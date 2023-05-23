@@ -23,18 +23,6 @@ import { Observable } from 'rxjs';
         <ngx-footer></ngx-footer>
       </nb-layout-footer>
     </nb-layout>
-
-    <ng-template #logo>
-      <nb-card>
-        <div class="d-flex justify-content-center  logo-wrapper p-2">
-          <img src="./assets/images/Logo/Pupuk Indonesia TL.png" alt="Pupuk Indonesia Logistik" style="width:20%">
-          <div class="logo-desc">
-            <h6 class="logo-name">PUPUK INDONESIA LOGISTIK</h6>
-            <span class="text-hint">(PIHC Group)</span> <br>   
-          </div>
-        </div>
-      </nb-card>
-    </ng-template>
   `,
 })
 export class OneColumnLayoutComponent {

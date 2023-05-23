@@ -19,7 +19,7 @@ export class NgxLoginComponent extends NbLoginComponent {
   // }
   
   login(): void {
-    this.router.navigateByUrl('/pages/home')
+    this.router.navigateByUrl('/pages/dashboards/piping-assets')
     // this.errors = [];
     // this.messages = [];
     // this.submitted = true;

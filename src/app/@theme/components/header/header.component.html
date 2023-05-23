@@ -9,12 +9,14 @@
   </nb-select>
 </div>
 
+<h5 class="justify-self-center">In Service Piping Inspection</h5>
+
 <div class="header-container">
   <nb-actions size="small">
-    <nb-action class="control-item">
+    <!-- <nb-action class="control-item">
       <nb-search type="rotate-layout"></nb-search>
-    </nb-action>
-    <nb-action class="control-item" icon="question-mark-circle-outline"></nb-action>
+    </nb-action> -->
+    <!-- <nb-action class="control-item" icon="question-mark-circle-outline"></nb-action> -->
     <nb-action class="user-action" *nbIsGranted="['view', 'user']" >
       <nb-user [nbContextMenu]="userMenu"
                [onlyPicture]="userPictureOnly"
