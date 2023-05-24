@@ -9,7 +9,7 @@ import {
     NbIconModule
 } from "@nebular/theme";
 import { NgxQRCodeModule } from "@techiediaries/ngx-qrcode";
-import { PrintQRCodeComponent } from "./qr-code/qr-code.dialog";
+// import { PrintQRCodeComponent } from "./qr-code/qr-code.dialog";
 
 @NgModule({
     imports: [
@@ -25,7 +25,7 @@ import { PrintQRCodeComponent } from "./qr-code/qr-code.dialog";
     ],
     declarations: [
         TopBarComponent,
-        PrintQRCodeComponent
+        // PrintQRCodeComponent
     ],
     exports : [
         TopBarComponent
