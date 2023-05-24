@@ -20,7 +20,7 @@ import { PrintQRCodeComponent } from "./qr-code/qr-code.dialog";
         NbIconModule,
         NgxQRCodeModule,
         NbDialogModule.forChild({
-            closeOnBackdropClick : false
+            closeOnBackdropClick : true
         })
     ],
     declarations: [
