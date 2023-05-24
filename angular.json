@@ -188,7 +188,8 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "ngx-admin-demo:serve"
+            "devServerTarget": "ngx-admin-demo:serve",
+            "outputPath": "dist/"
           }
         },
         "lint": {
