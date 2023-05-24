@@ -88,7 +88,7 @@ export class MatTableComponent implements OnInit {
 
   resultsLength = 0;
   displayedColumns: string[] = ['select', 'position', 'name', 
-  'weight', 'symbol'
+  // 'weight', 'symbol'
   ];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   selection = new SelectionModel<PeriodicElement>(true, []);

@@ -22,6 +22,8 @@ import { DashboardDetailsComponent } from './dashboard-details/dashboard-details
 import { FormsModule } from "@angular/forms";
 import { NgxQRCodeModule } from "@techiediaries/ngx-qrcode";
 import { CMLDetailsComponent } from "./cml-details/cml-details.component";
+import { DashboardRemainingChart } from "./dashboard-details/chart/remaining-chart.component";
+import { DashboardThicknessChart } from "./dashboard-details/chart/thickness-chart.component";
 
 @NgModule({
     imports: [
@@ -49,7 +51,9 @@ import { CMLDetailsComponent } from "./cml-details/cml-details.component";
     declarations: [
         MatTableComponent,
         DashboardDetailsComponent,
-        CMLDetailsComponent
+        CMLDetailsComponent,
+        DashboardRemainingChart,
+        DashboardThicknessChart
     ],
     exports : [
         MatTableComponent

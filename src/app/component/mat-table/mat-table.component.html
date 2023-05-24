@@ -12,7 +12,7 @@
         </mat-form-field>
     </nb-card-header>
     <nb-card-body class="row">
-        <div class="col-12">
+        <div class="col-2">
             <table style="width: 100%; box-shadow: none;" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
                 <!-- Checkbox Column -->
                 <ng-container matColumnDef="select">
@@ -68,9 +68,9 @@
             </mat-paginator>
         </div>
         
-        <!-- <div class="col-10"> -->
-            <!-- <ngx-dashboard-details></ngx-dashboard-details> -->
-            <!-- <ngx-cml-details></ngx-cml-details> -->
-        <!-- </div> -->
+        <div class="col-10">
+            <ngx-dashboard-details></ngx-dashboard-details>
+            <ngx-cml-details></ngx-cml-details>
+        </div>
     </nb-card-body>
 </nb-card>

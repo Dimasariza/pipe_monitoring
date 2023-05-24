@@ -134,24 +134,36 @@
     </nb-accordion-item>
 
     <nb-accordion-item expanded="true">
-        <nb-accordion-item-header>
-          CML Demage Mechanism
-        </nb-accordion-item-header>
-        <nb-accordion-item-body>
-          <label for="activeDamageMechanism" class="m-2">Active Damage Mechanism</label>
-          <textarea nbInput name="activeDamageMechanism" id="activeDamageMechanism" fullWidth rows="8"></textarea>
-        </nb-accordion-item-body>
+      <nb-accordion-item-header>
+        CML Demage Mechanism
+      </nb-accordion-item-header>
+      <nb-accordion-item-body>
+        <label for="activeDamageMechanism" class="m-2">Active Damage Mechanism</label>
+        <textarea nbInput name="activeDamageMechanism" id="activeDamageMechanism" fullWidth rows="8"></textarea>
+      </nb-accordion-item-body>
     </nb-accordion-item>
 
     <nb-accordion-item expanded="true">
-        <nb-accordion-item-header>
-          Inspection History
-        </nb-accordion-item-header>
-        <nb-accordion-item-body>
-          A nebula is an interstellar cloud of dust, hydrogen, helium and other ionized gases.
-          Originally, nebula was a name for any diffuse astronomical object,
-          including galaxies beyond the Milky Way.
-        </nb-accordion-item-body>
+      <nb-accordion-item-header>
+        Inspection History
+      </nb-accordion-item-header>
+      <nb-accordion-item-body>
+        A nebula is an interstellar cloud of dust, hydrogen, helium and other ionized gases.
+        Originally, nebula was a name for any diffuse astronomical object,
+        including galaxies beyond the Milky Way.
+      </nb-accordion-item-body>
+    </nb-accordion-item>
+
+    <nb-accordion-item expanded="true">
+      <nb-accordion-item-header>
+        Trend
+      </nb-accordion-item-header>
+      <nb-accordion-item-body>
+        <div class="row">
+          <ngx-dashboard-thickness-chart class="col-6"></ngx-dashboard-thickness-chart>
+          <ngx-dashboard-remaining-chart class="col-6"></ngx-dashboard-remaining-chart>
+        </div>
+      </nb-accordion-item-body>
     </nb-accordion-item>
 
     <nb-accordion-item expanded="true">
