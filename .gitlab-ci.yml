@@ -11,4 +11,4 @@ pages:
     paths:
       - public
   only:
-    - docking-apps
+    - pipe_monitoring
