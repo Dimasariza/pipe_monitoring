@@ -3,6 +3,7 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
+import { Router } from '@angular/router';
 
 export interface PeriodicElement {
   name: string;
@@ -58,23 +59,27 @@ const ELEMENT_DATA: PeriodicElement[] = [
 @Component({
   selector: 'ngx-mat-table',
   templateUrl: './mat-table.component.html',
-  styleUrls: ['./mat-table.component.css'],
 })
 export class MatTableComponent implements OnInit {
-  
-    
-  constructor() { }
+  constructor( 
+    private router : Router
+  ) { }
 
   ngOnInit(): void {
   }
 
   @Input() title;
+  @Input() navigateTo;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+  }
+
+  showRow(e) {
+    this.router.navigateByUrl(`/pages/${this.navigateTo}/${e.position}`)
   }
 
   applyFilter(event: Event) {
@@ -88,7 +93,7 @@ export class MatTableComponent implements OnInit {
 
   resultsLength = 0;
   displayedColumns: string[] = ['select', 'position', 'name', 
-  // 'weight', 'symbol'
+  'weight', 'symbol'
   ];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   selection = new SelectionModel<PeriodicElement>(true, []);

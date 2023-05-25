@@ -8,7 +8,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from '@angular/material/input';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
 import { 
     NbAccordionModule, 
     NbCardModule, 
@@ -18,12 +18,8 @@ import {
     NbOptionModule, 
     NbSelectModule 
 } from "@nebular/theme";
-import { DashboardDetailsComponent } from './dashboard-details/dashboard-details.component';
 import { FormsModule } from "@angular/forms";
 import { NgxQRCodeModule } from "@techiediaries/ngx-qrcode";
-import { CMLDetailsComponent } from "./cml-details/cml-details.component";
-import { DashboardRemainingChart } from "./dashboard-details/chart/remaining-chart.component";
-import { DashboardThicknessChart } from "./dashboard-details/chart/thickness-chart.component";
 
 @NgModule({
     imports: [
@@ -35,6 +31,7 @@ import { DashboardThicknessChart } from "./dashboard-details/chart/thickness-cha
         MatPaginatorModule,
         MatFormFieldModule, 
         MatInputModule,
+        MatSelectModule,
         NbOptionModule,
         NbSelectModule,
         NbCardModule,
@@ -44,16 +41,11 @@ import { DashboardThicknessChart } from "./dashboard-details/chart/thickness-cha
         NgxQRCodeModule,
         NbSelectModule,
         NbOptionModule,
-        MatSelectModule,
         NbListModule,
         NbCheckboxModule
     ],
     declarations: [
         MatTableComponent,
-        DashboardDetailsComponent,
-        CMLDetailsComponent,
-        DashboardRemainingChart,
-        DashboardThicknessChart
     ],
     exports : [
         MatTableComponent
