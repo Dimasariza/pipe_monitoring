@@ -144,6 +144,25 @@ const MENU_ITEMS = [
             },
         ]
     },
+    {
+        title: 'Report',
+        icon: {
+            icon: 'book',
+            pack: 'fas',
+        },
+        children: [
+            {
+                title: "Corrosion Rate Trend",
+                link: '/pages/analytics/corrosion-rate-trend',
+                home: true,
+            },
+            {
+                title: "Remaining Life Trend",
+                link: '/pages/analytics/remaining-life-trend',
+                home: true,
+            },
+        ]
+    },
 ];
 
 
@@ -186,6 +205,11 @@ const routes = [{
                 path: 'profile',
                 loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_profile_profile_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./profile/profile.module */ 88558))
                     .then(m => m.ProfileModule),
+            },
+            {
+                path: 'report',
+                loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_report_report_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./report/report.module */ 81725))
+                    .then(m => m.ReportModule),
             },
             {
                 path: 'analytics',

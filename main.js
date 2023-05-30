@@ -4652,7 +4652,9 @@ AppModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵ
             _nebular_theme__WEBPACK_IMPORTED_MODULE_10__.NbSidebarModule.forRoot(),
             _nebular_theme__WEBPACK_IMPORTED_MODULE_10__.NbMenuModule.forRoot(),
             _nebular_theme__WEBPACK_IMPORTED_MODULE_10__.NbDatepickerModule.forRoot(),
-            _nebular_theme__WEBPACK_IMPORTED_MODULE_10__.NbDialogModule.forRoot(),
+            _nebular_theme__WEBPACK_IMPORTED_MODULE_10__.NbDialogModule.forRoot({
+                hasScroll: true
+            }),
             _nebular_theme__WEBPACK_IMPORTED_MODULE_10__.NbWindowModule.forRoot(),
             _nebular_theme__WEBPACK_IMPORTED_MODULE_10__.NbToastrModule.forRoot(),
             _nebular_theme__WEBPACK_IMPORTED_MODULE_10__.NbChatModule.forRoot({
