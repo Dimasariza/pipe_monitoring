@@ -152,13 +152,13 @@ const MENU_ITEMS = [
         },
         children: [
             {
-                title: "Corrosion Rate Trend",
-                link: '/pages/analytics/corrosion-rate-trend',
+                title: "Piping Assets",
+                link: '/pages/report/piping-assets',
                 home: true,
             },
             {
-                title: "Remaining Life Trend",
-                link: '/pages/analytics/remaining-life-trend',
+                title: "Piping Circcuits",
+                link: '/pages/report/piping-circuits',
                 home: true,
             },
         ]
@@ -193,12 +193,12 @@ const routes = [{
         children: [
             {
                 path: 'dashboards',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_component_mat-table_mat-table_module_ts-src_app_component_top-bar_top-bar_com-e0e2e5"), __webpack_require__.e("default-src_app_component_chart_charts-component_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_dashboard_dashboard_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./dashboard/dashboard.module */ 71659))
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_component_mat-table_mat-table_module_ts"), __webpack_require__.e("default-src_app_component_chart_charts-component_ts"), __webpack_require__.e("default-src_app_component_top-bar_top-bar_component_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_dashboard_dashboard_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./dashboard/dashboard.module */ 71659))
                     .then(m => m.DashboardModule),
             },
             {
                 path: 'assesment',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_component_mat-table_mat-table_module_ts-src_app_component_top-bar_top-bar_com-e0e2e5"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_assesment_assesment_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./assesment/assesment.module */ 43495))
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_component_mat-table_mat-table_module_ts"), __webpack_require__.e("default-src_app_component_top-bar_top-bar_component_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_assesment_assesment_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./assesment/assesment.module */ 43495))
                     .then(m => m.AssesmentModule),
             },
             {
@@ -208,12 +208,12 @@ const routes = [{
             },
             {
                 path: 'report',
-                loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_pages_report_report_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./report/report.module */ 81725))
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_component_mat-table_mat-table_module_ts"), __webpack_require__.e("default-src_app_component_chart_charts-component_ts"), __webpack_require__.e("src_app_pages_report_report_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./report/report.module */ 81725))
                     .then(m => m.ReportModule),
             },
             {
                 path: 'analytics',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_component_mat-table_mat-table_module_ts-src_app_component_top-bar_top-bar_com-e0e2e5"), __webpack_require__.e("default-src_app_component_chart_charts-component_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_analytics_analytics_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./analytics/analytics.module */ 92679))
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_component_mat-table_mat-table_module_ts"), __webpack_require__.e("default-src_app_component_chart_charts-component_ts"), __webpack_require__.e("default-src_app_component_top-bar_top-bar_component_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_analytics_analytics_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./analytics/analytics.module */ 92679))
                     .then(m => m.AnalyticsModule),
             },
             {
