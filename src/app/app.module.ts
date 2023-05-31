@@ -34,7 +34,9 @@ import { NbDateFnsDateModule } from '@nebular/date-fns';
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),
     NbDatepickerModule.forRoot(),
-    NbDialogModule.forRoot(),
+    NbDialogModule.forRoot({
+      hasScroll : true
+    }),
     NbWindowModule.forRoot(),
     NbToastrModule.forRoot(),
     NbChatModule.forRoot({

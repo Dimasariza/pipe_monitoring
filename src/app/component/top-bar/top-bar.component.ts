@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NbDialogService } from '@nebular/theme';
 import { PrintQRCodeComponent } from './qr-code/qr-code.dialog';
+import { AddAssetsComponent } from '../../pages/dashboard/piping-assets/add-assets/add-assets.component';
 
 @Component({
   selector: 'ngx-top-bar',
@@ -15,9 +16,13 @@ export class TopBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
   addNew() {
-    console.log('add new')
+    this.dialogService.open(AddAssetsComponent, {
+      context: {
+        dialogData : 'hello'
+        // title: 'This is a title passed to the dialog component',
+      },
+    });
   }
 
   import() {
