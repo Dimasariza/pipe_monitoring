@@ -193,7 +193,7 @@ const routes = [{
         children: [
             {
                 path: 'dashboards',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_component_mat-table_mat-table_module_ts"), __webpack_require__.e("default-src_app_component_chart_charts-component_ts"), __webpack_require__.e("default-src_app_component_top-bar_top-bar_component_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_dashboard_dashboard_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./dashboard/dashboard.module */ 71659))
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_component_mat-table_mat-table_module_ts"), __webpack_require__.e("default-src_app_component_top-bar_top-bar_component_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_dashboard_dashboard_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./dashboard/dashboard.module */ 71659))
                     .then(m => m.DashboardModule),
             },
             {
@@ -213,7 +213,7 @@ const routes = [{
             },
             {
                 path: 'analytics',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_component_mat-table_mat-table_module_ts"), __webpack_require__.e("default-src_app_component_chart_charts-component_ts"), __webpack_require__.e("default-src_app_component_top-bar_top-bar_component_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_analytics_analytics_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./analytics/analytics.module */ 92679))
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_component_mat-table_mat-table_module_ts"), __webpack_require__.e("default-src_app_component_top-bar_top-bar_component_ts"), __webpack_require__.e("default-src_app_component_chart_charts-component_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_analytics_analytics_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./analytics/analytics.module */ 92679))
                     .then(m => m.AnalyticsModule),
             },
             {

@@ -387,6 +387,7 @@ const ELEMENT_DATA = [
 class ReportPipingAssets {
     constructor(router) {
         this.router = router;
+        this.pipingAssetsData = 1;
         this.elementType = _techiediaries_ngx_qrcode__WEBPACK_IMPORTED_MODULE_1__.NgxQrcodeElementTypes.URL;
         this.correctionLevel = _techiediaries_ngx_qrcode__WEBPACK_IMPORTED_MODULE_1__.NgxQrcodeErrorCorrectionLevels.HIGH;
         // Need to specify the valid website address
