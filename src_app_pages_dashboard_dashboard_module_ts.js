@@ -216,11 +216,11 @@ class PipingAssetsComponent {
             { type: 'text', prop: 'piping_id', head: 'Piping Id', width: '100px' },
             { type: 'text', prop: 'piping_name', head: 'Piping Name', width: '200px' },
             { type: 'text', prop: 'date_in_service', head: 'Date In Service', width: '200px' },
-            { type: 'button', prop: 'qr_print', head: 'QR', width: '50px',
-                button: [
-                // { name : 'QR Print', icon : 'qrcode', pack : 'fas' },
-                ]
-            },
+            // { type : 'button', prop : 'qr_print', head : 'QR', width : '50px',
+            //   button : [
+            //     { name : 'QR Print', icon : 'qrcode', pack : 'fas' },
+            //   ]
+            // },
         ];
     }
     ngOnInit() {
