@@ -10,6 +10,6 @@
 
 export const environment = {
   production: false,
-  apiUrl: "http://env-0831875-dev.jh-beon.cloud/public"
+  apiUrl: "http://127.0.0.1:8000/api"
   // apiUrl: ""
 };

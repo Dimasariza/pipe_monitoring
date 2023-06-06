@@ -34,8 +34,6 @@
               }
             ],
             "styles": [
-              "src/gantt.css",
-              "src/styles.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/typeface-exo/index.css",
               "node_modules/roboto-fontface/css/roboto/roboto-fontface.css",
@@ -137,7 +135,6 @@
               "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ],
             "styles": [
-              "src/gantt.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/typeface-exo/index.css",
               "node_modules/roboto-fontface/css/roboto/roboto-fontface.css",
