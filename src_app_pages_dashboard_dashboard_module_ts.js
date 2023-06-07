@@ -18,7 +18,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class DashboardComponent {
-    constructor() { }
+    constructor() {
+    }
     ngOnInit() {
     }
 }

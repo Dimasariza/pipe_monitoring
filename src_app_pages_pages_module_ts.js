@@ -133,12 +133,12 @@ const MENU_ITEMS = [
         },
         children: [
             {
-                title: "Corrosion Rate Trend",
+                title: "CML Trend",
                 link: '/pages/analytics/corrosion-rate-trend',
                 home: true,
             },
             {
-                title: "Remaining Life Trend",
+                title: "Piping Trend",
                 link: '/pages/analytics/remaining-life-trend',
                 home: true,
             },
@@ -157,7 +157,7 @@ const MENU_ITEMS = [
                 home: true,
             },
             {
-                title: "Piping Circcuits",
+                title: "Piping Circuits",
                 link: '/pages/report/piping-circuits',
                 home: true,
             },
