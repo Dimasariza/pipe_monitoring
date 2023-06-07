@@ -2760,7 +2760,7 @@ class HeaderComponent {
         this.userMenu = [{ title: 'Profile', link: '/pages/profile' }, { title: 'Log out', link: '/auth/logout' }];
     }
     ngOnInit() {
-        this.user = { name: 'David', picture: '../../../../assets/image/profile.jpg' };
+        this.user = { name: 'David', picture: 'https://th.bing.com/th/id/OIP.urs9CLtRNkSZtaP2K1uOIAHaHa?pid=ImgDet&rs=1' };
         this.currentTheme = this.themeService.currentTheme;
         const { xl } = this.breakpointService.getBreakpointsMap();
         this.themeService.onMediaQueryChange()
