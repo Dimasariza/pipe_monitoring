@@ -18,7 +18,11 @@ __webpack_require__.r(__webpack_exports__);
 class DashboardRemainingChart extends _component_chart_charts_component__WEBPACK_IMPORTED_MODULE_0__.ChartsComponent {
     constructor() {
         super();
-        this.defineOptions("Remaining Life vs Year", 'Remaining Life (years)', 'Year');
+        this.defineOptions({
+            chartTitle: "Remaining Life vs Year",
+            yTitle: 'Remaining Life (years)',
+            xTitle: 'Year'
+        });
     }
     ngOnInit() {
         this.generateChart('DashboardRemaining');
@@ -49,7 +53,11 @@ __webpack_require__.r(__webpack_exports__);
 class DashboardThicknessChart extends _component_chart_charts_component__WEBPACK_IMPORTED_MODULE_0__.ChartsComponent {
     constructor() {
         super();
-        this.defineOptions("Thickness vs Year", 'Thickness (mm)', 'Year');
+        this.defineOptions({
+            chartTitle: "Thickness vs Year",
+            yTitle: 'Thickness (mm)',
+            xTitle: 'Year'
+        });
     }
     ngOnInit() {
         this.generateChart('DashboardThickness');
