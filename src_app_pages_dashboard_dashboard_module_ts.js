@@ -41,9 +41,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "DashboardModule": () => (/* binding */ DashboardModule)
 /* harmony export */ });
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/common */ 36362);
 /* harmony import */ var _theme_theme_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../@theme/theme.module */ 80268);
-/* harmony import */ var _nebular_theme__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @nebular/theme */ 68253);
+/* harmony import */ var _nebular_theme__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @nebular/theme */ 68253);
 /* harmony import */ var _dashboard_routing__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dashboard.routing */ 45774);
 /* harmony import */ var _dashboard_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./dashboard.component */ 24789);
 /* harmony import */ var _component_top_bar_top_bar_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../component/top-bar/top-bar.module */ 8351);
@@ -51,17 +51,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _piping_circuits_piping_circuits_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./piping-circuits/piping-circuits.component */ 75233);
 /* harmony import */ var _view_proposal_view_proposal_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./view-proposal/view-proposal.component */ 56161);
 /* harmony import */ var _component_mat_table_mat_table_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../component/mat-table/mat-table.module */ 39511);
-/* harmony import */ var _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/material/slide-toggle */ 6623);
-/* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/material/table */ 97217);
-/* harmony import */ var _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/material/checkbox */ 61534);
-/* harmony import */ var _angular_material_paginator__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/material/paginator */ 9861);
-/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/material/form-field */ 44770);
-/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/input */ 43365);
-/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/material/select */ 91434);
-/* harmony import */ var _techiediaries_ngx_qrcode__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @techiediaries/ngx-qrcode */ 33244);
+/* harmony import */ var _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/material/slide-toggle */ 6623);
+/* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/material/table */ 97217);
+/* harmony import */ var _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/material/checkbox */ 61534);
+/* harmony import */ var _angular_material_paginator__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/material/paginator */ 9861);
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/form-field */ 44770);
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/material/input */ 43365);
+/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/material/select */ 91434);
+/* harmony import */ var _techiediaries_ngx_qrcode__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @techiediaries/ngx-qrcode */ 33244);
 /* harmony import */ var _piping_assets_add_assets_add_assets_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./piping-assets/add-assets/add-assets.component */ 39267);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/forms */ 90587);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/forms */ 90587);
+/* harmony import */ var _piping_circuits_add_circuit_add_circuit_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./piping-circuits/add-circuit/add-circuit.component */ 24651);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/core */ 3184);
+
 
 
 
@@ -86,59 +88,60 @@ __webpack_require__.r(__webpack_exports__);
 class DashboardModule {
 }
 DashboardModule.ɵfac = function DashboardModule_Factory(t) { return new (t || DashboardModule)(); };
-DashboardModule.ɵmod = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineNgModule"]({ type: DashboardModule });
-DashboardModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵdefineInjector"]({ imports: [[
-            _angular_common__WEBPACK_IMPORTED_MODULE_10__.CommonModule,
+DashboardModule.ɵmod = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineNgModule"]({ type: DashboardModule });
+DashboardModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineInjector"]({ imports: [[
+            _angular_common__WEBPACK_IMPORTED_MODULE_11__.CommonModule,
             _theme_theme_module__WEBPACK_IMPORTED_MODULE_0__.ThemeModule,
-            _nebular_theme__WEBPACK_IMPORTED_MODULE_11__.NbMenuModule,
-            _nebular_theme__WEBPACK_IMPORTED_MODULE_11__.NbCardModule,
-            _nebular_theme__WEBPACK_IMPORTED_MODULE_11__.NbOptionModule,
-            _nebular_theme__WEBPACK_IMPORTED_MODULE_11__.NbSelectModule,
-            _nebular_theme__WEBPACK_IMPORTED_MODULE_11__.NbAccordionModule,
-            _nebular_theme__WEBPACK_IMPORTED_MODULE_11__.NbInputModule,
-            _nebular_theme__WEBPACK_IMPORTED_MODULE_11__.NbDatepickerModule,
-            _nebular_theme__WEBPACK_IMPORTED_MODULE_11__.NbButtonModule,
-            _techiediaries_ngx_qrcode__WEBPACK_IMPORTED_MODULE_12__.NgxQRCodeModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormsModule,
-            _nebular_theme__WEBPACK_IMPORTED_MODULE_11__.NbIconModule,
+            _nebular_theme__WEBPACK_IMPORTED_MODULE_12__.NbMenuModule,
+            _nebular_theme__WEBPACK_IMPORTED_MODULE_12__.NbCardModule,
+            _nebular_theme__WEBPACK_IMPORTED_MODULE_12__.NbOptionModule,
+            _nebular_theme__WEBPACK_IMPORTED_MODULE_12__.NbSelectModule,
+            _nebular_theme__WEBPACK_IMPORTED_MODULE_12__.NbAccordionModule,
+            _nebular_theme__WEBPACK_IMPORTED_MODULE_12__.NbInputModule,
+            _nebular_theme__WEBPACK_IMPORTED_MODULE_12__.NbDatepickerModule,
+            _nebular_theme__WEBPACK_IMPORTED_MODULE_12__.NbButtonModule,
+            _techiediaries_ngx_qrcode__WEBPACK_IMPORTED_MODULE_13__.NgxQRCodeModule,
+            _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormsModule,
+            _nebular_theme__WEBPACK_IMPORTED_MODULE_12__.NbIconModule,
             _dashboard_routing__WEBPACK_IMPORTED_MODULE_1__.DashboardsRoutingModule,
             _component_top_bar_top_bar_module__WEBPACK_IMPORTED_MODULE_3__.TopBarModule,
             _component_mat_table_mat_table_module__WEBPACK_IMPORTED_MODULE_7__.MaterialTableModule,
-            _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_14__.MatSlideToggleModule,
-            _angular_material_table__WEBPACK_IMPORTED_MODULE_15__.MatTableModule,
-            _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_16__.MatCheckboxModule,
-            _angular_material_paginator__WEBPACK_IMPORTED_MODULE_17__.MatPaginatorModule,
-            _angular_material_form_field__WEBPACK_IMPORTED_MODULE_18__.MatFormFieldModule,
-            _angular_material_input__WEBPACK_IMPORTED_MODULE_19__.MatInputModule,
-            _angular_material_select__WEBPACK_IMPORTED_MODULE_20__.MatSelectModule,
+            _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_15__.MatSlideToggleModule,
+            _angular_material_table__WEBPACK_IMPORTED_MODULE_16__.MatTableModule,
+            _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_17__.MatCheckboxModule,
+            _angular_material_paginator__WEBPACK_IMPORTED_MODULE_18__.MatPaginatorModule,
+            _angular_material_form_field__WEBPACK_IMPORTED_MODULE_19__.MatFormFieldModule,
+            _angular_material_input__WEBPACK_IMPORTED_MODULE_20__.MatInputModule,
+            _angular_material_select__WEBPACK_IMPORTED_MODULE_21__.MatSelectModule,
         ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵsetNgModuleScope"](DashboardModule, { declarations: [_dashboard_component__WEBPACK_IMPORTED_MODULE_2__.DashboardComponent,
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵsetNgModuleScope"](DashboardModule, { declarations: [_dashboard_component__WEBPACK_IMPORTED_MODULE_2__.DashboardComponent,
         _piping_assets_piping_assets_component__WEBPACK_IMPORTED_MODULE_4__.PipingAssetsComponent,
         _piping_circuits_piping_circuits_component__WEBPACK_IMPORTED_MODULE_5__.PipingCircuitsComponent,
         _view_proposal_view_proposal_component__WEBPACK_IMPORTED_MODULE_6__.ViewProposalComponent,
-        _piping_assets_add_assets_add_assets_component__WEBPACK_IMPORTED_MODULE_8__.AddAssetsComponent], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_10__.CommonModule,
+        _piping_assets_add_assets_add_assets_component__WEBPACK_IMPORTED_MODULE_8__.AddAssetsComponent,
+        _piping_circuits_add_circuit_add_circuit_component__WEBPACK_IMPORTED_MODULE_9__.AddCircuitComponent], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_11__.CommonModule,
         _theme_theme_module__WEBPACK_IMPORTED_MODULE_0__.ThemeModule,
-        _nebular_theme__WEBPACK_IMPORTED_MODULE_11__.NbMenuModule,
-        _nebular_theme__WEBPACK_IMPORTED_MODULE_11__.NbCardModule,
-        _nebular_theme__WEBPACK_IMPORTED_MODULE_11__.NbOptionModule,
-        _nebular_theme__WEBPACK_IMPORTED_MODULE_11__.NbSelectModule,
-        _nebular_theme__WEBPACK_IMPORTED_MODULE_11__.NbAccordionModule,
-        _nebular_theme__WEBPACK_IMPORTED_MODULE_11__.NbInputModule,
-        _nebular_theme__WEBPACK_IMPORTED_MODULE_11__.NbDatepickerModule,
-        _nebular_theme__WEBPACK_IMPORTED_MODULE_11__.NbButtonModule,
-        _techiediaries_ngx_qrcode__WEBPACK_IMPORTED_MODULE_12__.NgxQRCodeModule,
-        _angular_forms__WEBPACK_IMPORTED_MODULE_13__.FormsModule,
-        _nebular_theme__WEBPACK_IMPORTED_MODULE_11__.NbIconModule,
+        _nebular_theme__WEBPACK_IMPORTED_MODULE_12__.NbMenuModule,
+        _nebular_theme__WEBPACK_IMPORTED_MODULE_12__.NbCardModule,
+        _nebular_theme__WEBPACK_IMPORTED_MODULE_12__.NbOptionModule,
+        _nebular_theme__WEBPACK_IMPORTED_MODULE_12__.NbSelectModule,
+        _nebular_theme__WEBPACK_IMPORTED_MODULE_12__.NbAccordionModule,
+        _nebular_theme__WEBPACK_IMPORTED_MODULE_12__.NbInputModule,
+        _nebular_theme__WEBPACK_IMPORTED_MODULE_12__.NbDatepickerModule,
+        _nebular_theme__WEBPACK_IMPORTED_MODULE_12__.NbButtonModule,
+        _techiediaries_ngx_qrcode__WEBPACK_IMPORTED_MODULE_13__.NgxQRCodeModule,
+        _angular_forms__WEBPACK_IMPORTED_MODULE_14__.FormsModule,
+        _nebular_theme__WEBPACK_IMPORTED_MODULE_12__.NbIconModule,
         _dashboard_routing__WEBPACK_IMPORTED_MODULE_1__.DashboardsRoutingModule,
         _component_top_bar_top_bar_module__WEBPACK_IMPORTED_MODULE_3__.TopBarModule,
         _component_mat_table_mat_table_module__WEBPACK_IMPORTED_MODULE_7__.MaterialTableModule,
-        _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_14__.MatSlideToggleModule,
-        _angular_material_table__WEBPACK_IMPORTED_MODULE_15__.MatTableModule,
-        _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_16__.MatCheckboxModule,
-        _angular_material_paginator__WEBPACK_IMPORTED_MODULE_17__.MatPaginatorModule,
-        _angular_material_form_field__WEBPACK_IMPORTED_MODULE_18__.MatFormFieldModule,
-        _angular_material_input__WEBPACK_IMPORTED_MODULE_19__.MatInputModule,
-        _angular_material_select__WEBPACK_IMPORTED_MODULE_20__.MatSelectModule] }); })();
+        _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_15__.MatSlideToggleModule,
+        _angular_material_table__WEBPACK_IMPORTED_MODULE_16__.MatTableModule,
+        _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_17__.MatCheckboxModule,
+        _angular_material_paginator__WEBPACK_IMPORTED_MODULE_18__.MatPaginatorModule,
+        _angular_material_form_field__WEBPACK_IMPORTED_MODULE_19__.MatFormFieldModule,
+        _angular_material_input__WEBPACK_IMPORTED_MODULE_20__.MatInputModule,
+        _angular_material_select__WEBPACK_IMPORTED_MODULE_21__.MatSelectModule] }); })();
 
 
 /***/ }),
