@@ -1,5 +1,5 @@
 <nb-card>
-    <nb-card-header class="d-flex justify-content-between">
+    <nb-card-header class="d-flex justify-content-between" *ngIf="!tableHead.head">
         <div class="d-flex">
             <h5>{{ tableHead?.title }}</h5>
             <nb-select [placeholder]="tableHead?.filter" class="mx-5" status="primary">
@@ -56,6 +56,14 @@
                     </td>
                 </div>
 
+                <!-- Column type Navigate to -->
+                <div *ngIf="column.type == 'navto'">
+                    <th mat-header-cell *matHeaderCellDef [ngStyle]=" {'width' : column.width} "> {{ column.head }} </th>
+                    <td mat-cell *matCellDef="let element"> 
+                        <button>test</button>   
+                    </td>
+                </div>
+
             </ng-container>
         
             <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
@@ -64,7 +72,7 @@
             </tr>
         </table>
 
-        <mat-paginator 
+        <mat-paginator *ngIf="!tableHead.foot"
             [length]="resultsLength" 
             [pageSize]="30" 
             aria-label="Select page of GitHub search results">
