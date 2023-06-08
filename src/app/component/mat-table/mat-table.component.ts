@@ -21,8 +21,14 @@ export class MatTableComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
 
-  @Input() tableHead;
+  @Input() tableHeader;
+  @Input() tableFooter = {
+    show : true,
+    pageSize : 30
+  }; 
   @Input() tableData;
+  @Input() columnDetails
+  displayedColumns: string[]
   
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -30,16 +36,6 @@ export class MatTableComponent implements OnInit {
   resultsLength = 0;
   selection = new SelectionModel(true, []);
   dataSource
-
-  @Input() columnDetails = [ 
-    { type : 'select', prop : 'select', head : '', width : '60px' },
-    { type : 'position', prop : 'position', head : 'No. ', width : '40px' },
-    { type : 'text', prop : 'name', head : 'Name', width : '100px' },
-    { type : 'text', prop : 'weight', head : 'Weight', width : '200px' },
-    { type : 'text', prop : 'symbol', head : 'Symbol', width : '200px' },
-  ]
-
-  displayedColumns: string[]
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
