@@ -3,13 +3,16 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ngx-mat-table',
   templateUrl: './mat-table.component.html',
 })
 export class MatTableComponent implements OnInit {
-  constructor( ) { }
+  constructor( 
+    private router : Router
+  ) { }
 
   ngOnInit(): void { 
     this.displayedColumns = this.columnDetails.map(column => column.prop);
@@ -36,6 +39,10 @@ export class MatTableComponent implements OnInit {
   resultsLength = 0;
   selection = new SelectionModel(true, []);
   dataSource
+
+  navigateTo(nav, element) {
+    this.router.navigateByUrl(nav + element.piping_id)
+  }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
