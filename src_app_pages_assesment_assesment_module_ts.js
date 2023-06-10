@@ -227,7 +227,7 @@ class DemageMechanismComponent {
         this.columnDetails = [
             { type: 'text', prop: 'piping_id', head: 'Piping Id', width: '100px' },
             { type: 'text', prop: 'piping_damage_mechanism', head: 'Piping Damage Mechanism', width: '200px' },
-            { type: 'text', prop: 'active', head: 'Active', width: '200px' },
+            { type: 'check', prop: 'active', head: 'Active', width: '100px' },
             { type: 'text', prop: 'notes', head: 'Notes', width: '200px' },
             { type: 'text', prop: 'expected_type', head: 'Expected Type/Location', width: '200px' },
             { type: 'text', prop: 'last_inspection', head: 'Last Insp.Date', width: '200px' },

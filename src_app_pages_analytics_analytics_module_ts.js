@@ -449,28 +449,34 @@ class PipingCircuitChartComponent extends _component_chart_charts_component__WEB
         super();
         this.chartType = 'bar';
         this.yLabels = ['Pipe 101A', 'Pipe 102A', 'Pipe 103A', 'Pipe 104A', 'Pipe 105A'];
+        this.legendPosition = 'bottom';
+        this.showRightSclae = true;
         this.datasets = [
             {
                 label: "Reading (mm)",
+                yAxisID: 'A',
                 data: ['467', '576', '572', '79', '92'],
                 backgroundColor: 'rgba(255,0,0,.5)',
                 borderColor: 'rgba(255,0,0,.5)',
             },
             {
                 label: "T minimum (mm)",
+                yAxisID: 'A',
                 data: ['542', '542', '536', '327', '17'],
                 backgroundColor: 'rgba(100,100,0,.5)',
                 borderColor: 'rgba(100,100,0,.5)',
             },
             {
                 label: "Nominal Thickness (mm)",
+                yAxisID: 'A',
                 data: ['504', '142', '336', '317', '100'],
                 backgroundColor: 'rgba(10,50,100,.5)',
                 borderColor: 'rgba(10,50,100,.5)',
             },
             {
                 label: "Corrosion Rate (mm/Year)",
-                data: ['52', '42', '336', '527', '517'],
+                yAxisID: 'B',
+                data: ['0.052', '0.042', '0.336', '0.527', '0.517'],
                 backgroundColor: 'rgba(90,190,90,.5)',
                 borderColor: 'rgba(90,190,90,.5)',
             },

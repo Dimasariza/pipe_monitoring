@@ -22,55 +22,77 @@ class ChartsComponent {
         this.datasets = [
             {
                 label: "CML 1A",
+                yAxisID: 'A',
                 data: ['467', '576', '572', '79', '92'],
                 backgroundColor: 'transparent',
                 borderColor: 'rgba(255,0,0,.5)',
             },
             {
                 label: "CML 1B",
+                yAxisID: 'A',
                 data: ['542', '542', '536', '327', '17'],
                 backgroundColor: 'transparent',
                 borderColor: 'rgba(100,100,0,.5)',
             },
             {
                 label: "CML 1C",
+                yAxisID: 'A',
                 data: ['504', '142', '336', '317', '100'],
                 backgroundColor: 'transparent',
                 borderColor: 'rgba(10,50,100,.5)',
             },
             {
                 label: "CML 1D",
+                yAxisID: 'A',
                 data: ['52', '42', '336', '527', '517'],
                 backgroundColor: 'transparent',
                 borderColor: 'rgba(90,190,90,.5)',
             },
             {
                 label: "CML 1E",
+                yAxisID: 'A',
                 data: ['50', '402', '336', '427', '217'],
                 backgroundColor: 'transparent',
                 borderColor: 'rgba(190,190,10,.5)',
             },
             {
                 label: "CML 1F",
+                yAxisID: 'A',
                 data: ['92', '342', '536', '227', '117'],
                 backgroundColor: 'transparent',
                 borderColor: 'rgba(200,200,20,.5)',
             },
             {
                 label: "CML 1G",
+                yAxisID: 'A',
                 data: ['52', '242', '436', '327', '217'],
                 backgroundColor: 'transparent',
                 borderColor: 'rgba(20,150,200,.5)',
             }
         ];
         this.yLabels = ['2020', '2021', '2022', '2023', '2024'];
+        this.legendPosition = 'right';
+        this.showRightSclae = false;
     }
     defineOptions({ chartTitle = '', yTitle = '', xTitle = '' }) {
+        let delayed;
         this.options = {
+            animation: {
+                onComplete: () => {
+                    delayed = true;
+                },
+                delay: (context) => {
+                    let delay = 0;
+                    if (context.type === 'data' && context.mode === 'default' && !delayed) {
+                        delay = context.dataIndex * 300 + context.datasetIndex * 100;
+                    }
+                    return delay;
+                },
+            },
             responsive: true,
             plugins: {
                 legend: {
-                    position: 'right'
+                    position: this.legendPosition
                 },
                 title: {
                     display: true,
@@ -79,8 +101,25 @@ class ChartsComponent {
                 },
             },
             scales: {
-                y: {
+                A: {
                     display: true,
+                    position: 'left',
+                    id: 'A',
+                    title: {
+                        display: true,
+                        text: yTitle,
+                        font: {
+                            family: 'Times',
+                            style: 'normal',
+                            lineHeight: 1.2
+                        },
+                        padding: { top: 0, bottom: 10 }
+                    }
+                },
+                B: {
+                    display: this.showRightSclae,
+                    position: 'right',
+                    id: 'A',
                     title: {
                         display: true,
                         text: yTitle,
