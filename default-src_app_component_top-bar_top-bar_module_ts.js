@@ -368,9 +368,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "PipingAssetsService": () => (/* binding */ PipingAssetsService)
 /* harmony export */ });
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ 28784);
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../environments/environment */ 92340);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ 28784);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
+
 
 
 
@@ -381,15 +382,18 @@ class PipingAssetsService {
     }
     getPipingAssets() {
         const url = this.apiUrl + "/assets";
-        return this.httpClient.get(url);
+        const httpHeaders = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpHeaders();
+        httpHeaders.append("enctype", "multipart/form-data");
+        httpHeaders.append("Accept", "*/*");
+        return this.httpClient.get(url, { headers: httpHeaders });
     }
     addPipingAssets(data) {
         const url = this.apiUrl + "/assets";
         return this.httpClient.post(url, data);
     }
 }
-PipingAssetsService.ɵfac = function PipingAssetsService_Factory(t) { return new (t || PipingAssetsService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpClient)); };
-PipingAssetsService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({ token: PipingAssetsService, factory: PipingAssetsService.ɵfac, providedIn: 'root' });
+PipingAssetsService.ɵfac = function PipingAssetsService_Factory(t) { return new (t || PipingAssetsService)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpClient)); };
+PipingAssetsService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({ token: PipingAssetsService, factory: PipingAssetsService.ɵfac, providedIn: 'root' });
 
 
 /***/ }),

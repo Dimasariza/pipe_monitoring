@@ -135,21 +135,19 @@ NgxAuthModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_5__["
                     _nebular_auth__WEBPACK_IMPORTED_MODULE_10__.NbPasswordAuthStrategy.setup({
                         name: 'email',
                         token: {
-                            class: _nebular_auth__WEBPACK_IMPORTED_MODULE_10__.NbAuthJWTToken,
+                            // class: NbAuthJWTToken,
                             key: 'data.access_token'
                         },
                         baseEndpoint: _environments_environment__WEBPACK_IMPORTED_MODULE_4__.environment.apiUrl,
                         login: {
-                            // ...
-                            endpoint: '/auth/login',
+                            endpoint: '/login',
                             redirect: {
                                 success: '/pages',
                                 failure: null,
                             }
                         },
                         logout: {
-                            // ...
-                            endpoint: '/auth/logout',
+                            endpoint: '/logout',
                             redirect: {
                                 success: '/'
                             }
@@ -319,28 +317,28 @@ class NgxLoginComponent extends _nebular_auth__WEBPACK_IMPORTED_MODULE_1__.NbLog
     //   this.showPassword = !this.showPassword
     // }
     login() {
-        this.router.navigateByUrl('/pages/dashboards/piping-assets');
-        // this.errors = [];
-        // this.messages = [];
-        // this.submitted = true;
-        // this.service.authenticate(this.strategy, {
-        //   user_email: this.user.email, 
-        //   password: this.user.password, 
-        //   remember: this.rememberMe
-        // }).subscribe((result: NbAuthResult) => {
-        //   this.submitted = false;
-        //   console.log(result)
-        //   if (result.isSuccess()) {
-        //     this.messages = result.getMessages();
-        //   } else {
-        //     this.errors = result.getErrors();
-        //   }
-        //   const redirect = result.getRedirect();
-        //   if (redirect) {
-        //       this.router.navigateByUrl(redirect);
-        //   }
-        //   this.cd.detectChanges();
-        // });
+        // this.router.navigateByUrl('/pages/dashboards/piping-assets')
+        this.errors = [];
+        this.messages = [];
+        this.submitted = true;
+        this.service.authenticate(this.strategy, {
+            username: this.user.email,
+            password: this.user.password,
+            remember: this.rememberMe
+        }).subscribe((result) => {
+            this.submitted = false;
+            if (result.isSuccess()) {
+                this.messages = result.getMessages();
+            }
+            else {
+                this.errors = result.getErrors();
+            }
+            const redirect = result.getRedirect();
+            if (redirect) {
+                this.router.navigateByUrl(redirect);
+            }
+            this.cd.detectChanges();
+        });
     }
 }
 NgxLoginComponent.ɵfac = /*@__PURE__*/ function () { let ɵNgxLoginComponent_BaseFactory; return function NgxLoginComponent_Factory(t) { return (ɵNgxLoginComponent_BaseFactory || (ɵNgxLoginComponent_BaseFactory = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetInheritedFactory"](NgxLoginComponent)))(t || NgxLoginComponent); }; }();

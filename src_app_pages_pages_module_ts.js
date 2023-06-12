@@ -228,7 +228,7 @@ const routes = [{
             },
             {
                 path: '',
-                redirectTo: 'dashboards',
+                redirectTo: 'dashboards/piping-assets',
                 pathMatch: 'full',
             },
             {
