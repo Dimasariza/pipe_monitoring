@@ -8,6 +8,6 @@ class AuthenticationController extends Controller
 {
     public function login() 
     {
-        
+        return response()->json(["message" => "Login Success."]);
     }
 }
