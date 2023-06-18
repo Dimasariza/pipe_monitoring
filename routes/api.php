@@ -3,7 +3,11 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AssetsController;
+use App\Http\Controllers\CircuitsController;
+use App\Http\Controllers\DatacmlsController;
+use App\Http\Controllers\FileStorageController;
 use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\VisualConditionsController;
 
 
 /*
@@ -37,8 +41,8 @@ Route::post('logout', [AuthenticationController::class, 'logout'])
 
 Route::apiResource('assets', AssetsController::class);
 Route::apiResource('circuit', CircuitsController::class);
-Route::apiResource('visual_condition', VisualConditionController::class);
-Route::apiResource('cml', DataCMLController::class);
+Route::apiResource('visual_condition', VisualConditionsController::class);
+Route::apiResource('cml', DatacmlsController::class);
 
 Route::post('image', [FileStorageController::class, 'storeImage']);
 Route::get('image/{id}', [FileStorageController::class, 'showImage']);
