@@ -36,7 +36,7 @@ Route::post('logout', [AuthenticationController::class, 'logout'])
 ->name('logout');
 
 Route::apiResource('assets', AssetsController::class);
-Route::apiResource('circuit', CircuitController::class);
+Route::apiResource('circuit', CircuitsController::class);
 Route::apiResource('visual_condition', VisualConditionController::class);
 Route::apiResource('cml', DataCMLController::class);
 
