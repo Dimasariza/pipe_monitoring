@@ -28,7 +28,7 @@ Route::get("/test", function() {
 });
 
 Route::post('login', [AuthenticationController::class, 'login'])
-// ->middleware('api')
+->middleware('api')
 ->name('login');
 
 Route::apiResource('assets', AssetsController::class);

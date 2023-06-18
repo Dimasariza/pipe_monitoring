@@ -8,30 +8,29 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthenticationController extends Controller
 {
-    public function login(Request $request) 
+    public function __construct()
     {
-        $credentials = $request->validate([
-            'email' => 'required',
-            'password' => 'required'
-        ]);
+        $this->middleware('auth:api', ['except' => ['login']]);
+    }
 
-        if(Auth::attempt($credentials)) {
-            $user = User::where('email', $request->email)
-            ->orWhere("username", $request['username'])
-            ->first();
+    public function login() 
+    {
+        $credentials = request(['email' ,'username', 'password']);
 
-            $user['token'] = $request->user()->createToken($request['email'])->plainTextToken;
-
-            return response()->json([
-                "status" => true,
-                "message" => "Login berhasil.",
-                "data" => $user
-            ], 200);
+        if (! $token = auth()->attempt($credentials)) {
+            return response()->json(['error' => 'Unauthorized'], 401);
         }
 
+        return $this->respondWithToken($token);
+    }
+
+    protected function respondWithToken($token)
+    {
         return response()->json([
-            "status" => true,
-            "message" => "Login gagal.",
-        ],  401);
+            'user' => Auth::user(),
+            'access_token' => $token,
+            'token_type' => 'bearer',
+            'expires_in' => auth()->factory()->getTTL() * 60
+        ], 200);
     }
 }
