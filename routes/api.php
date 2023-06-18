@@ -31,5 +31,16 @@ Route::post('login', [AuthenticationController::class, 'login'])
 ->middleware('api')
 ->name('login');
 
-Route::apiResource('assets', AssetsController::class);
+Route::post('logout', [AuthenticationController::class, 'logout'])
+->middleware('api')
+->name('logout');
 
+Route::apiResource('assets', AssetsController::class);
+Route::apiResource('circuit', CircuitController::class);
+Route::apiResource('visual_condition', VisualConditionController::class);
+Route::apiResource('cml', DataCMLController::class);
+
+Route::post('image', [FileStorageController::class, 'storeImage']);
+Route::get('image/{id}', [FileStorageController::class, 'showImage']);
+Route::post('document', [FileStorageController::class, 'storeDocument']);
+Route::get('document/{id}', [FileStorageController::class, 'showDocument']);
