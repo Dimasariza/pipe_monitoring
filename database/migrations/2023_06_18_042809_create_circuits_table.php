@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('circuits', function (Blueprint $table) {
             $table->id();
+            $table->date("date_in_service");
+            $table->string("class");
+            $table->string("piping_circuit_name");
+            $table->string("piping_circuit_id");
+            $table->text("notes")->nullable();
+            $table->string("attachment")->nullable();
+            $table->text("recomendation")->nullable();
+            $table->string("image")-> nullable();
             $table->timestamps();
         });
     }

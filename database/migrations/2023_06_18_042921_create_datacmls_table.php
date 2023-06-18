@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('datacmls', function (Blueprint $table) {
             $table->id();
+            $table->string("cml_id");
+            $table->string("gauge_point");
+            $table->string("point_location");
+            $table->float("nominal_thickness");
+            $table->float("min_required_thickness");
+            $table->float("last_thickness_reading");
+            $table->date("last_thickness_reading_date");
+            $table->date("calculated_cr");
             $table->timestamps();
         });
     }

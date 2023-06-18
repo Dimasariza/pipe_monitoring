@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('file_storages', function (Blueprint $table) {
             $table->id();
+            $table->string('file_name');
+            $table->string('type');
             $table->timestamps();
         });
     }
