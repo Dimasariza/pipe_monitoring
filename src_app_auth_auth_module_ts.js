@@ -348,7 +348,7 @@ class NgxLoginComponent extends _nebular_auth__WEBPACK_IMPORTED_MODULE_1__.NbLog
             password: this.user.password,
             remember: this.rememberMe
         }).subscribe((result) => {
-            console.log(result);
+            // console.log(result)
             this.submitted = false;
             if (result.isSuccess()) {
                 this.messages = result.getMessages();

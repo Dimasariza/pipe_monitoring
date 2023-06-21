@@ -223,9 +223,40 @@ const _c2 = function () { return [1, 2, 3, 4, 5]; };
 const _c3 = function () { return { show: false }; };
 class DemageMechanismComponent {
     constructor() {
-        this.tableData = [];
+        this.tableData = [
+            { piping_damage_mechanism: "General and localized metal loss", active: true, notes: "Example Notes", expected_type: "Expected Type", last_inspection: "Last Inspection", insp_due_date: "Inspect due date" },
+            { piping_damage_mechanism: "Sulfidation and High Temp. H2S/H2 Corrosion", active: true, notes: "Example Notes", expected_type: "Expected Type", last_inspection: "Last Inspection", insp_due_date: "Inspect due date" },
+            { piping_damage_mechanism: "Oxidation", active: true, notes: "Example Notes", expected_type: "Expected Type", last_inspection: "Last Inspection", insp_due_date: "Inspect due date" },
+            { piping_damage_mechanism: "Microbiologically Induced Corrosion (MIC)", active: true, notes: "Example Notes", expected_type: "Expected Type", last_inspection: "Last Inspection", insp_due_date: "Inspect due date" },
+            { piping_damage_mechanism: "Naphthenic Acid Corrosion", active: true, notes: "Example Notes", expected_type: "Expected Type", last_inspection: "Last Inspection", insp_due_date: "Inspect due date" },
+            { piping_damage_mechanism: "Erosion/Erosison-Corrosion", active: true, notes: "Example Notes", expected_type: "Expected Type", last_inspection: "Last Inspection", insp_due_date: "Inspect due date" },
+            { piping_damage_mechanism: "Galvanic Corrosion", active: true, notes: "Example Notes", expected_type: "Expected Type", last_inspection: "Last Inspection", insp_due_date: "Inspect due date" },
+            { piping_damage_mechanism: "Atmospheric Corrosion", active: true, notes: "Example Notes", expected_type: "Expected Type", last_inspection: "Last Inspection", insp_due_date: "Inspect due date" },
+            { piping_damage_mechanism: "Corrosion Under Insulation (CUI)", active: true, notes: "Example Notes", expected_type: "Expected Type", last_inspection: "Last Inspection", insp_due_date: "Inspect due date" },
+            { piping_damage_mechanism: "Cooling Water Corrosion", active: true, notes: "Example Notes", expected_type: "Expected Type", last_inspection: "Last Inspection", insp_due_date: "Inspect due date" },
+            { piping_damage_mechanism: "Boiler Water Condensate Corrosion", active: true, notes: "Example Notes", expected_type: "Expected Type", last_inspection: "Last Inspection", insp_due_date: "Inspect due date" },
+            { piping_damage_mechanism: "Soil Corrosion", active: true, notes: "Example Notes", expected_type: "Expected Type", last_inspection: "Last Inspection", insp_due_date: "Inspect due date" },
+            { piping_damage_mechanism: "Ammonium Bisulfide and Chloride Corrosion", active: true, notes: "Example Notes", expected_type: "Expected Type", last_inspection: "Last Inspection", insp_due_date: "Inspect due date" },
+            { piping_damage_mechanism: "Carbon Dioxide Corrosion", active: true, notes: "Example Notes", expected_type: "Expected Type", last_inspection: "Last Inspection", insp_due_date: "Inspect due date" },
+            { piping_damage_mechanism: "Surface Connected Cracking", active: true, notes: "Example Notes", expected_type: "Expected Type", last_inspection: "Last Inspection", insp_due_date: "Inspect due date" },
+            { piping_damage_mechanism: "Mechanical Fatigue Cracking", active: true, notes: "Example Notes", expected_type: "Expected Type", last_inspection: "Last Inspection", insp_due_date: "Inspect due date" },
+            { piping_damage_mechanism: "Caustic Stress Corrosion Cracking", active: true, notes: "Example Notes", expected_type: "Expected Type", last_inspection: "Last Inspection", insp_due_date: "Inspect due date" },
+            { piping_damage_mechanism: "Polythionic Stress Corrosion Cracking", active: true, notes: "Example Notes", expected_type: "Expected Type", last_inspection: "Last Inspection", insp_due_date: "Inspect due date" },
+            { piping_damage_mechanism: "Sulfide Stress Cracking", active: true, notes: "Example Notes", expected_type: "Expected Type", last_inspection: "Last Inspection", insp_due_date: "Inspect due date" },
+            { piping_damage_mechanism: "Chloride Stress Corrosion Cracking", active: true, notes: "Example Notes", expected_type: "Expected Type", last_inspection: "Last Inspection", insp_due_date: "Inspect due date" },
+            { piping_damage_mechanism: "Subsurface Cracking", active: true, notes: "Example Notes", expected_type: "Expected Type", last_inspection: "Last Inspection", insp_due_date: "Inspect due date" },
+            { piping_damage_mechanism: "Hydrogen Induced Cracking", active: true, notes: "Example Notes", expected_type: "Expected Type", last_inspection: "Last Inspection", insp_due_date: "Inspect due date" },
+            { piping_damage_mechanism: "Wet Hydrogen Sulfide Cracking", active: true, notes: "Example Notes", expected_type: "Expected Type", last_inspection: "Last Inspection", insp_due_date: "Inspect due date" },
+            { piping_damage_mechanism: "High-Temperature Micro-fissuring/Micro-void Fromation and Eventual Macro Cracking", active: true, notes: "Example Notes", expected_type: "Expected Type", last_inspection: "Last Inspection", insp_due_date: "Inspect due date" },
+            { piping_damage_mechanism: "High-temperature Hydrogen Attack", active: true, notes: "Example Notes", expected_type: "Expected Type", last_inspection: "Last Inspection", insp_due_date: "Inspect due date" },
+            { piping_damage_mechanism: "Creep/Stress Rupture", active: true, notes: "Example Notes", expected_type: "Expected Type", last_inspection: "Last Inspection", insp_due_date: "Inspect due date" },
+            { piping_damage_mechanism: "Metallurgical Changes", active: true, notes: "Example Notes", expected_type: "Expected Type", last_inspection: "Last Inspection", insp_due_date: "Inspect due date" },
+            { piping_damage_mechanism: "Graphitization", active: true, notes: "Example Notes", expected_type: "Expected Type", last_inspection: "Last Inspection", insp_due_date: "Inspect due date" },
+            { piping_damage_mechanism: "Temper Embrittlement", active: true, notes: "Example Notes", expected_type: "Expected Type", last_inspection: "Last Inspection", insp_due_date: "Inspect due date" },
+            { piping_damage_mechanism: "Hydrogen Embrittlement", active: true, notes: "Example Notes", expected_type: "Expected Type", last_inspection: "Last Inspection", insp_due_date: "Inspect due date" },
+        ];
         this.columnDetails = [
-            { type: 'text', prop: 'piping_damage_mechanism', head: 'Piping Damage Mechanism', width: '200px' },
+            { type: 'text', prop: 'piping_damage_mechanism', head: 'Piping Damage Mechanism', width: '400px' },
             { type: 'check', prop: 'active', head: 'Active', width: '100px' },
             { type: 'text', prop: 'notes', head: 'Notes', width: '200px' },
             { type: 'text', prop: 'expected_type', head: 'Expected Type/Location', width: '200px' },
@@ -237,16 +268,15 @@ class DemageMechanismComponent {
         this.resultsLength = 0;
     }
     ngOnInit() {
-        for (let i = 0; i < 20; i++)
-            this.tableData.push({
-                piping_id: 'id',
-                piping_damage_mechanism: 'example name',
-                active: 'example active',
-                notes: 'example notes',
-                expected_type: 'expected type',
-                last_inspection: 'Last inspection',
-                insp_due_date: 'insp due date',
-            });
+        // for(let i=0; i < 20; i++) this.tableData.push({ 
+        //   piping_id : 'id',
+        //   piping_damage_mechanism : 'example name',
+        //   active : 'example active',
+        //   notes : 'example notes',
+        //   expected_type : 'expected type',
+        //   last_inspection : 'Last inspection',
+        //   insp_due_date : 'insp due date',
+        // })
         let tablePosition = [];
         for (let i = 1; i <= 40; i++)
             tablePosition.push({ position: i });
@@ -333,12 +363,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _component_mat_table_mat_table_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../component/mat-table/mat-table.component */ 53858);
 
 
-const _c0 = function () { return { title: "Thickness", filter: "Piping Id" }; };
+const _c0 = function () { return { title: "Thickness", filter: "Piping ID" }; };
 class ThicknessComponent {
     constructor() {
         this.tableData = [];
         this.columnDetails = [
-            { type: 'navto', prop: 'piping_id', head: 'Piping Id', width: '200px', nav: '/pages/cml/' },
+            { type: 'navto', prop: 'piping_id', head: 'Piping ID', width: '200px', nav: '/pages/cml/' },
             { type: 'text', prop: 'reading', head: 'Reading (mm)', width: '200px' },
             { type: 'text', prop: 't_min', head: 'T min (mm)', width: '200px' },
             { type: 'text', prop: 'lt_cr', head: 'LT CR (mm/Year)', width: '200px' },
@@ -416,7 +446,7 @@ function VisualConditionComponent_nb_option_6_Template(rf, ctx) { if (rf & 1) {
 const _c0 = function () { return { "width": "40px" }; };
 function VisualConditionComponent_th_16_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 28);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Piping Circuit ID ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Piping ID ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](1, _c0));
@@ -595,7 +625,7 @@ VisualConditionComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_M
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.paginator = _t.first);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.sort = _t.first);
-    } }, decls: 53, vars: 12, consts: [[1, "d-flex", "justify-content-between"], [1, "d-flex"], ["placeholder", "Piping Circuit Id", "status", "primary", 1, "mx-5"], ["value", "option", 4, "ngFor", "ngForOf"], ["matInput", "", "placeholder", "Ex. Mia"], ["input", ""], [1, "row"], [1, "col-3"], ["mat-table", "", 1, "mat-elevation-z8", 2, "width", "100%", "box-shadow", "none", 3, "dataSource"], ["matColumnDef", "position"], ["mat-header-cell", "", 3, "ngStyle", 4, "matHeaderCellDef"], ["mat-cell", "", "style", "cursor : pointer", 3, "ngStyle", "mouseover", "mouseout", "click", 4, "matCellDef"], ["mat-header-row", "", 4, "matHeaderRowDef", "matHeaderRowDefSticky"], ["mat-row", "", 3, "click", 4, "matRowDef", "matRowDefColumns"], ["aria-label", "Select page of GitHub search results", 3, "length", "pageSize"], [1, "col-9"], ["multi", ""], ["expanded", "true"], [1, "my-2"], [3, "value", 4, "ngFor", "ngForOf"], [1, "w-100", "mx-4"], ["for", "finding", 1, "d-block", "mb-2"], ["nbInput", "", "name", "finding", "id", "finding", "fullWidth", "", "rows", "5"], [1, "w-100"], ["for", "recomendation", 1, "d-block", "mb-2"], ["nbInput", "", "name", "recomendation", "id", "recomendation", "fullWidth", "", "rows", "5"], ["class", "pb-5 px-4 col-6", 4, "ngFor", "ngForOf"], ["value", "option"], ["mat-header-cell", "", 3, "ngStyle"], ["mat-cell", "", 2, "cursor", "pointer", 3, "ngStyle", "mouseover", "mouseout", "click"], ["nameCell", ""], ["mat-header-row", ""], ["mat-row", "", 3, "click"], [3, "value"], [1, "pb-5", "px-4", "col-6"], [1, "d-flex", "align-items-center", "justify-content-between"], ["class", "d-flex justify-content-between", 4, "ngFor", "ngForOf"], [1, "mx-2", 3, "checkedChange"]], template: function VisualConditionComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, decls: 53, vars: 12, consts: [[1, "d-flex", "justify-content-between"], [1, "d-flex"], ["placeholder", "Piping Id", "status", "primary", 1, "mx-5"], ["value", "option", 4, "ngFor", "ngForOf"], ["matInput", "", "placeholder", "Ex. Mia"], ["input", ""], [1, "row"], [1, "col-3"], ["mat-table", "", 1, "mat-elevation-z8", 2, "width", "100%", "box-shadow", "none", 3, "dataSource"], ["matColumnDef", "position"], ["mat-header-cell", "", 3, "ngStyle", 4, "matHeaderCellDef"], ["mat-cell", "", "style", "cursor : pointer", 3, "ngStyle", "mouseover", "mouseout", "click", 4, "matCellDef"], ["mat-header-row", "", 4, "matHeaderRowDef", "matHeaderRowDefSticky"], ["mat-row", "", 3, "click", 4, "matRowDef", "matRowDefColumns"], ["aria-label", "Select page of GitHub search results", 3, "length", "pageSize"], [1, "col-9"], ["multi", ""], ["expanded", "true"], [1, "my-2"], [3, "value", 4, "ngFor", "ngForOf"], [1, "w-100", "mx-4"], ["for", "finding", 1, "d-block", "mb-2"], ["nbInput", "", "name", "finding", "id", "finding", "fullWidth", "", "rows", "5"], [1, "w-100"], ["for", "recomendation", 1, "d-block", "mb-2"], ["nbInput", "", "name", "recomendation", "id", "recomendation", "fullWidth", "", "rows", "5"], ["class", "pb-5 px-4 col-6", 4, "ngFor", "ngForOf"], ["value", "option"], ["mat-header-cell", "", 3, "ngStyle"], ["mat-cell", "", 2, "cursor", "pointer", 3, "ngStyle", "mouseover", "mouseout", "click"], ["nameCell", ""], ["mat-header-row", ""], ["mat-row", "", 3, "click"], [3, "value"], [1, "pb-5", "px-4", "col-6"], [1, "d-flex", "align-items-center", "justify-content-between"], ["class", "d-flex justify-content-between", 4, "ngFor", "ngForOf"], [1, "mx-2", 3, "checkedChange"]], template: function VisualConditionComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nb-card")(1, "nb-card-header", 0)(2, "div", 1)(3, "h5");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "Visual Condition");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
