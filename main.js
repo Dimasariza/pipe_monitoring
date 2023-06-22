@@ -3223,8 +3223,8 @@ __webpack_require__.r(__webpack_exports__);
 class RolePipe {
     get user() { return JSON.parse(localStorage.getItem('user')); }
     transform(input) {
-        const { role } = this.user;
-        return input.indexOf(role) > -1;
+        // const {role} = this.user
+        // return input.indexOf(role) > -1
     }
 }
 RolePipe.ɵfac = function RolePipe_Factory(t) { return new (t || RolePipe)(); };

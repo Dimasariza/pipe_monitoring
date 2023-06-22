@@ -247,7 +247,7 @@ class AddAssetsComponent {
         this.assetsService = assetsService;
         this.spesificationItem = [
             { id: 'piping_id', name: "Piping Id", unit: 'mm' },
-            { id: 'piping_name', name: "Piping Name", unit: 'mm' },
+            { id: 'piping_name', name: "Piping Name", unbit: 'mm' },
             { id: 'nominal_pipe_size', name: "Nominal Pipe Size", unit: 'mm' },
             { id: 'pipe_design_code', name: "Pipe Design Code" },
             { id: 'schedule', name: "Schedule", unit: 'mm' },
@@ -354,46 +354,6 @@ AddAssetsComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](15);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("nbDatepicker", _r4);
     } }, directives: [_nebular_theme__WEBPACK_IMPORTED_MODULE_2__.NbCardComponent, _nebular_theme__WEBPACK_IMPORTED_MODULE_2__.NbCardHeaderComponent, _nebular_theme__WEBPACK_IMPORTED_MODULE_2__.NbButtonComponent, _nebular_theme__WEBPACK_IMPORTED_MODULE_2__.NbIconComponent, _nebular_theme__WEBPACK_IMPORTED_MODULE_2__.NbCardBodyComponent, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgForm, _angular_common__WEBPACK_IMPORTED_MODULE_4__.NgForOf, _nebular_theme__WEBPACK_IMPORTED_MODULE_2__.NbInputDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgModel, _angular_common__WEBPACK_IMPORTED_MODULE_4__.NgClass, _nebular_theme__WEBPACK_IMPORTED_MODULE_2__.NbDatepickerDirective, _nebular_theme__WEBPACK_IMPORTED_MODULE_2__.NbDatepickerComponent], encapsulation: 2 });
-
-
-/***/ }),
-
-/***/ 78539:
-/*!************************************************************************!*\
-  !*** ./src/app/pages/dashboard/piping-assets/piping-assets.service.ts ***!
-  \************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "PipingAssetsService": () => (/* binding */ PipingAssetsService)
-/* harmony export */ });
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ 28784);
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../environments/environment */ 92340);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
-
-
-
-
-class PipingAssetsService {
-    constructor(httpClient) {
-        this.httpClient = httpClient;
-        this.apiUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.apiUrl;
-    }
-    getPipingAssets() {
-        const url = this.apiUrl + "/assets";
-        const httpHeaders = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpHeaders();
-        httpHeaders.append("enctype", "multipart/form-data");
-        httpHeaders.append("Accept", "*/*");
-        return this.httpClient.get(url, { headers: httpHeaders });
-    }
-    addPipingAssets(data) {
-        const url = this.apiUrl + "/assets";
-        return this.httpClient.post(url, data);
-    }
-}
-PipingAssetsService.ɵfac = function PipingAssetsService_Factory(t) { return new (t || PipingAssetsService)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpClient)); };
-PipingAssetsService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({ token: PipingAssetsService, factory: PipingAssetsService.ɵfac, providedIn: 'root' });
 
 
 /***/ }),

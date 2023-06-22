@@ -193,17 +193,17 @@ const routes = [{
         children: [
             {
                 path: 'dashboards',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_component_mat-table_mat-table_module_ts"), __webpack_require__.e("default-src_app_component_top-bar_top-bar_module_ts"), __webpack_require__.e("src_app_pages_dashboard_dashboard_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./dashboard/dashboard.module */ 71659))
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_component_mat-table_mat-table_module_ts-src_app_pages_dashboard_piping-assets-982835"), __webpack_require__.e("default-src_app_component_top-bar_top-bar_module_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_dashboard_dashboard_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./dashboard/dashboard.module */ 71659))
                     .then(m => m.DashboardModule),
             },
             {
                 path: 'assesment',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_component_mat-table_mat-table_module_ts"), __webpack_require__.e("default-src_app_component_top-bar_top-bar_module_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_assesment_assesment_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./assesment/assesment.module */ 43495))
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_component_mat-table_mat-table_module_ts-src_app_pages_dashboard_piping-assets-982835"), __webpack_require__.e("default-src_app_component_top-bar_top-bar_module_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_assesment_assesment_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./assesment/assesment.module */ 43495))
                     .then(m => m.AssesmentModule),
             },
             {
                 path: 'cml/:id',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_component_mat-table_mat-table_module_ts"), __webpack_require__.e("default-src_app_component_top-bar_top-bar_module_ts"), __webpack_require__.e("src_app_pages_cml_cml_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./cml/cml.module */ 74845))
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_component_mat-table_mat-table_module_ts-src_app_pages_dashboard_piping-assets-982835"), __webpack_require__.e("default-src_app_component_top-bar_top-bar_module_ts"), __webpack_require__.e("src_app_pages_cml_cml_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./cml/cml.module */ 74845))
                     .then(m => m.CMLModule),
             },
             {
@@ -213,12 +213,12 @@ const routes = [{
             },
             {
                 path: 'report',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_component_mat-table_mat-table_module_ts"), __webpack_require__.e("default-src_app_component_chart_charts-component_ts"), __webpack_require__.e("src_app_pages_report_report_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./report/report.module */ 81725))
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_component_mat-table_mat-table_module_ts-src_app_pages_dashboard_piping-assets-982835"), __webpack_require__.e("default-src_app_component_chart_charts-component_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_report_report_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./report/report.module */ 81725))
                     .then(m => m.ReportModule),
             },
             {
                 path: 'analytics',
-                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_component_mat-table_mat-table_module_ts"), __webpack_require__.e("default-src_app_component_chart_charts-component_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_analytics_analytics_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./analytics/analytics.module */ 92679))
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_component_mat-table_mat-table_module_ts-src_app_pages_dashboard_piping-assets-982835"), __webpack_require__.e("default-src_app_component_chart_charts-component_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_pages_analytics_analytics_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./analytics/analytics.module */ 92679))
                     .then(m => m.AnalyticsModule),
             },
             {
@@ -280,8 +280,8 @@ class PagesComponent extends _base_page_base_component__WEBPACK_IMPORTED_MODULE_
         // this.iconLibraries.setDefaultPack('far');
     }
     ngOnInit() {
-        const { role } = this.user;
-        this.menu = _pages_menu__WEBPACK_IMPORTED_MODULE_0__.MENU_ITEMS.filter(m => m.data == undefined ? true : m.data.role.indexOf(role) > -1);
+        // const {role} = this.user
+        // this.menu = MENU_ITEMS.filter(m => m.data == undefined ? true : m.data.role.indexOf(role) > -1)
     }
 }
 PagesComponent.ɵfac = function PagesComponent_Factory(t) { return new (t || PagesComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_3__.Injector), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_nebular_theme__WEBPACK_IMPORTED_MODULE_4__.NbIconLibraries)); };
