@@ -320,13 +320,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ViewProposalComponent": () => (/* binding */ ViewProposalComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _component_mat_table_mat_table_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../component/mat-table/mat-table.component */ 53858);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _view_proposal_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./view-proposal.service */ 74039);
+/* harmony import */ var _component_mat_table_mat_table_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../component/mat-table/mat-table.component */ 53858);
+
 
 
 const _c0 = function () { return { title: "Proposal", filter: "Proposal Id" }; };
 class ViewProposalComponent {
-    constructor() {
+    constructor(viewProposalService) {
+        this.viewProposalService = viewProposalService;
         this.tableData = [];
         this.columnDetails = [
             { type: 'select', prop: 'select', head: '', width: '20px' },
@@ -337,21 +340,56 @@ class ViewProposalComponent {
         ];
     }
     ngOnInit() {
-        for (let i = 0; i < 20; i++)
-            this.tableData.push({
-                proposal_id: 'example proposal id',
-                inspection_plan_date: 'example plan date',
-                piping_circuit: 'example piping circuit',
-                remarks: 'example class',
-            });
+        this.viewProposalService.getProposals()
+            .subscribe(({ data }) => {
+            this.tableData = data;
+        });
+        // for(let i=0; i < 20; i++) this.tableData.push({ 
+        //   proposal_id : 'example proposal id',
+        //   inspection_plan_date : 'example plan date',
+        //   piping_circuit : 'example piping circuit',
+        //   remarks : 'example class',
+        // })
     }
 }
-ViewProposalComponent.ɵfac = function ViewProposalComponent_Factory(t) { return new (t || ViewProposalComponent)(); };
-ViewProposalComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: ViewProposalComponent, selectors: [["ngx-view-proposal"]], decls: 1, vars: 4, consts: [[3, "tableHeader", "columnDetails", "tableData"]], template: function ViewProposalComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "ngx-mat-table", 0);
+ViewProposalComponent.ɵfac = function ViewProposalComponent_Factory(t) { return new (t || ViewProposalComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_view_proposal_service__WEBPACK_IMPORTED_MODULE_0__.ViewProposalService)); };
+ViewProposalComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: ViewProposalComponent, selectors: [["ngx-view-proposal"]], decls: 1, vars: 4, consts: [[3, "tableHeader", "columnDetails", "tableData"]], template: function ViewProposalComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "ngx-mat-table", 0);
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("tableHeader", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpureFunction0"](3, _c0))("columnDetails", ctx.columnDetails)("tableData", ctx.tableData);
-    } }, directives: [_component_mat_table_mat_table_component__WEBPACK_IMPORTED_MODULE_0__.MatTableComponent], encapsulation: 2 });
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("tableHeader", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction0"](3, _c0))("columnDetails", ctx.columnDetails)("tableData", ctx.tableData);
+    } }, directives: [_component_mat_table_mat_table_component__WEBPACK_IMPORTED_MODULE_1__.MatTableComponent], encapsulation: 2 });
+
+
+/***/ }),
+
+/***/ 74039:
+/*!************************************************************************!*\
+  !*** ./src/app/pages/dashboard/view-proposal/view-proposal.service.ts ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ViewProposalService": () => (/* binding */ ViewProposalService)
+/* harmony export */ });
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../environments/environment */ 92340);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ 28784);
+
+
+
+class ViewProposalService {
+    constructor(httpClient) {
+        this.httpClient = httpClient;
+        this.apiUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.apiUrl;
+    }
+    getProposals() {
+        const url = this.apiUrl + "/proposal";
+        return this.httpClient.get(url);
+    }
+}
+ViewProposalService.ɵfac = function ViewProposalService_Factory(t) { return new (t || ViewProposalService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpClient)); };
+ViewProposalService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({ token: ViewProposalService, factory: ViewProposalService.ɵfac, providedIn: 'root' });
 
 
 /***/ })
