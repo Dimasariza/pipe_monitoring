@@ -182,15 +182,24 @@ const routes = [{
         children: [
             {
                 path: 'piping-assets',
-                component: _piping_assets_piping_assets_component__WEBPACK_IMPORTED_MODULE_1__.PipingAssetsComponent
+                component: _piping_assets_piping_assets_component__WEBPACK_IMPORTED_MODULE_1__.PipingAssetsComponent,
+                data: {
+                    routename: "assets"
+                }
             },
             {
                 path: 'piping-circuits',
-                component: _piping_circuits_piping_circuits_component__WEBPACK_IMPORTED_MODULE_2__.PipingCircuitsComponent
+                component: _piping_circuits_piping_circuits_component__WEBPACK_IMPORTED_MODULE_2__.PipingCircuitsComponent,
+                data: {
+                    routename: "circuit"
+                }
             },
             {
                 path: 'view-proposal',
-                component: _view_proposal_view_proposal_component__WEBPACK_IMPORTED_MODULE_3__.ViewProposalComponent
+                component: _view_proposal_view_proposal_component__WEBPACK_IMPORTED_MODULE_3__.ViewProposalComponent,
+                data: {
+                    routename: "proposal"
+                }
             },
         ],
     }];

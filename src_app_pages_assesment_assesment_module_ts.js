@@ -387,7 +387,13 @@ class ThicknessComponent {
     }
     ngOnInit() {
         this.assetsService.getPipingAssets()
-            .subscribe(({ data }) => this.tableData = data);
+            .subscribe(({ data }) => {
+            this.tableData = data.map(item => {
+                const { outside_diameter, min_design_pressure, longtd_quality_factor, weld_joint_factor, allowable_unit_stress, coefficient, min_alert_thickness, min_structural_thickness } = item;
+                const pressure_design_thickness = (min_design_pressure * outside_diameter) / (2 * ((longtd_quality_factor * weld_joint_factor * allowable_unit_stress) + (coefficient * min_design_pressure)));
+                return Object.assign(Object.assign({}, item), { t_min: Math.max(pressure_design_thickness, min_alert_thickness, min_structural_thickness) });
+            });
+        });
         // for(let i=1; i <= 20; i++) this.tableData.push({ 
         //   piping_id : i,
         //   reading : 'example reading',
