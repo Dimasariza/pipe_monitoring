@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\CircuitResource;
 use App\Models\Circuits;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator as FacadesValidator;
@@ -17,7 +18,7 @@ class CircuitsController extends Controller
         return response()->json([
             'status' => true,
             'message' => 'Data ditemukan',
-            'data' => $data
+            'data' => CircuitResource::collection($data)
         ], 200);
     }
 
@@ -40,6 +41,7 @@ class CircuitsController extends Controller
             "class"                 => "required",
             "piping_circuit_name"   => "required",
             "piping_circuit_id"     => "required",
+            "piping_id"             => "required",
         ];
 
         $validator = FacadesValidator::make($request->all(), $rules);
@@ -48,7 +50,7 @@ class CircuitsController extends Controller
                 'status' => false,
                 'message' => 'Gagal menambahkan data.',
                 'data' => $validator->errors()
-            ]);
+            ], 403);
         }
 
         $data_value = [
@@ -56,13 +58,14 @@ class CircuitsController extends Controller
             "class",
             "piping_circuit_name",
             "piping_circuit_id",
+            "piping_id",
             "notes",
             "attachment",
             "recomendation",
             "image"
         ];
 
-        foreach ($data_value as $key => $value) {
+        foreach ($data_value as $key) {
             $data->$key = $request->$key;
         }
 

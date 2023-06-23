@@ -11,13 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('proposals', function (Blueprint $table) {
+        Schema::create('damage_mechanisms', function (Blueprint $table) {
             $table->id();
-            $table->text("inspection_summary");
-            $table->text("list_of_piping_id");
-            $table->text("inspection_method");
-            $table->date("inspection_planned_date");
-            $table->date("recommendation_date");
             $table->timestamps();
         });
     }
@@ -27,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('proposals');
+        Schema::dropIfExists('damage_mechanisms');
     }
 };

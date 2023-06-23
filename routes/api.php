@@ -7,6 +7,7 @@ use App\Http\Controllers\CircuitsController;
 use App\Http\Controllers\DatacmlsController;
 use App\Http\Controllers\FileStorageController;
 use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\ProposalsController;
 use App\Http\Controllers\VisualConditionsController;
 
 
@@ -43,6 +44,7 @@ Route::apiResource('assets', AssetsController::class);
 Route::apiResource('circuit', CircuitsController::class);
 Route::apiResource('visual_condition', VisualConditionsController::class);
 Route::apiResource('cml', DatacmlsController::class);
+Route::apiResource('proposal', ProposalsController::class);
 
 Route::post('image', [FileStorageController::class, 'storeImage']);
 Route::get('image/{id}', [FileStorageController::class, 'showImage']);

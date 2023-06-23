@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\AssetsResource;
 use App\Models\Assets;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator as FacadesValidator;
@@ -15,7 +16,7 @@ class AssetsController extends Controller
         return response()->json([
             'status' => true,
             'message' => 'Data ditemukan',
-            'data' => $data
+            'data' => AssetsResource::collection($data) 
         ], 200);
     }
 

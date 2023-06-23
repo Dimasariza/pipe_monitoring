@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\VisualConditionResource;
 use App\Models\VisualConditions;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator as FacadesValidator;
@@ -18,7 +19,7 @@ class VisualConditionsController extends Controller
         return response()->json([
             'status' => true,
             'message' => 'Data ditemukan',
-            'data' => $data
+            'data' => VisualConditionResource::collection($data)
         ], 200);
     }
 
@@ -37,6 +38,7 @@ class VisualConditionsController extends Controller
     {
         $data = new VisualConditions;
         $rules = [
+            "piping_id"                 => "required",
             "general_condition"         => "required",
             "leaks_condition"           => "required",
             "misalignment_condition"    => "required",
@@ -56,6 +58,7 @@ class VisualConditionsController extends Controller
         }
 
         $data_value = [
+            "piping_id",
             "general_condition",
             "general_finding",
             "general_recomendation",
@@ -100,8 +103,6 @@ class VisualConditionsController extends Controller
         foreach ($data_value as $key) {
             $data->$key = $request->$key ?? false;
         }
-
-        // dd($data);
 
         $data->save();
         return response()->json([

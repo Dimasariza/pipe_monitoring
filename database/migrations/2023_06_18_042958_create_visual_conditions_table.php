@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('visual_conditions', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('piping_id');
+            $table->foreign('piping_id')->references('id')->on('assets');
             $table->string("general_condition");    
             $table->text("general_finding")->nullable();
             $table->text("general_recomendation")->nullable();

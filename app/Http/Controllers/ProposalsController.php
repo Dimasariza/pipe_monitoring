@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Proposals;
 use App\Http\Requests\StoreProposalsRequest;
 use App\Http\Requests\UpdateProposalsRequest;
+use App\Http\Resources\ProposalResource;
 
 class ProposalsController extends Controller
 {
@@ -13,7 +14,12 @@ class ProposalsController extends Controller
      */
     public function index()
     {
-        //
+        $data = Proposals::all();
+        return response()->json([
+            'status' => true,
+            'message' => 'Data ditemukan',
+            'data' => ProposalResource::collection($data)
+        ], 200);
     }
 
     /**
