@@ -383,6 +383,9 @@ class ThicknessComponent {
             { type: 'text', prop: 'remaining_life', head: 'Remaining Life (Year)', width: '200px' },
             { type: 'text', prop: 'half_life', head: 'Half Life (Year)', width: '200px' },
             { type: 'text', prop: 'retirement_date', head: 'Retirement Date', width: '200px' },
+            { type: 'text', prop: 'next_tm_insp_date', head: 'Next TM Insp Date', width: '200px' },
+            { type: 'text', prop: 'next_ve_insp_date', head: 'Next VE Insp Date', width: '200px' },
+            { type: 'text', prop: 'mawp', head: 'MAWP (psi)', width: '200px' },
         ];
     }
     ngOnInit() {

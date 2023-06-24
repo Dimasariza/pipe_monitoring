@@ -67,6 +67,10 @@ class CmlComponent {
             { type: 'text', prop: 'last_thickness_date', head: 'Last Thickness Date', width: '200px' },
             { type: 'text', prop: 'calculate_cr', head: 'Calculated CR (mm/Year)', width: '200px' },
         ];
+        this.inputDetail = [
+            { name: "Gauge Point", prop: "gauge_point" },
+            { name: "Point Location", prop: "point_location" },
+        ];
     }
     ngOnInit() {
         const route = this.activatedroute.snapshot.paramMap.get('id');
