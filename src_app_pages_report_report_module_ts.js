@@ -282,13 +282,6 @@ class ReportPipingAssets {
             this.dataSource.paginator = this.paginator;
             this.dataSource.sort = this.sort;
         });
-        // for(let i=0; i < 20; i++) this.tableData.push({ 
-        //     inspection_id : 'id',
-        //     inspection_date : 'inspection date',
-        //     damage_mechanism : 'damage Mechanism',
-        //     inspection_summary : 'inspection summary',
-        //     caried_out : 'caried out',
-        // })
     }
     // ngAfterViewInit() {
     //     this.dataSource.paginator = this.paginator;

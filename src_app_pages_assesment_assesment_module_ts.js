@@ -397,16 +397,6 @@ class ThicknessComponent {
                 return Object.assign(Object.assign({}, item), { t_min: Math.max(pressure_design_thickness, min_alert_thickness, min_structural_thickness) });
             });
         });
-        // for(let i=1; i <= 20; i++) this.tableData.push({ 
-        //   piping_id : i,
-        //   reading : 'example reading',
-        //   t_min : 'example date',
-        //   lt_cr : 'example LTCR',
-        //   st_cr : 'example STCR',
-        //   remaining_life : 'example Remaining Life',
-        //   half_life : 'example Half Life',
-        //   retirement_date : 'example Retirement date',
-        // })
     }
 }
 ThicknessComponent.ɵfac = function ThicknessComponent_Factory(t) { return new (t || ThicknessComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_dashboard_piping_assets_piping_assets_service__WEBPACK_IMPORTED_MODULE_0__.PipingAssetsService)); };

@@ -45,17 +45,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "CmlComponent": () => (/* binding */ CmlComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 52816);
-/* harmony import */ var _component_top_bar_top_bar_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../component/top-bar/top-bar.component */ 78713);
-/* harmony import */ var _component_mat_table_mat_table_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../component/mat-table/mat-table.component */ 53858);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 52816);
+/* harmony import */ var _cml_servivce__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./cml.servivce */ 19271);
+/* harmony import */ var _component_top_bar_top_bar_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../component/top-bar/top-bar.component */ 78713);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 36362);
+/* harmony import */ var _component_mat_table_mat_table_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../component/mat-table/mat-table.component */ 53858);
 
 
 
 
+
+
+function CmlComponent_ngx_mat_table_1_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](0, "ngx-mat-table", 1);
+} if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("tableHeader", ctx_r0.tableHeader)("columnDetails", ctx_r0.columnDetails)("tableData", ctx_r0.tableData);
+} }
 class CmlComponent {
-    constructor(activatedroute) {
+    constructor(activatedroute, cmlService) {
         this.activatedroute = activatedroute;
+        this.cmlService = cmlService;
         this.tableData = [];
         this.columnDetails = [
             { type: 'text', prop: 'cml_id', head: 'CML Id', width: '200px' },
@@ -73,28 +84,20 @@ class CmlComponent {
         ];
     }
     ngOnInit() {
-        const route = this.activatedroute.snapshot.paramMap.get('id');
-        for (let i = 1; i <= 20; i++)
-            this.tableData.push({
-                cml_id: i,
-                gauge_point: 'Gauge',
-                point_location: 'Location',
-                nominal_thickness: '0.1',
-                min_required_thickness: '0.1',
-                last_thickness_reading: '0.1',
-                last_thickness_date: '08/06/2023',
-                calculate_cr: '08/06/2023',
-            });
-        this.tableHeader = { title: `Pipe ${route}`, filter: "CML Id" };
+        const piping_id = this.activatedroute.snapshot.paramMap.get('id');
+        this.cmlService.getCMLs()
+            .subscribe(({ data }) => this.tableData = data);
+        this.tableHeader = { title: `Pipe ${piping_id}`, filter: "CML Id" };
     }
 }
-CmlComponent.ɵfac = function CmlComponent_Factory(t) { return new (t || CmlComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__.ActivatedRoute)); };
-CmlComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: CmlComponent, selectors: [["ngx-cml"]], decls: 2, vars: 3, consts: [[3, "tableHeader", "columnDetails", "tableData"]], template: function CmlComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "ngx-top-bar")(1, "ngx-mat-table", 0);
+CmlComponent.ɵfac = function CmlComponent_Factory(t) { return new (t || CmlComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_cml_servivce__WEBPACK_IMPORTED_MODULE_0__.CMLService)); };
+CmlComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: CmlComponent, selectors: [["ngx-cml"]], decls: 2, vars: 1, consts: [[3, "tableHeader", "columnDetails", "tableData", 4, "ngIf"], [3, "tableHeader", "columnDetails", "tableData"]], template: function CmlComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](0, "ngx-top-bar");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](1, CmlComponent_ngx_mat_table_1_Template, 1, 3, "ngx-mat-table", 0);
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("tableHeader", ctx.tableHeader)("columnDetails", ctx.columnDetails)("tableData", ctx.tableData);
-    } }, directives: [_component_top_bar_top_bar_component__WEBPACK_IMPORTED_MODULE_0__.TopBarComponent, _component_mat_table_mat_table_component__WEBPACK_IMPORTED_MODULE_1__.MatTableComponent], encapsulation: 2 });
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.tableData.length);
+    } }, directives: [_component_top_bar_top_bar_component__WEBPACK_IMPORTED_MODULE_1__.TopBarComponent, _angular_common__WEBPACK_IMPORTED_MODULE_5__.NgIf, _component_mat_table_mat_table_component__WEBPACK_IMPORTED_MODULE_2__.MatTableComponent], encapsulation: 2 });
 
 
 /***/ }),
@@ -117,7 +120,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _component_mat_table_mat_table_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../component/mat-table/mat-table.module */ 39511);
 /* harmony import */ var _add_cml_add_cml_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./add-cml/add-cml.component */ 46415);
 /* harmony import */ var _nebular_theme__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @nebular/theme */ 68253);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/forms */ 90587);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 3184);
+
 
 
 
@@ -141,6 +146,7 @@ CMLModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵ
             _nebular_theme__WEBPACK_IMPORTED_MODULE_8__.NbButtonModule,
             _component_top_bar_top_bar_module__WEBPACK_IMPORTED_MODULE_3__.TopBarModule,
             _component_mat_table_mat_table_module__WEBPACK_IMPORTED_MODULE_4__.MaterialTableModule,
+            _angular_forms__WEBPACK_IMPORTED_MODULE_9__.FormsModule
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵsetNgModuleScope"](CMLModule, { declarations: [_cml_component__WEBPACK_IMPORTED_MODULE_1__.CmlComponent,
         _add_cml_add_cml_component__WEBPACK_IMPORTED_MODULE_5__.AddCMLComponent], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.CommonModule,
@@ -151,7 +157,40 @@ CMLModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵ
         _nebular_theme__WEBPACK_IMPORTED_MODULE_8__.NbInputModule,
         _nebular_theme__WEBPACK_IMPORTED_MODULE_8__.NbButtonModule,
         _component_top_bar_top_bar_module__WEBPACK_IMPORTED_MODULE_3__.TopBarModule,
-        _component_mat_table_mat_table_module__WEBPACK_IMPORTED_MODULE_4__.MaterialTableModule] }); })();
+        _component_mat_table_mat_table_module__WEBPACK_IMPORTED_MODULE_4__.MaterialTableModule,
+        _angular_forms__WEBPACK_IMPORTED_MODULE_9__.FormsModule] }); })();
+
+
+/***/ }),
+
+/***/ 19271:
+/*!*******************************************!*\
+  !*** ./src/app/pages/cml/cml.servivce.ts ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "CMLService": () => (/* binding */ CMLService)
+/* harmony export */ });
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../environments/environment */ 92340);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ 28784);
+
+
+
+class CMLService {
+    constructor(httpClient) {
+        this.httpClient = httpClient;
+        this.apiUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.apiUrl;
+    }
+    getCMLs() {
+        const url = this.apiUrl + "/cml";
+        return this.httpClient.get(url);
+    }
+}
+CMLService.ɵfac = function CMLService_Factory(t) { return new (t || CMLService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpClient)); };
+CMLService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({ token: CMLService, factory: CMLService.ɵfac, providedIn: 'root' });
 
 
 /***/ })
