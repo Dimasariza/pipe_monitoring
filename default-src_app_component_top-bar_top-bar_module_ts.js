@@ -730,7 +730,6 @@ class PipingAssetsComponent {
         })
             .onClose
             .subscribe(data => {
-            return console.log(this.viewTable.tableData);
             if (data)
                 this.assetsService.deletePipingAssets(data.id)
                     .pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.takeUntil)(this.destroy$))
