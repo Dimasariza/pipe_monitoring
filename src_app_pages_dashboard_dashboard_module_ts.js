@@ -1,44 +1,6 @@
 "use strict";
 (self["webpackChunkngx_admin_demo"] = self["webpackChunkngx_admin_demo"] || []).push([["src_app_pages_dashboard_dashboard_module_ts"],{
 
-/***/ 13872:
-/*!********************************************************************!*\
-  !*** ./src/app/component/delete dialog/delete-dialog.component.ts ***!
-  \********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "DeleteDialogComponent": () => (/* binding */ DeleteDialogComponent)
-/* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _nebular_theme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nebular/theme */ 68253);
-
-
-class DeleteDialogComponent {
-    constructor(dialog) {
-        this.dialog = dialog;
-    }
-    closeDialog(arr = null) {
-        if (!arr)
-            this.dialog.close();
-        if (arr) {
-            console.log(arr);
-            // this.assetsService.addPipingAssets(arr)
-            // .subscribe(res => console.log(res))
-        }
-    }
-}
-DeleteDialogComponent.ɵfac = function DeleteDialogComponent_Factory(t) { return new (t || DeleteDialogComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_nebular_theme__WEBPACK_IMPORTED_MODULE_1__.NbDialogRef)); };
-DeleteDialogComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DeleteDialogComponent, selectors: [["ngx-delete-dialog"]], inputs: { dialogData: "dialogData" }, decls: 2, vars: 0, template: function DeleteDialogComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h5");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Delete dialog");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    } }, encapsulation: 2 });
-
-
-/***/ }),
-
 /***/ 79138:
 /*!*****************************************************************!*\
   !*** ./src/app/component/delete dialog/delete-dialog.module.ts ***!
@@ -70,9 +32,14 @@ DeleteDialogModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_
             _nebular_theme__WEBPACK_IMPORTED_MODULE_4__.NbDialogModule.forChild({
                 closeOnBackdropClick: true
             }),
+            _nebular_theme__WEBPACK_IMPORTED_MODULE_4__.NbCardModule,
+            _nebular_theme__WEBPACK_IMPORTED_MODULE_4__.NbIconModule,
+            _nebular_theme__WEBPACK_IMPORTED_MODULE_4__.NbButtonModule
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsetNgModuleScope"](DeleteDialogModule, { declarations: [_delete_dialog_component__WEBPACK_IMPORTED_MODULE_0__.DeleteDialogComponent], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.CommonModule,
-        _theme_theme_module__WEBPACK_IMPORTED_MODULE_1__.ThemeModule, _nebular_theme__WEBPACK_IMPORTED_MODULE_4__.NbDialogModule], exports: [_delete_dialog_component__WEBPACK_IMPORTED_MODULE_0__.DeleteDialogComponent] }); })();
+        _theme_theme_module__WEBPACK_IMPORTED_MODULE_1__.ThemeModule, _nebular_theme__WEBPACK_IMPORTED_MODULE_4__.NbDialogModule, _nebular_theme__WEBPACK_IMPORTED_MODULE_4__.NbCardModule,
+        _nebular_theme__WEBPACK_IMPORTED_MODULE_4__.NbIconModule,
+        _nebular_theme__WEBPACK_IMPORTED_MODULE_4__.NbButtonModule], exports: [_delete_dialog_component__WEBPACK_IMPORTED_MODULE_0__.DeleteDialogComponent] }); })();
 
 
 /***/ }),
@@ -87,10 +54,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "DashboardComponent": () => (/* binding */ DashboardComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _component_top_bar_top_bar_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../component/top-bar/top-bar.component */ 78713);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 52816);
-
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 3184);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ 52816);
 
 
 class DashboardComponent {
@@ -100,9 +65,9 @@ class DashboardComponent {
     }
 }
 DashboardComponent.ɵfac = function DashboardComponent_Factory(t) { return new (t || DashboardComponent)(); };
-DashboardComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: DashboardComponent, selectors: [["ngx-dashboard"]], decls: 2, vars: 0, template: function DashboardComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "ngx-top-bar")(1, "router-outlet");
-    } }, directives: [_component_top_bar_top_bar_component__WEBPACK_IMPORTED_MODULE_0__.TopBarComponent, _angular_router__WEBPACK_IMPORTED_MODULE_2__.RouterOutlet], encapsulation: 2 });
+DashboardComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DashboardComponent, selectors: [["ngx-dashboard"]], decls: 1, vars: 0, template: function DashboardComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "router-outlet");
+    } }, directives: [_angular_router__WEBPACK_IMPORTED_MODULE_1__.RouterOutlet], encapsulation: 2 });
 
 
 /***/ }),
@@ -165,6 +130,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 class DashboardModule {
 }
 DashboardModule.ɵfac = function DashboardModule_Factory(t) { return new (t || DashboardModule)(); };
@@ -182,9 +148,14 @@ DashboardModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_12_
             _nebular_theme__WEBPACK_IMPORTED_MODULE_14__.NbButtonModule,
             _nebular_theme__WEBPACK_IMPORTED_MODULE_14__.NbIconModule,
             _nebular_theme__WEBPACK_IMPORTED_MODULE_14__.NbListModule,
+            _nebular_theme__WEBPACK_IMPORTED_MODULE_14__.NbIconModule,
+            _nebular_theme__WEBPACK_IMPORTED_MODULE_14__.NbToastrModule.forRoot({
+                destroyByClick: true,
+                duration: 3000,
+                position: _nebular_theme__WEBPACK_IMPORTED_MODULE_14__.NbGlobalPhysicalPosition.BOTTOM_RIGHT
+            }),
             _techiediaries_ngx_qrcode__WEBPACK_IMPORTED_MODULE_15__.NgxQRCodeModule,
             _angular_forms__WEBPACK_IMPORTED_MODULE_16__.FormsModule,
-            _nebular_theme__WEBPACK_IMPORTED_MODULE_14__.NbIconModule,
             _dashboard_routing__WEBPACK_IMPORTED_MODULE_1__.DashboardsRoutingModule,
             _component_top_bar_top_bar_module__WEBPACK_IMPORTED_MODULE_3__.TopBarModule,
             _component_mat_table_mat_table_module__WEBPACK_IMPORTED_MODULE_7__.MaterialTableModule,
@@ -195,7 +166,7 @@ DashboardModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_12_
             _angular_material_form_field__WEBPACK_IMPORTED_MODULE_21__.MatFormFieldModule,
             _angular_material_input__WEBPACK_IMPORTED_MODULE_22__.MatInputModule,
             _angular_material_select__WEBPACK_IMPORTED_MODULE_23__.MatSelectModule,
-            _component_delete_dialog_delete_dialog_module__WEBPACK_IMPORTED_MODULE_11__.DeleteDialogModule
+            _component_delete_dialog_delete_dialog_module__WEBPACK_IMPORTED_MODULE_11__.DeleteDialogModule,
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵsetNgModuleScope"](DashboardModule, { declarations: [_dashboard_component__WEBPACK_IMPORTED_MODULE_2__.DashboardComponent,
         _piping_assets_piping_assets_component__WEBPACK_IMPORTED_MODULE_4__.PipingAssetsComponent,
@@ -215,9 +186,8 @@ DashboardModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_12_
         _nebular_theme__WEBPACK_IMPORTED_MODULE_14__.NbButtonModule,
         _nebular_theme__WEBPACK_IMPORTED_MODULE_14__.NbIconModule,
         _nebular_theme__WEBPACK_IMPORTED_MODULE_14__.NbListModule,
-        _techiediaries_ngx_qrcode__WEBPACK_IMPORTED_MODULE_15__.NgxQRCodeModule,
+        _nebular_theme__WEBPACK_IMPORTED_MODULE_14__.NbIconModule, _nebular_theme__WEBPACK_IMPORTED_MODULE_14__.NbToastrModule, _techiediaries_ngx_qrcode__WEBPACK_IMPORTED_MODULE_15__.NgxQRCodeModule,
         _angular_forms__WEBPACK_IMPORTED_MODULE_16__.FormsModule,
-        _nebular_theme__WEBPACK_IMPORTED_MODULE_14__.NbIconModule,
         _dashboard_routing__WEBPACK_IMPORTED_MODULE_1__.DashboardsRoutingModule,
         _component_top_bar_top_bar_module__WEBPACK_IMPORTED_MODULE_3__.TopBarModule,
         _component_mat_table_mat_table_module__WEBPACK_IMPORTED_MODULE_7__.MaterialTableModule,
@@ -289,220 +259,6 @@ DashboardsRoutingModule.ɵfac = function DashboardsRoutingModule_Factory(t) { re
 DashboardsRoutingModule.ɵmod = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineNgModule"]({ type: DashboardsRoutingModule });
 DashboardsRoutingModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule.forChild(routes)], _angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵsetNgModuleScope"](DashboardsRoutingModule, { imports: [_angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterModule] }); })();
-
-
-/***/ }),
-
-/***/ 58804:
-/*!**************************************************************************!*\
-  !*** ./src/app/pages/dashboard/piping-assets/piping-assets.component.ts ***!
-  \**************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "PipingAssetsComponent": () => (/* binding */ PipingAssetsComponent)
-/* harmony export */ });
-/* harmony import */ var _component_delete_dialog_delete_dialog_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../component/delete dialog/delete-dialog.component */ 13872);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _piping_assets_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./piping-assets.service */ 78539);
-/* harmony import */ var _nebular_theme__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @nebular/theme */ 68253);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 36362);
-/* harmony import */ var _component_mat_table_mat_table_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../component/mat-table/mat-table.component */ 53858);
-
-
-
-
-
-
-const _c0 = function () { return { title: "Piping Assets", filter: "Piping Id" }; };
-function PipingAssetsComponent_ngx_mat_table_0_Template(rf, ctx) { if (rf & 1) {
-    const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "ngx-mat-table", 1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("onClickTable", function PipingAssetsComponent_ngx_mat_table_0_Template_ngx_mat_table_onClickTable_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r2); const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](); return ctx_r1.onClickTable($event.data, $event.title); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("tableHeader", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](3, _c0))("columnDetails", ctx_r0.columnDetails)("tableData", ctx_r0.tableData);
-} }
-class PipingAssetsComponent {
-    constructor(assetsService, dialogService) {
-        this.assetsService = assetsService;
-        this.dialogService = dialogService;
-        this.columnDetails = [
-            { type: 'select', prop: 'select', head: '', width: '20px' },
-            { type: 'text', prop: 'piping_id', head: 'Piping Id', width: '100px' },
-            { type: 'text', prop: 'piping_name', head: 'Piping Name', width: '200px' },
-            { type: 'text', prop: 'date_in_service', head: 'Date In Service', width: '200px' },
-            { type: 'text', prop: 'class', head: 'Class', width: '200px' },
-            { type: 'text', prop: 'tm_inspection_interval', head: 'TM Inspection Interval', width: '200px' },
-            { type: 'text', prop: 've_inspection_interval', head: 'VE Inspection Interval', width: '200px' },
-            { type: 'text', prop: 'notes', head: 'Notes', width: '200px' },
-            { type: 'button', prop: 'edit', width: '80px', button: [
-                    { icon: 'edit-outline', status: 'info', title: "edit-assets" },
-                    { icon: 'trash-2-outline', status: 'danger', title: "delete-assets" },
-                ] },
-        ];
-    }
-    ngOnInit() {
-        this.assetsService.getPipingAssets()
-            .subscribe(({ data }) => this.tableData = data);
-    }
-    onClickTable(data, title) {
-        if (title == 'delete-assets')
-            this.deleteAsset(data);
-    }
-    deleteAsset(data) {
-        this.dialogService.open(_component_delete_dialog_delete_dialog_component__WEBPACK_IMPORTED_MODULE_0__.DeleteDialogComponent, {
-            context: {
-                dialogData: 'hello'
-                // title: 'This is a title passed to the dialog component',
-            },
-        });
-    }
-}
-PipingAssetsComponent.ɵfac = function PipingAssetsComponent_Factory(t) { return new (t || PipingAssetsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_piping_assets_service__WEBPACK_IMPORTED_MODULE_1__.PipingAssetsService), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_nebular_theme__WEBPACK_IMPORTED_MODULE_4__.NbDialogService)); };
-PipingAssetsComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: PipingAssetsComponent, selectors: [["ngx-piping-assets"]], decls: 1, vars: 1, consts: [[3, "tableHeader", "columnDetails", "tableData", "onClickTable", 4, "ngIf"], [3, "tableHeader", "columnDetails", "tableData", "onClickTable"]], template: function PipingAssetsComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](0, PipingAssetsComponent_ngx_mat_table_0_Template, 1, 4, "ngx-mat-table", 0);
-    } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.tableData);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_5__.NgIf, _component_mat_table_mat_table_component__WEBPACK_IMPORTED_MODULE_2__.MatTableComponent], encapsulation: 2 });
-
-
-/***/ }),
-
-/***/ 75233:
-/*!******************************************************************************!*\
-  !*** ./src/app/pages/dashboard/piping-circuits/piping-circuits.component.ts ***!
-  \******************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "PipingCircuitsComponent": () => (/* binding */ PipingCircuitsComponent)
-/* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _piping_circuits_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./piping-circuits.service */ 52787);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ 36362);
-/* harmony import */ var _component_mat_table_mat_table_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../component/mat-table/mat-table.component */ 53858);
-
-
-
-
-const _c0 = function () { return { title: "Piping Circuits", filter: "Circuit Id" }; };
-function PipingCircuitsComponent_ngx_mat_table_0_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "ngx-mat-table", 1);
-} if (rf & 2) {
-    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("tableHeader", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction0"](3, _c0))("columnDetails", ctx_r0.columnDetails)("tableData", ctx_r0.tableData);
-} }
-class PipingCircuitsComponent {
-    constructor(circuitService) {
-        this.circuitService = circuitService;
-        this.columnDetails = [
-            { type: 'select', prop: 'select', head: '', width: '20px' },
-            { type: 'text', prop: 'piping_circuit_id', head: 'Piping Circuit Id', width: '100px' },
-            { type: 'text', prop: 'piping_circuit_name', head: 'Piping Circuit Name', width: '200px' },
-            { type: 'text', prop: 'date_in_service', head: 'Date In Service', width: '200px' },
-            { type: 'text', prop: 'class', head: 'Class', width: '200px' },
-            { type: 'text', prop: 'notes', head: 'Notes', width: '200px' },
-        ];
-    }
-    ngOnInit() {
-        this.circuitService.getPipingCircuits()
-            .subscribe(({ data }) => this.tableData = data);
-    }
-}
-PipingCircuitsComponent.ɵfac = function PipingCircuitsComponent_Factory(t) { return new (t || PipingCircuitsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_piping_circuits_service__WEBPACK_IMPORTED_MODULE_0__.PipingCircuitService)); };
-PipingCircuitsComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: PipingCircuitsComponent, selectors: [["ngx-piping-circuits"]], decls: 1, vars: 1, consts: [[3, "tableHeader", "columnDetails", "tableData", 4, "ngIf"], [3, "tableHeader", "columnDetails", "tableData"]], template: function PipingCircuitsComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](0, PipingCircuitsComponent_ngx_mat_table_0_Template, 1, 4, "ngx-mat-table", 0);
-    } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx.tableData);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.NgIf, _component_mat_table_mat_table_component__WEBPACK_IMPORTED_MODULE_1__.MatTableComponent], encapsulation: 2 });
-
-
-/***/ }),
-
-/***/ 56161:
-/*!**************************************************************************!*\
-  !*** ./src/app/pages/dashboard/view-proposal/view-proposal.component.ts ***!
-  \**************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "ViewProposalComponent": () => (/* binding */ ViewProposalComponent)
-/* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _view_proposal_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./view-proposal.service */ 74039);
-/* harmony import */ var _component_mat_table_mat_table_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../component/mat-table/mat-table.component */ 53858);
-
-
-
-const _c0 = function () { return { title: "Proposal", filter: "Proposal Id" }; };
-class ViewProposalComponent {
-    constructor(viewProposalService) {
-        this.viewProposalService = viewProposalService;
-        this.tableData = [];
-        this.columnDetails = [
-            { type: 'select', prop: 'select', head: '', width: '20px' },
-            { type: 'text', prop: 'proposal_id', head: 'Proposal ID', width: '100px' },
-            { type: 'text', prop: 'inspection_plan_date', head: 'Inspection Plan Date', width: '200px' },
-            { type: 'text', prop: 'piping_circuit', head: 'Piping/Piping Circuit', width: '200px' },
-            { type: 'text', prop: 'remarks', head: 'Remarks', width: '200px' },
-        ];
-    }
-    ngOnInit() {
-        this.viewProposalService.getProposals()
-            .subscribe(({ data }) => {
-            this.tableData = data;
-        });
-        // for(let i=0; i < 20; i++) this.tableData.push({ 
-        //   proposal_id : 'example proposal id',
-        //   inspection_plan_date : 'example plan date',
-        //   piping_circuit : 'example piping circuit',
-        //   remarks : 'example class',
-        // })
-    }
-}
-ViewProposalComponent.ɵfac = function ViewProposalComponent_Factory(t) { return new (t || ViewProposalComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_view_proposal_service__WEBPACK_IMPORTED_MODULE_0__.ViewProposalService)); };
-ViewProposalComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: ViewProposalComponent, selectors: [["ngx-view-proposal"]], decls: 1, vars: 4, consts: [[3, "tableHeader", "columnDetails", "tableData"]], template: function ViewProposalComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "ngx-mat-table", 0);
-    } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("tableHeader", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction0"](3, _c0))("columnDetails", ctx.columnDetails)("tableData", ctx.tableData);
-    } }, directives: [_component_mat_table_mat_table_component__WEBPACK_IMPORTED_MODULE_1__.MatTableComponent], encapsulation: 2 });
-
-
-/***/ }),
-
-/***/ 74039:
-/*!************************************************************************!*\
-  !*** ./src/app/pages/dashboard/view-proposal/view-proposal.service.ts ***!
-  \************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "ViewProposalService": () => (/* binding */ ViewProposalService)
-/* harmony export */ });
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../environments/environment */ 92340);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 3184);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ 28784);
-
-
-
-class ViewProposalService {
-    constructor(httpClient) {
-        this.httpClient = httpClient;
-        this.apiUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.apiUrl;
-    }
-    getProposals() {
-        const url = this.apiUrl + "/proposal";
-        return this.httpClient.get(url);
-    }
-}
-ViewProposalService.ɵfac = function ViewProposalService_Factory(t) { return new (t || ViewProposalService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpClient)); };
-ViewProposalService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({ token: ViewProposalService, factory: ViewProposalService.ɵfac, providedIn: 'root' });
 
 
 /***/ })

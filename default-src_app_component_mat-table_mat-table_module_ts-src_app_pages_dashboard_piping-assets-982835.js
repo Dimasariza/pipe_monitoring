@@ -297,6 +297,12 @@ class MatTableComponent {
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
     }
+    regenerateTable(tableData) {
+        console.log(tableData);
+        this.tableData = tableData;
+        this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_2__.MatTableDataSource(tableData);
+        this.ngAfterViewInit();
+    }
     toggle(checked) {
         this.checked = checked;
     }
@@ -491,11 +497,25 @@ class PipingAssetsService {
         const httpHeaders = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpHeaders();
         httpHeaders.append("enctype", "multipart/form-data");
         httpHeaders.append("Accept", "*/*");
-        return this.httpClient.get(url, { headers: httpHeaders });
+        return this.httpClient.get(url);
     }
     addPipingAssets(data) {
         const url = this.apiUrl + "/assets";
         return this.httpClient.post(url, data);
+    }
+    updatePipingAssets(data) {
+        const url = this.apiUrl + "/assets/" + data.id;
+        return this.httpClient.put(url, data);
+    }
+    deletePipingAssets(id) {
+        const url = this.apiUrl + "/assets/" + id;
+        return this.httpClient.delete(url);
+    }
+    uploadImage(postBody) {
+        const url = this.apiUrl + "/file/upload";
+        return this.httpClient.post(url, postBody, {
+            reportProgress: true, observe: 'events'
+        });
     }
 }
 PipingAssetsService.ɵfac = function PipingAssetsService_Factory(t) { return new (t || PipingAssetsService)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpClient)); };
