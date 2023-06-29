@@ -685,7 +685,7 @@ class PipingAssetsComponent {
         this.tableHeader = {
             title: 'Piping Assets',
             filter: [
-                { name: "Class", value: [1, 2, 3, 4], title: 'filter_by_class' }
+                { name: "Class", value: ["All", 1, 2, 3, 4], title: 'filter_by_class' }
             ]
         };
         this.columnDetails = [
@@ -720,8 +720,12 @@ class PipingAssetsComponent {
             this.filterByClass(data);
     }
     filterByClass(classes) {
-        const tableData = this.tableData.filter(data => data.class == classes);
-        this.viewTable.regenerateTable(tableData);
+        if (classes == "All")
+            this.viewTable.regenerateTable(this.tableData);
+        else {
+            const tableData = this.tableData.filter(data => data.class == classes);
+            this.viewTable.regenerateTable(tableData);
+        }
     }
     addAssets() {
         this.dialogService.open(_add_assets_add_assets_component__WEBPACK_IMPORTED_MODULE_1__.AddAssetsComponent, {
