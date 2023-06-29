@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('assets', function (Blueprint $table) {
             $table->id();
-            $table->string('piping_id');
+            $table->string('piping_id')->unique();
             $table->string('piping_name');
             $table->float('nominal_pipe_size');
-            $table->float('pipe_design_code');
-            $table->float('schedule');
+            $table->string('pipe_design_code');
+            $table->string('schedule');
             $table->float('outside_diameter');
             $table->float('longtd_quality_factor');
             $table->float('weld_joint_factor');

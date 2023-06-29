@@ -13,10 +13,13 @@ return new class extends Migration
     {
         Schema::create('damage_mechanisms', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('piping_id');
+            $table->text("damage_mechanism");
+            $table->foreign('piping_id')->references('id')->on('assets')->onUpdate('cascade');
             $table->timestamps();
         });
     }
-
+    
     /**
      * Reverse the migrations.
      */

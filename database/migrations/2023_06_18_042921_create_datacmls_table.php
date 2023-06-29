@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('datacmls', function (Blueprint $table) {
             $table->id();
+            $table->string("piping_id");
             $table->string("cml_id");
             $table->string("gauge_point");
             $table->string("point_location");

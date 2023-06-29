@@ -36,6 +36,7 @@ class DatacmlsController extends Controller
     {
         $data = new Datacmls;
         $rules = [
+            "piping_id"                     => "required",
             "cml_id"                        => "required",
             "gauge_point"                   => "required",
             "point_location"                => "required",
@@ -101,6 +102,7 @@ class DatacmlsController extends Controller
     {
         $data = Datacmls::find($id);
         $rules = [
+            "piping_id"                     => "required",
             "cml_id"                        => "required",
             "gauge_point"                   => "required",
             "point_location"                => "required",

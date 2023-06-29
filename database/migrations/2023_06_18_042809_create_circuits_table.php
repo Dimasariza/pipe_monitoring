@@ -21,8 +21,8 @@ return new class extends Migration
             $table->string("attachment")->nullable();
             $table->text("recomendation")->nullable();
             $table->string("image")-> nullable();
-            $table->unsignedBigInteger('piping_id');
-            $table->foreign('piping_id')->references('id')->on('assets');
+            $table->text('piping_id');
+            // $table->foreign('piping_id')->references('id')->on('assets')->onUpdate('cascade');
             $table->timestamps();
         });
     }
