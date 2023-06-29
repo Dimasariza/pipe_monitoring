@@ -764,7 +764,19 @@ class PipingAssetsComponent {
     ngOnInit() {
         this.assetsService.getPipingAssets()
             .subscribe(({ data }) => {
-            this.tableData = data;
+            this.tableData = data.map(item => {
+                let { class: classes, tm_inspection_interval, ve_inspection_interval } = item;
+                switch (classes) {
+                    case 1:
+                        break;
+                    case 4:
+                        break;
+                }
+                return {
+                // tm_inspection_interval : ,
+                // ve_inspection_interval : ,
+                };
+            });
             this.viewTable.regenerateTable(data);
         }, () => this.toastrService.danger('Please check your connection and try again.', 'Your request failed.'));
     }
