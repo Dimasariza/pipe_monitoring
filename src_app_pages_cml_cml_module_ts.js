@@ -79,7 +79,8 @@ CMLModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵ
             _nebular_theme__WEBPACK_IMPORTED_MODULE_8__.NbButtonModule,
             _component_top_bar_top_bar_module__WEBPACK_IMPORTED_MODULE_3__.TopBarModule,
             _component_mat_table_mat_table_module__WEBPACK_IMPORTED_MODULE_4__.MaterialTableModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_9__.FormsModule
+            _angular_forms__WEBPACK_IMPORTED_MODULE_9__.FormsModule,
+            _nebular_theme__WEBPACK_IMPORTED_MODULE_8__.NbDatepickerModule
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵsetNgModuleScope"](CMLModule, { declarations: [_cml_component__WEBPACK_IMPORTED_MODULE_1__.CmlComponent,
         _add_cml_add_cml_component__WEBPACK_IMPORTED_MODULE_5__.AddCMLComponent], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.CommonModule,
@@ -91,7 +92,8 @@ CMLModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵ
         _nebular_theme__WEBPACK_IMPORTED_MODULE_8__.NbButtonModule,
         _component_top_bar_top_bar_module__WEBPACK_IMPORTED_MODULE_3__.TopBarModule,
         _component_mat_table_mat_table_module__WEBPACK_IMPORTED_MODULE_4__.MaterialTableModule,
-        _angular_forms__WEBPACK_IMPORTED_MODULE_9__.FormsModule] }); })();
+        _angular_forms__WEBPACK_IMPORTED_MODULE_9__.FormsModule,
+        _nebular_theme__WEBPACK_IMPORTED_MODULE_8__.NbDatepickerModule] }); })();
 
 
 /***/ })
