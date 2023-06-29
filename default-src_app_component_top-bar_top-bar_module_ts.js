@@ -676,13 +676,18 @@ const _c0 = function () { return { name: "New", icon: "plus-outline" }; };
 const _c1 = function () { return { name: "Import", icon: "download-outline" }; };
 const _c2 = function () { return { name: "Export", icon: "upload-outline" }; };
 const _c3 = function (a0, a1, a2) { return [a0, a1, a2]; };
-const _c4 = function () { return { title: "Piping Assets", filter: "Piping Id" }; };
 class PipingAssetsComponent {
     constructor(assetsService, dialogService, toastrService) {
         this.assetsService = assetsService;
         this.dialogService = dialogService;
         this.toastrService = toastrService;
         this.destroy$ = new rxjs__WEBPACK_IMPORTED_MODULE_5__.Subject();
+        this.tableHeader = {
+            title: 'Piping Assets',
+            filter: [
+                { name: "Class", value: [1, 2, 3, 4], title: 'filter_by_class' }
+            ]
+        };
         this.columnDetails = [
             { type: 'select', prop: 'select', head: '', width: '20px' },
             { type: 'text', prop: 'piping_id', head: 'Piping Id', width: '100px' },
@@ -711,6 +716,12 @@ class PipingAssetsComponent {
             this.deleteAsset(data);
         if (title == 'edit-assets')
             this.editAsset(data);
+        if (title == 'filter_by_class')
+            this.filterByClass(data);
+    }
+    filterByClass(classes) {
+        const tableData = this.tableData.filter(data => data.class == classes);
+        this.viewTable.regenerateTable(tableData);
     }
     addAssets() {
         this.dialogService.open(_add_assets_add_assets_component__WEBPACK_IMPORTED_MODULE_1__.AddAssetsComponent, {
@@ -785,7 +796,6 @@ class PipingAssetsComponent {
                 index++;
             }
             const data = xlsx_xlsx_mjs__WEBPACK_IMPORTED_MODULE_7__.utils.sheet_to_json(sheet, { range: index - 1, defval: "" });
-            console.log(data);
             this.reconstructDataExcel(data);
         };
     }
@@ -834,7 +844,7 @@ PipingAssetsComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODU
     } if (rf & 2) {
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx.viewTable = _t.first);
-    } }, decls: 4, vars: 12, consts: [["nbButton", "", "outline", "", "size", "small", "status", "primary", "class", "m-2", 3, "click", 4, "ngFor", "ngForOf"], [3, "tableHeader", "columnDetails", "tableData", "onClickTable"], ["nbButton", "", "outline", "", "size", "small", "status", "primary", 1, "m-2", 3, "click"], ["type", "file", "accept", "application/vnd.ms-excel", 2, "display", "none", 3, "change"], ["importExcel", ""], [1, "m-1", 3, "icon", "pack"]], template: function PipingAssetsComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, decls: 4, vars: 11, consts: [["nbButton", "", "outline", "", "size", "small", "status", "primary", "class", "m-2", 3, "click", 4, "ngFor", "ngForOf"], [3, "tableHeader", "columnDetails", "tableData", "onClickTable"], ["nbButton", "", "outline", "", "size", "small", "status", "primary", 1, "m-2", 3, "click"], ["type", "file", "accept", "application/vnd.ms-excel", 2, "display", "none", 3, "change"], ["importExcel", ""], [1, "m-1", 3, "icon", "pack"]], template: function PipingAssetsComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "nb-card")(1, "nb-card-body");
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](2, PipingAssetsComponent_button_2_Template, 6, 3, "button", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
@@ -845,7 +855,7 @@ PipingAssetsComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODU
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction3"](7, _c3, _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction0"](4, _c0), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction0"](5, _c1), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction0"](6, _c2)));
         _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("tableHeader", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction0"](11, _c4))("columnDetails", ctx.columnDetails)("tableData", ctx.tableData);
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("tableHeader", ctx.tableHeader)("columnDetails", ctx.columnDetails)("tableData", ctx.tableData);
     } }, directives: [_nebular_theme__WEBPACK_IMPORTED_MODULE_8__.NbCardComponent, _nebular_theme__WEBPACK_IMPORTED_MODULE_8__.NbCardBodyComponent, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgForOf, _nebular_theme__WEBPACK_IMPORTED_MODULE_8__.NbButtonComponent, _nebular_theme__WEBPACK_IMPORTED_MODULE_8__.NbIconComponent, _component_mat_table_mat_table_component__WEBPACK_IMPORTED_MODULE_2__.MatTableComponent], encapsulation: 2 });
 PipingAssetsComponent.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjectable"]({ token: PipingAssetsComponent, factory: PipingAssetsComponent.ɵfac, providedIn: 'root' });
 
