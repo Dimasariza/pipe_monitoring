@@ -152,7 +152,9 @@ DashboardModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_12_
             _nebular_theme__WEBPACK_IMPORTED_MODULE_14__.NbToastrModule.forRoot({
                 destroyByClick: true,
                 duration: 3000,
-                position: _nebular_theme__WEBPACK_IMPORTED_MODULE_14__.NbGlobalPhysicalPosition.BOTTOM_RIGHT
+                position: _nebular_theme__WEBPACK_IMPORTED_MODULE_14__.NbGlobalPhysicalPosition.BOTTOM_RIGHT,
+                preventDuplicates: true,
+                limit: 3
             }),
             _techiediaries_ngx_qrcode__WEBPACK_IMPORTED_MODULE_15__.NgxQRCodeModule,
             _angular_forms__WEBPACK_IMPORTED_MODULE_16__.FormsModule,
