@@ -387,19 +387,29 @@ class ThicknessComponent {
         ];
     }
     ngOnInit() {
-        let dataCML;
+        let averageOfCML = {};
         this.assetsService.getPipingAssets()
             .subscribe(({ data }) => {
             this.cmlService.getCMLs()
-                .subscribe(({ data }) => dataCML = data);
-            this.tableData = data.map(item => {
-                const { outside_diameter, min_design_pressure, longtd_quality_factor, weld_joint_factor, allowable_unit_stress, coefficient, min_alert_thickness, min_structural_thickness, piping_id } = item;
-                let dataThickness = [];
-                // dataCML.forEach(item => {
-                // if(dataThickness.includes(item.piping_id))
-                // });
-                const pressure_design_thickness = (min_design_pressure * outside_diameter) / (2 * ((longtd_quality_factor * weld_joint_factor * allowable_unit_stress) + (coefficient * min_design_pressure)));
-                return Object.assign(Object.assign({}, item), { t_min: Math.max(pressure_design_thickness, min_alert_thickness, min_structural_thickness) });
+                .subscribe(({ data: dataCML, piping }) => {
+                console.log(piping);
+                dataCML.forEach(item => {
+                    const { piping_id } = item;
+                    if (!averageOfCML[piping_id])
+                        averageOfCML[piping_id] = Object.assign(Object.assign({}, item), { total: 0, last_thickness_reading: 0 });
+                    if (averageOfCML[piping_id]) {
+                        averageOfCML[piping_id]['total']++;
+                        averageOfCML[piping_id]['last_thickness_reading'] += item.last_thickness_reading;
+                    }
+                });
+                this.tableData = data.map(item => {
+                    var _a;
+                    const { outside_diameter, min_design_pressure, longtd_quality_factor, weld_joint_factor, allowable_unit_stress, coefficient, min_alert_thickness, min_structural_thickness, piping_id } = item;
+                    const { last_thickness_reading, total } = (_a = averageOfCML[piping_id]) !== null && _a !== void 0 ? _a : 0;
+                    const reading = last_thickness_reading / total;
+                    const pressure_design_thickness = (min_design_pressure * outside_diameter) / (2 * ((longtd_quality_factor * weld_joint_factor * allowable_unit_stress) + (coefficient * min_design_pressure)));
+                    return Object.assign(Object.assign({}, item), { t_min: Math.max(pressure_design_thickness, min_alert_thickness, min_structural_thickness), reading, lt_cr: "3", st_cr: "4", remaining_life: "5", half_life: "6", retirement_date: "7", next_tm_insp_date: "8", next_ve_insp_date: "9", mawp: "10" });
+                });
             });
         });
     }
