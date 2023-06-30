@@ -17,11 +17,11 @@ return new class extends Migration
             $table->string("cml_id");
             $table->string("gauge_point");
             $table->string("point_location");
-            $table->float("nominal_thickness");
-            $table->float("min_required_thickness");
+            // $table->float("nominal_thickness");
+            // $table->float("min_required_thickness");
             $table->float("last_thickness_reading");
             $table->date("last_thickness_reading_date");
-            $table->date("calculated_cr");
+            $table->date("calculated_cr")->nullable();
             $table->timestamps();
         });
     }

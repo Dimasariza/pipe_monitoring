@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\AssetsResource;
+use App\Http\Resources\DataCMLResource;
+use App\Models\Assets;
 use Illuminate\Support\Facades\Validator as FacadesValidator;
 use App\Models\Datacmls;
 use Illuminate\Http\Request;
@@ -18,6 +21,7 @@ class DatacmlsController extends Controller
             'status' => true,
             'message' => 'Data ditemukan',
             'data' => $data
+            // 'data' => DataCMLResource::collection($data)
         ], 200);
     }
 
@@ -44,7 +48,6 @@ class DatacmlsController extends Controller
             "min_required_thickness"        => "required",
             "last_thickness_reading"        => "required",
             "last_thickness_reading_date"   => "required",
-            "calculated_cr"                 => "required",
         ];
 
         $validator = FacadesValidator::make($request->all(), $rules);
@@ -72,12 +75,14 @@ class DatacmlsController extends Controller
      */
     public function show(string $id)
     {
-        $data = Datacmls::find($id);
+        $data = Datacmls::where('piping_id', $id)->get();
+        $assets = Assets::where('piping_id', "Pipe 101A")->get();
         if($data) {
             return response()->json([
                 'status' => true,
                 'message' => 'Data ditemukan.',
-                'data' => $data
+                'data' => $data,
+                'piping' => $assets
             ], 200);
         } else {
             return response()->json([
@@ -106,11 +111,9 @@ class DatacmlsController extends Controller
             "cml_id"                        => "required",
             "gauge_point"                   => "required",
             "point_location"                => "required",
-            "nominal_thickness"             => "required",
-            "min_required_thickness"        => "required",
             "last_thickness_reading"        => "required",
             "last_thickness_reading_date"   => "required",
-            "calculated_cr"                 => "required",
+            // "calculated_cr"                 => "required",
         ];
 
         $validator = FacadesValidator::make($request->all(), $rules);

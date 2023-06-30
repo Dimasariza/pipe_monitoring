@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\AssetsResource;
 use App\Models\Assets;
+use App\Models\DamageMechanism;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator as FacadesValidator;
 
@@ -12,11 +13,15 @@ class AssetsController extends Controller
 {
     public function index()
     {
-        $data = Assets::all();
+        $data = Assets::all()->toArray();
+        $json_data = array_map(function($val) { 
+            return [...$val, "damage_mechanism" => json_decode($val["damage_mechanism"])]; 
+        }, $data);
+
         return response()->json([
             'status' => true,
             'message' => 'Data ditemukan',
-            'data' => AssetsResource::collection($data) 
+            'data' => AssetsResource::collection($json_data) 
         ], 200);
     }
 
@@ -64,7 +69,6 @@ class AssetsController extends Controller
             'date_in_service'           => 'required|date',
         ];
 
-
         $validator = FacadesValidator::make($request->all(), $rules);
         if ( $validator->fails() ) {
             return response()->json([
@@ -82,8 +86,10 @@ class AssetsController extends Controller
         $data->attachment = $request->attachment;
         $data->images = $request->image;
         $data->recomendation = $request->recomendation;
+        $data->damage_mechanism = json_encode($request->damage_mechanism);
 
         $data->save();
+
         return response()->json([
             'status' => true,
             'message' => 'Sukses menambahkan data.'
@@ -142,6 +148,7 @@ class AssetsController extends Controller
         $data->attachment = $request->attachment;
         $data->images = $request->image;
         $data->recomendation = $request->recomendation;
+        $data->damage_mechanism = $request->damage_mechanism;
 
         $data->save();
         return response()->json([
