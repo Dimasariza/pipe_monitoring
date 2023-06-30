@@ -65,6 +65,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 class CMLModule {
 }
 CMLModule.ɵfac = function CMLModule_Factory(t) { return new (t || CMLModule)(); };
@@ -80,7 +81,14 @@ CMLModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵ
             _component_top_bar_top_bar_module__WEBPACK_IMPORTED_MODULE_3__.TopBarModule,
             _component_mat_table_mat_table_module__WEBPACK_IMPORTED_MODULE_4__.MaterialTableModule,
             _angular_forms__WEBPACK_IMPORTED_MODULE_9__.FormsModule,
-            _nebular_theme__WEBPACK_IMPORTED_MODULE_8__.NbDatepickerModule
+            _nebular_theme__WEBPACK_IMPORTED_MODULE_8__.NbDatepickerModule,
+            _nebular_theme__WEBPACK_IMPORTED_MODULE_8__.NbToastrModule.forRoot({
+                destroyByClick: true,
+                duration: 3000,
+                position: _nebular_theme__WEBPACK_IMPORTED_MODULE_8__.NbGlobalPhysicalPosition.BOTTOM_RIGHT,
+                preventDuplicates: true,
+                limit: 3
+            }),
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵsetNgModuleScope"](CMLModule, { declarations: [_cml_component__WEBPACK_IMPORTED_MODULE_1__.CmlComponent,
         _add_cml_add_cml_component__WEBPACK_IMPORTED_MODULE_5__.AddCMLComponent], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.CommonModule,
@@ -93,7 +101,7 @@ CMLModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵ
         _component_top_bar_top_bar_module__WEBPACK_IMPORTED_MODULE_3__.TopBarModule,
         _component_mat_table_mat_table_module__WEBPACK_IMPORTED_MODULE_4__.MaterialTableModule,
         _angular_forms__WEBPACK_IMPORTED_MODULE_9__.FormsModule,
-        _nebular_theme__WEBPACK_IMPORTED_MODULE_8__.NbDatepickerModule] }); })();
+        _nebular_theme__WEBPACK_IMPORTED_MODULE_8__.NbDatepickerModule, _nebular_theme__WEBPACK_IMPORTED_MODULE_8__.NbToastrModule] }); })();
 
 
 /***/ })

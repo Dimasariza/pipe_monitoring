@@ -266,10 +266,10 @@ class AddCMLComponent {
     }
 }
 AddCMLComponent.ɵfac = function AddCMLComponent_Factory(t) { return new (t || AddCMLComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_nebular_theme__WEBPACK_IMPORTED_MODULE_1__.NbDialogRef)); };
-AddCMLComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AddCMLComponent, selectors: [["ngx-add-cml"]], inputs: { dialogData: "dialogData" }, decls: 32, vars: 3, consts: [[1, "w-100", "d-flex", "justify-content-center", "mt-5"], [1, "mt-5"], [1, "d-flex"], [1, "w-100"], [1, "flex-shrink-1"], ["nbButton", "", "status", "danger", "size", "tiny", 3, "click"], ["icon", "close-outline"], [3, "ngSubmit"], ["cmlForm", "ngForm"], [1, ""], ["for", "cml_id", 1, "d-block"], ["type", "text", "id", "cml_id", "nbInput", "", "fieldSize", "small", "required", "", "ngModel", "", "name", "cml_id"], ["for", "gauge_point", 1, "d-block"], ["type", "text", "id", "gauge_point", "nbInput", "", "fieldSize", "small", "required", "", "ngModel", "", "name", "gauge_point"], ["for", "point_location", 1, "d-block"], ["type", "text", "id", "point_location", "nbInput", "", "fieldSize", "small", "required", "", "ngModel", "", "name", "point_location"], ["for", "last_thickness_reading", 1, "d-block"], ["type", "text", "id", "last_thickness_reading", "nbInput", "", "fieldSize", "small", "required", "", "ngModel", "", "name", "last_thickness_reading"], ["for", "last_thickness_reading_date", 1, "d-block"], ["type", "text", "id", "last_thickness_reading_date", "required", "", "nbInput", "", "fieldSize", "small", "ngModel", "", "name", "last_thickness_reading_date", 3, "nbDatepicker", "ngModel"], ["datepicker", ""], ["nbButton", "", "size", "small", "status", "success", "type", "submit", 1, "mt-2", "w-100", 3, "disabled"]], template: function AddCMLComponent_Template(rf, ctx) { if (rf & 1) {
+AddCMLComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AddCMLComponent, selectors: [["ngx-add-cml"]], inputs: { dialogData: "dialogData" }, decls: 32, vars: 9, consts: [[1, "w-100", "d-flex", "justify-content-center", "mt-5"], [1, "mt-5"], [1, "d-flex"], [1, "w-100"], [1, "flex-shrink-1"], ["nbButton", "", "status", "danger", "size", "tiny", 3, "click"], ["icon", "close-outline"], [3, "ngSubmit"], ["cmlForm", "ngForm"], [1, ""], ["for", "cml_id", 1, "d-block"], ["type", "text", "id", "cml_id", "nbInput", "", "fieldSize", "small", "required", "", "name", "cml_id", 3, "ngModel"], ["for", "gauge_point", 1, "d-block"], ["type", "text", "id", "gauge_point", "nbInput", "", "fieldSize", "small", "required", "", "name", "gauge_point", 3, "ngModel"], ["for", "point_location", 1, "d-block"], ["type", "text", "id", "point_location", "nbInput", "", "fieldSize", "small", "required", "", "name", "point_location", 3, "ngModel"], ["for", "last_thickness_reading", 1, "d-block"], ["type", "text", "id", "last_thickness_reading", "nbInput", "", "fieldSize", "small", "required", "", "name", "last_thickness_reading", 3, "ngModel"], ["for", "last_thickness_reading_date", 1, "d-block"], ["type", "text", "id", "last_thickness_reading_date", "required", "", "nbInput", "", "fieldSize", "small", "name", "last_thickness_reading_date", 3, "nbDatepicker", "ngModel"], ["datepicker", ""], ["nbButton", "", "size", "small", "status", "success", "type", "submit", 1, "mt-2", "w-100", 3, "disabled"]], template: function AddCMLComponent_Template(rf, ctx) { if (rf & 1) {
         const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0)(1, "nb-card", 1)(2, "nb-card-header", 2)(3, "h5", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "Add CML");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 4)(6, "button", 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AddCMLComponent_Template_button_click_6_listener() { return ctx.closeDialog(); });
@@ -299,15 +299,27 @@ AddCMLComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](27, "input", 19)(28, "nb-datepicker", null, 20);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "button", 21);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](31, "Add CML");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](31);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()()()()();
     } if (rf & 2) {
         const _r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](10);
         const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](29);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](27);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.dialogData == null ? null : ctx.dialogData.title);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.dialogData == null ? null : ctx.dialogData.data == null ? null : ctx.dialogData.data.cml_id);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.dialogData == null ? null : ctx.dialogData.data == null ? null : ctx.dialogData.data.gauge_point);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.dialogData == null ? null : ctx.dialogData.data == null ? null : ctx.dialogData.data.point_location);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.dialogData == null ? null : ctx.dialogData.data == null ? null : ctx.dialogData.data.last_thickness_reading);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("nbDatepicker", _r1)("ngModel", ctx.dialogData == null ? null : ctx.dialogData.data == null ? null : ctx.dialogData.data.last_thickness_reading_date);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", !_r0.form.valid);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.dialogData == null ? null : ctx.dialogData.title);
     } }, directives: [_nebular_theme__WEBPACK_IMPORTED_MODULE_1__.NbCardComponent, _nebular_theme__WEBPACK_IMPORTED_MODULE_1__.NbCardHeaderComponent, _nebular_theme__WEBPACK_IMPORTED_MODULE_1__.NbButtonComponent, _nebular_theme__WEBPACK_IMPORTED_MODULE_1__.NbIconComponent, _nebular_theme__WEBPACK_IMPORTED_MODULE_1__.NbCardBodyComponent, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.NgForm, _nebular_theme__WEBPACK_IMPORTED_MODULE_1__.NbInputDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.NgModel, _nebular_theme__WEBPACK_IMPORTED_MODULE_1__.NbDatepickerDirective, _nebular_theme__WEBPACK_IMPORTED_MODULE_1__.NbDatepickerComponent], encapsulation: 2 });
 
 
@@ -380,7 +392,7 @@ class CmlComponent {
             { type: 'text', prop: 'min_required_thickness', head: 'Min. Required Thickness (mm)', width: '200px' },
             { type: 'text', prop: 'last_thickness_reading', head: 'Last Thickness Reading (mm)', width: '200px' },
             { type: 'text', prop: 'last_thickness_reading_date', head: 'Last Thickness Date', width: '200px' },
-            { type: 'text', prop: 'calculate_cr', head: 'Calculated CR (mm/Year)', width: '200px' },
+            { type: 'text', prop: 'calculated_cr', head: 'Calculated CR (mm/Year)', width: '200px' },
             { type: 'button', prop: 'edit', width: '80px', button: [
                     { icon: 'edit-outline', status: 'info', title: "edit-cml" },
                     { icon: 'trash-2-outline', status: 'danger', title: "delete-cml" },
@@ -396,14 +408,11 @@ class CmlComponent {
         this.cmlService.getCML(piping_id)
             .subscribe(({ data, piping }) => {
             const pipe = this.piping = piping[0];
-            const { min_structural_thickness, min_alert_thickness, min_design_pressure, outside_diameter, longtd_quality_factor, weld_joint_factor, allowable_unit_stress, coefficient, corrosion_allowance, mechanical_allowance, date_in_service } = pipe;
-            const nominal_thickness = piping[0].nominal_thickness;
+            const { min_structural_thickness, min_alert_thickness, min_design_pressure, outside_diameter, longtd_quality_factor, weld_joint_factor, allowable_unit_stress, coefficient, corrosion_allowance, mechanical_allowance, nominal_thickness } = pipe;
             const pressure_design_thickness = (min_design_pressure * outside_diameter)
                 / (2 * ((longtd_quality_factor * weld_joint_factor * allowable_unit_stress) + (coefficient * min_design_pressure)));
             this.tableData = data.map(item => {
-                const year_diff = (this.getYear(item.last_thickness_reading_date) - this.getYear(date_in_service));
-                const calculate_cr = year_diff == 0 ? '0' : (nominal_thickness - item.last_thickness_reading) / year_diff;
-                return Object.assign(Object.assign({}, item), { nominal_thickness, min_required_thickness: (Math.max(min_structural_thickness, min_alert_thickness, pressure_design_thickness) + corrosion_allowance + mechanical_allowance).toFixed(3), calculate_cr });
+                return Object.assign(Object.assign({}, item), { nominal_thickness, min_required_thickness: (Math.max(min_structural_thickness, min_alert_thickness, pressure_design_thickness) + corrosion_allowance + mechanical_allowance).toFixed(3) });
             });
             this.viewTable.regenerateTable(this.tableData);
         });
@@ -431,8 +440,10 @@ class CmlComponent {
             .onClose
             .subscribe(newData => {
             if (newData) {
-                newData.piping_id = this.piping.piping_id;
-                newData.last_thickness_reading_date = this.datePipe.transform(newData.last_thickness_reading_date, "yyyy-MM-dd");
+                const { nominal_thickness, date_in_service } = this.piping;
+                const year_diff = (this.getYear(newData.last_thickness_reading_date) - this.getYear(date_in_service));
+                const calculated_cr = year_diff == 0 ? '0' : (nominal_thickness - newData.last_thickness_reading) / year_diff;
+                newData = Object.assign(Object.assign({}, newData), { piping_id: this.piping.piping_id, last_thickness_reading_date: this.datePipe.transform(newData.last_thickness_reading_date, "yyyy-MM-dd"), calculated_cr });
                 this.cmlService.addCML(newData)
                     .subscribe(() => this.ngOnInit(), () => this.toastrService.danger('Please check your connection and try again.', 'Your request failed.'), () => this.toastrService.success('Data has been added.', 'Your request success.'));
             }
@@ -443,16 +454,18 @@ class CmlComponent {
             context: {
                 dialogData: {
                     title: 'Update CML',
-                    data: Object.assign(Object.assign({}, data), { date_in_service: new Date(data.date_in_service) })
+                    data: Object.assign(Object.assign({}, data), { last_thickness_reading_date: new Date(data.last_thickness_reading_date) })
                 }
             },
         })
             .onClose
             .subscribe(newData => {
             if (newData) {
-                newData.piping_id = this.piping.piping_id;
-                newData.last_thickness_reading_date = this.datePipe.transform(newData.last_thickness_reading_date, "yyyy-MM-dd");
-                this.cmlService.addCML(newData)
+                const { nominal_thickness, date_in_service } = this.piping;
+                const year_diff = (this.getYear(newData.last_thickness_reading_date) - this.getYear(date_in_service));
+                const calculated_cr = year_diff == 0 ? '0' : (nominal_thickness - newData.last_thickness_reading) / year_diff;
+                newData = Object.assign(Object.assign({}, newData), { id: data.id, piping_id: this.piping.piping_id, last_thickness_reading_date: this.datePipe.transform(newData.last_thickness_reading_date, "yyyy-MM-dd"), calculated_cr });
+                this.cmlService.updateCML(newData)
                     .subscribe(() => this.ngOnInit(), () => this.toastrService.danger('Please check your connection and try again.', 'Your request failed.'), () => this.toastrService.success('Data has been added.', 'Your request success.'));
             }
         });
@@ -886,10 +899,15 @@ class PipingAssetsComponent {
         })
             .onClose
             .subscribe(newData => {
-            return console.log(newData);
-            if (newData)
-                this.assetsService.addPipingAssets(newData)
-                    .subscribe(() => this.ngOnInit(), () => this.toastrService.danger('Please check your connection and try again.', 'Your request failed.'), () => this.toastrService.success('Data has been added.', 'Your request success.'));
+            if (!newData)
+                return;
+            const { min_design_pressure, outside_diameter, longtd_quality_factor, weld_joint_factor, allowable_unit_stress, coefficient, min_alert_thickness, min_structural_thickness, corrosion_allowance, mechanical_allowance } = newData;
+            const pressure_design_thickness = (min_design_pressure * outside_diameter) / (2 * ((longtd_quality_factor * weld_joint_factor * allowable_unit_stress) + (coefficient * min_design_pressure)));
+            const min_required_thickness = Math.max(pressure_design_thickness, min_alert_thickness, min_structural_thickness) + corrosion_allowance + mechanical_allowance;
+            newData = Object.assign(Object.assign({}, newData), { pressure_design_thickness,
+                min_required_thickness });
+            this.assetsService.addPipingAssets(newData)
+                .subscribe(() => this.ngOnInit(), () => this.toastrService.danger('Please check your connection and try again.', 'Your request failed.'), () => this.toastrService.success('Data has been added.', 'Your request success.'));
         });
     }
     deleteAsset(data) {
@@ -921,10 +939,16 @@ class PipingAssetsComponent {
         })
             .onClose
             .subscribe(newData => {
-            if (newData)
-                this.assetsService.updatePipingAssets(Object.assign(Object.assign({}, data), newData))
-                    .pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.takeUntil)(this.destroy$))
-                    .subscribe(() => this.ngOnInit(), () => this.toastrService.danger('Please check your connection and try again.', 'Your request failed.'), () => this.toastrService.success('Data has been updated.', 'Your request success.'));
+            if (!newData)
+                return;
+            const { min_design_pressure, outside_diameter, longtd_quality_factor, weld_joint_factor, allowable_unit_stress, coefficient, min_alert_thickness, min_structural_thickness, corrosion_allowance, mechanical_allowance } = newData;
+            const pressure_design_thickness = (min_design_pressure * outside_diameter) / (2 * ((longtd_quality_factor * weld_joint_factor * allowable_unit_stress) + (coefficient * min_design_pressure)));
+            const min_required_thickness = Math.max(pressure_design_thickness, min_alert_thickness, min_structural_thickness) + corrosion_allowance + mechanical_allowance;
+            newData = Object.assign(Object.assign({}, newData), { pressure_design_thickness,
+                min_required_thickness });
+            this.assetsService.updatePipingAssets(Object.assign(Object.assign({}, data), newData))
+                .pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_7__.takeUntil)(this.destroy$))
+                .subscribe(() => this.ngOnInit(), () => this.toastrService.danger('Please check your connection and try again.', 'Your request failed.'), () => this.toastrService.success('Data has been updated.', 'Your request success.'));
         });
     }
     exportExcelFile() {
@@ -1225,7 +1249,7 @@ function PipingCircuitsComponent_button_2_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](button_r2.name);
 } }
-const _c0 = function () { return { title: "Piping Circuits", filter: "Circuit Id" }; };
+const _c0 = function () { return { title: "Piping Circuits" }; };
 function PipingCircuitsComponent_ngx_mat_table_3_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](0, "ngx-mat-table", 4);
 } if (rf & 2) {
@@ -1710,7 +1734,7 @@ const _c0 = function () { return { name: "New", icon: "plus-outline" }; };
 const _c1 = function () { return { name: "Import", icon: "download-outline" }; };
 const _c2 = function () { return { name: "Export", icon: "upload-outline" }; };
 const _c3 = function (a0, a1, a2) { return [a0, a1, a2]; };
-const _c4 = function () { return { title: "Proposal", filter: "Proposal Id" }; };
+const _c4 = function () { return { title: "Proposal" }; };
 class ViewProposalComponent {
     constructor(viewProposalService, dialogService) {
         this.viewProposalService = viewProposalService;
