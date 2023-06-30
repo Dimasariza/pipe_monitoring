@@ -67,6 +67,8 @@ class AssetsController extends Controller
             'nominal_thickness'         => 'required',
             'class'                     => 'required',
             'date_in_service'           => 'required|date',
+            'pressure_design_thickness' => 'required',
+            'min_required_thickness'    => 'required'
         ];
 
         $validator = FacadesValidator::make($request->all(), $rules);
@@ -129,6 +131,8 @@ class AssetsController extends Controller
             'nominal_thickness'         => 'required',
             'class'                     => 'required',
             'date_in_service'           => 'required|date',
+            'pressure_design_thickness' => 'required',
+            'min_required_thickness'    => 'required'
         ];
 
         $validator = FacadesValidator::make($request->all(), $rules);

@@ -21,7 +21,7 @@ return new class extends Migration
             // $table->float("min_required_thickness");
             $table->float("last_thickness_reading");
             $table->date("last_thickness_reading_date");
-            $table->date("calculated_cr")->nullable();
+            $table->string("calculated_cr")->nullable();
             $table->timestamps();
         });
     }

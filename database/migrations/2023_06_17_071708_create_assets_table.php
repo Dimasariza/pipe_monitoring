@@ -33,6 +33,8 @@ return new class extends Migration
             $table->float('min_alert_thickness');
             $table->float('nominal_thickness');
             $table->string('class');
+            $table->float("pressure_design_thickness");
+            $table->float("min_required_thickness");
             $table->text('date_in_service');
             $table->text('notes')->nullable();
             $table->text('attachment')->nullable();

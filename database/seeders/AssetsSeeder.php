@@ -41,7 +41,9 @@ class AssetsSeeder extends Seeder
                     "attachment" => "",
                     "images" => "",
                     "recomendation" => "add inspection data",
-                    "qr_code" => "www.google.com"
+                    "qr_code" => "www.google.com",
+                    'pressure_design_thickness' => 0.1,
+                    'min_required_thickness'    => 0.1
                 ],
                 [
                     "piping_id" => "Pipe 102A",
@@ -69,7 +71,9 @@ class AssetsSeeder extends Seeder
                     "attachment" => "",
                     "images" => "",
                     "recomendation" => "add inspection data",
-                    "qr_code" => "www.google.com"
+                    "qr_code" => "www.google.com",
+                    'pressure_design_thickness' => 0.1,
+                    'min_required_thickness'    => 0.1
                 ],
                 [
                     "piping_id" => "Pipe 103A",
@@ -97,7 +101,9 @@ class AssetsSeeder extends Seeder
                     "attachment" => "",
                     "images" => "",
                     "recomendation" => "add inspection data",
-                    "qr_code" => "www.google.com"
+                    "qr_code" => "www.google.com",
+                    'pressure_design_thickness' => 0.1,
+                    'min_required_thickness'    => 0.1
                 ],
                 [
                     "piping_id" => "Pipe 104A",
@@ -125,7 +131,9 @@ class AssetsSeeder extends Seeder
                     "attachment" => "",
                     "images" => "",
                     "recomendation" => "add inspection data",
-                    "qr_code" => "www.google.com"
+                    "qr_code" => "www.google.com",
+                    'pressure_design_thickness' => 0.1,
+                    'min_required_thickness'    => 0.1
                 ],
                 [
                     "piping_id" => "Pipe 105A",
@@ -153,7 +161,9 @@ class AssetsSeeder extends Seeder
                     "attachment" => "",
                     "images" => "",
                     "recomendation" => "add inspection data",
-                    "qr_code" => "www.google.com"
+                    "qr_code" => "www.google.com",
+                    'pressure_design_thickness' => 0.1,
+                    'min_required_thickness'    => 0.1
                 ],
                 [
                     "piping_id" => "Pipe 106A",
@@ -181,7 +191,9 @@ class AssetsSeeder extends Seeder
                     "attachment" => "",
                     "images" => "",
                     "recomendation" => "add inspection data",
-                    "qr_code" => "www.google.com"
+                    "qr_code" => "www.google.com",
+                    'pressure_design_thickness' => 0.1,
+                    'min_required_thickness'    => 0.1
                 ]
             ]
         );
