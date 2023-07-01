@@ -41,8 +41,8 @@ return new class extends Migration
             $table->text('images')->nullable();
             $table->text('recomendation')->nullable();
             $table->text('qr_code')->nullable();
+            $table->unsignedInteger('piping_circuit')->nullable();
             $table->timestamp('update');
-            $table->text("damage_mechanism")->nullable();
             $table->timestamps();
         });
     }

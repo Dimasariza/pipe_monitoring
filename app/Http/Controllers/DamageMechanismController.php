@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\DamageMechanismResource;
 use App\Models\DamageMechanism;
 use Illuminate\Http\Request;
 
@@ -13,17 +14,11 @@ class DamageMechanismController extends Controller
     public function index()
     {
         $data = DamageMechanism::all();
-        $damage_mechanism = array();
-        foreach($data as $damage_data)
-        array_push($damage_mechanism, [
-            "id" => $damage_data["id"],
-            "piping_id" => $damage_data["piping_id"],
-            "damage_mechanism" => json_decode($damage_data["damage_mechanism"])
-        ]);
         return response()->json([
             'status' => true,
             'message' => 'Data ditemukan',
-            'data' => $damage_mechanism
+            // 'data' => $data
+            'data' => DamageMechanismResource::collection($data) 
         ], 200);
     }
 
@@ -41,9 +36,9 @@ class DamageMechanismController extends Controller
     public function store(Request $request)
     {
         $data = new DamageMechanism();
-        $data->damage_mechanism = json_encode($request->damage_mechanism);
-        $data->piping_id = $request->piping_id;
-        $data->save();
+        // $data->damage_mechanism = json_encode($request->damage_mechanism);
+        // $data->piping_id = $request->piping_id;
+        // $data->save();
         return response()->json([
             "status" => true,
             "message" => "Data berhasil ditambahkan.",
@@ -74,12 +69,18 @@ class DamageMechanismController extends Controller
     {
         $data = DamageMechanism::find($id);
         $data->damage_mechanism = json_encode($request->damage_mechanism);
-        $data->piping_id = $request->piping_id;
-        $data->save();
+        $success = $data->save();
+        if($success) 
         return response()->json([
             "status" => true,
             "message" => "Data berhasil diperbarui.",
             "data" => $data
+        ]);
+
+        if(!$success)
+        return response()->json([
+            "status" => false,
+            "message" => "Data tidak berhasil diperbarui.",
         ]);
     }
 

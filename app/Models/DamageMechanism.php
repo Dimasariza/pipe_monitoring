@@ -9,8 +9,8 @@ class DamageMechanism extends Model
 {
     use HasFactory;
 
-    public function damage_mechanism()
+    public function damage_mechanisms()
     {
-        return $this->belongsTo(Assets::class, 'piping_id');
+        return $this->hasOne(Assets::class, 'id', 'piping_id');
     }
 }

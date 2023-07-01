@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Resources\AssetsResource;
 use App\Models\Assets;
 use App\Models\DamageMechanism;
+use App\Models\VisualConditions;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator as FacadesValidator;
 
@@ -13,15 +14,12 @@ class AssetsController extends Controller
 {
     public function index()
     {
-        $data = Assets::all()->toArray();
-        $json_data = array_map(function($val) { 
-            return [...$val, "damage_mechanism" => json_decode($val["damage_mechanism"])]; 
-        }, $data);
+        $data = Assets::all();
 
         return response()->json([
             'status' => true,
             'message' => 'Data ditemukan',
-            'data' => AssetsResource::collection($json_data) 
+            'data' => AssetsResource::collection($data) 
         ], 200);
     }
 
@@ -40,6 +38,11 @@ class AssetsController extends Controller
                 'message' => 'Data tidak ditemukan.'
             ], 404);
         }
+    }
+
+    public function edit($request)
+    {
+        dd('patch');
     }
 
     public function store(Request $request) 
@@ -88,14 +91,26 @@ class AssetsController extends Controller
         $data->attachment = $request->attachment;
         $data->images = $request->image;
         $data->recomendation = $request->recomendation;
-        $data->damage_mechanism = json_encode($request->damage_mechanism);
+        $data->piping_circuit = $request->piping_circuit;
 
-        $data->save();
+        $success = $data->save();
+        if($success) {
 
-        return response()->json([
-            'status' => true,
-            'message' => 'Sukses menambahkan data.'
-        ], 200);
+            $asset_id = $data->getOriginal()['id'];
+            $visual_conditions = new VisualConditions;
+            $visual_conditions->piping_id = $asset_id;
+            $visual_conditions->save();
+
+            $damage_mechanism = new DamageMechanism;
+            $damage_mechanism->piping_id = $asset_id;
+            $damage_mechanism->save();
+
+            return response()->json([
+                'status' => true,
+                'message' => 'Sukses menambahkan data.'
+            ], 200);
+        }
+
     }
 
     public function update(Request $request, string $id) 
@@ -152,7 +167,7 @@ class AssetsController extends Controller
         $data->attachment = $request->attachment;
         $data->images = $request->image;
         $data->recomendation = $request->recomendation;
-        $data->damage_mechanism = $request->damage_mechanism;
+        $data->piping_circuit = $request->piping_circuit;
 
         $data->save();
         return response()->json([

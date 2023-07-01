@@ -146,6 +146,7 @@ class VisualConditionsController extends Controller
     {
         $data = VisualConditions::find($id);
 
+
         if(empty($data)) {
             return response()->json([
                 'status' => false,
@@ -167,7 +168,7 @@ class VisualConditionsController extends Controller
         if ( $validator->fails() ) {
             return response()->json([
                 'status' => false,
-                'message' => 'Gagal menambahkan data.',
+                'message' => 'Gagal memperbarui data.',
                 'data' => $validator->errors()
             ]);
         }
@@ -221,7 +222,7 @@ class VisualConditionsController extends Controller
         $data->save();
         return response()->json([
             'status' => true,
-            'message' => 'Sukses menambahkan data.'
+            'message' => 'Sukses memperbarui data.'
         ], 200);
     }
 

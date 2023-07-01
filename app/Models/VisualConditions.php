@@ -11,6 +11,6 @@ class VisualConditions extends Model
 
     public function visual_condition()
     {
-        return $this->belongsTo(VisualConditions::class, 'id', 'piping_id');
+        return $this->hasOne(Assets::class, 'id', 'piping_id');
     }
 }

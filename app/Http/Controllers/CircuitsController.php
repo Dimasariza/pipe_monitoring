@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\CircuitResource;
+use App\Models\Assets;
 use App\Models\Circuits;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator as FacadesValidator;
+
 
 class CircuitsController extends Controller
 {
@@ -15,6 +18,7 @@ class CircuitsController extends Controller
     public function index()
     {
         $data = Circuits::all();
+
         return response()->json([
             'status' => true,
             'message' => 'Data ditemukan',
@@ -68,12 +72,28 @@ class CircuitsController extends Controller
         foreach ($data_value as $key) {
             $data->$key = $request->$key;
         }
+        
+        $data->piping_id = json_encode($request->piping_id);
+        $complete = $data->save();
 
-        $data->save();
+        if($complete) {
+            foreach($request->piping_id as $pipe) {
+                DB::table('assets')->where('id', $pipe)->update([
+                    "piping_circuit" =>  $data['id']
+                ]);
+            }
+
+            return response()->json([
+                'status' => true,
+                'message' => 'Sukses menambahkan data.'
+            ], 200);
+        }
+
+        if(!$complete) 
         return response()->json([
-            'status' => true,
-            'message' => 'Sukses menambahkan data.'
-        ], 200);
+            'status' => false,
+            'message' => 'Data gagal di tambahkan'
+        ]);
     }
 
     /**

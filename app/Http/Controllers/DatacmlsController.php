@@ -41,8 +41,6 @@ class DatacmlsController extends Controller
             "cml_id"                        => "required",
             "gauge_point"                   => "required",
             "point_location"                => "required",
-            // "nominal_thickness"             => "required",
-            // "min_required_thickness"        => "required",
             "last_thickness_reading"        => "required",
             "last_thickness_reading_date"   => "required",
             "calculated_cr"                 => "required",
@@ -61,10 +59,13 @@ class DatacmlsController extends Controller
             $data->$key = $request->$key;
         }
 
+        // dd($data);
+
         $data->save();
         return response()->json([
             'status' => true,
-            'message' => 'Sukses menambahkan data.'
+            'message' => 'Sukses menambahkan data.',
+            'data' => $data
         ], 200);
     }
 
@@ -73,8 +74,8 @@ class DatacmlsController extends Controller
      */
     public function show(string $id)
     {
-        $data = Datacmls::where('piping_id', $id)->get();
         $assets = Assets::where('piping_id', $id)->get();
+        $data = Datacmls::where('piping_id', $id)->get();
         if($data) {
             return response()->json([
                 'status' => true,

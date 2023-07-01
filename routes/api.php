@@ -52,3 +52,4 @@ Route::post('image', [FileStorageController::class, 'storeImage']);
 Route::get('image/{id}', [FileStorageController::class, 'showImage']);
 Route::post('document', [FileStorageController::class, 'storeDocument']);
 Route::get('document/{id}', [FileStorageController::class, 'showDocument']);
+

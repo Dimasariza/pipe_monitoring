@@ -13,7 +13,7 @@ class Circuits extends Model
 
     public function circuit()
     {
-        return $this->belongsTo(Assets::class, 'piping_id');
+        return $this->hasMany(Assets::class, 'piping_circuit', 'id');
     }
 
 }

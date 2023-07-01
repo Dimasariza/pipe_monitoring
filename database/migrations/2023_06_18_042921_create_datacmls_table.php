@@ -13,15 +13,17 @@ return new class extends Migration
     {
         Schema::create('datacmls', function (Blueprint $table) {
             $table->id();
-            $table->string("piping_id");
+            $table->unsignedBigInteger("piping_id");
+            $table->foreign('piping_id')
+            ->references('id')
+            ->on('assets')
+            ->onDelete('cascade');
             $table->string("cml_id");
             $table->string("gauge_point");
             $table->string("point_location");
-            // $table->float("nominal_thickness");
-            // $table->float("min_required_thickness");
-            $table->float("last_thickness_reading");
+            $table->double("last_thickness_reading");
             $table->date("last_thickness_reading_date");
-            $table->string("calculated_cr")->nullable();
+            $table->double("calculated_cr")->nullable();
             $table->timestamps();
         });
     }
