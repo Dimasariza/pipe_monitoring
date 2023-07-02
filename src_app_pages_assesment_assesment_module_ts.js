@@ -323,7 +323,6 @@ class DemageMechanismComponent {
         });
     }
     regenerateTableData(damage_mechanism) {
-        console.log(damage_mechanism);
         const tableData = this.tableData.map(item => {
             const { id } = item;
             if (damage_mechanism === null || damage_mechanism === void 0 ? void 0 : damage_mechanism[id]) {
@@ -353,8 +352,8 @@ class DemageMechanismComponent {
     }
     onClickTable(data, title) {
         // this.regenerateTableData(data)
-        console.log("data", data);
-        console.log("title", title);
+        // console.log("data",data)
+        // console.log("title", title)
     }
     showData(element) {
         this.selectionData = element;
