@@ -323,15 +323,18 @@ class DemageMechanismComponent {
         });
     }
     regenerateTableData(damage_mechanism) {
-        this.tableData = this.tableData.map(item => {
+        console.log(damage_mechanism);
+        const tableData = this.tableData.map(item => {
             const { id } = item;
-            if (damage_mechanism === null || damage_mechanism === void 0 ? void 0 : damage_mechanism.id) {
+            if (damage_mechanism === null || damage_mechanism === void 0 ? void 0 : damage_mechanism[id]) {
+                console.log('generate data');
                 const { last_insp_date, insp_due_date } = damage_mechanism[id];
+                console.log(damage_mechanism);
                 return Object.assign(Object.assign(Object.assign({}, item), damage_mechanism[id]), { active: true, last_insp_date: new Date(last_insp_date), insp_due_date: new Date(insp_due_date) });
             }
             return Object.assign({}, item);
         });
-        this.viewTable.regenerateTable(this.tableData);
+        this.viewTable.regenerateTable(tableData);
     }
     onSubmit() {
         const tableData = this.viewTable.getDataSource()["_data"]["_value"];
@@ -355,6 +358,7 @@ class DemageMechanismComponent {
     }
     showData(element) {
         this.selectionData = element;
+        this.regenerateTableData(element.damage_mechanism);
     }
     applyFilter(event) {
         const filterValue = event.target.value;
