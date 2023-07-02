@@ -10,7 +10,7 @@ use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\DamageMechanismController;
 use App\Http\Controllers\ProposalsController;
 use App\Http\Controllers\VisualConditionsController;
-
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,3 +53,6 @@ Route::get('image/{id}', [FileStorageController::class, 'showImage']);
 Route::post('document', [FileStorageController::class, 'storeDocument']);
 Route::get('document/{id}', [FileStorageController::class, 'showDocument']);
 
+Route::get('/linkstorage', function () {
+    Artisan::call('storage:link');
+});
