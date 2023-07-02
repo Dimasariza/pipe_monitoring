@@ -427,7 +427,7 @@ class MatTableComponent {
         };
         this.onClickTable = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.EventEmitter();
         this.resultsLength = 0;
-        this.selection = new _angular_cdk_collections__WEBPACK_IMPORTED_MODULE_1__.SelectionModel(true, []);
+        this.selection = new _angular_cdk_collections__WEBPACK_IMPORTED_MODULE_1__.SelectionModel(true, [], true);
         this.checked = false;
     }
     ngOnInit() {
@@ -457,7 +457,8 @@ class MatTableComponent {
         }
     }
     selectTableRow() {
-        this.onClickTable.emit({ data: this.selection["_selected"], title: 'Export To Excel' });
+        return this.selection.selected;
+        // this.onClickTable.emit({data, title : 'Export To Excel'})
     }
     getDataSource() {
         return this.dataSource;
