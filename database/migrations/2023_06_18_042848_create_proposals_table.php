@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('proposals', function (Blueprint $table) {
             $table->id();
-            $table->text("inspection_summary");
             $table->text("list_of_piping_id");
-            $table->text("inspection_method");
             $table->date("inspection_planned_date");
             $table->date("recommendation_date");
+            $table->text("remarks")->nullable();
+            $table->text("inspection_method")->nullable();
             $table->timestamps();
         });
     }

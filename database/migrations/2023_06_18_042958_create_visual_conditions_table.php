@@ -19,14 +19,14 @@ return new class extends Migration
             ->on('assets')
             ->onDelete('cascade');
             $table->string("general_condition")->nullable();    
-            $table->text("general_finding")->nullable();
-            $table->text("general_recomendation")->nullable();
+            $table->text("general_finding")->nullable()->default("");
+            $table->text("general_recomendation")->nullable()->default("");
             $table->string("leaks_condition")->nullable();
-            $table->text("leaks_comment")->nullable();
+            $table->text("leaks_comment")->nullable()->default("");
             $table->boolean("leaks_process")->default(false);
             $table->boolean("leaks_steam_tracing")->default(false);
             $table->string("misalignment_condition")->nullable();
-            $table->text("misalignment_comment")->nullable();
+            $table->text("misalignment_comment")->nullable()->default("");
             $table->boolean("misalignment_piping_misalignment")->default(false);
             $table->boolean("misalignment_expainsion_joint")->default(false);
             $table->boolean("misalignment_existing_clamps")->default(false);
@@ -38,14 +38,14 @@ return new class extends Migration
             $table->boolean("vibration_threaded_connections")->default(false);
             $table->boolean("vibration_loose_support")->default(false);
             $table->string("corrosion_condition")->nullable();
-            $table->text("corrosion_comment")->nullable();
+            $table->text("corrosion_comment")->nullable()->default("");
             $table->boolean("corrosion_bolting_support")->default(false);
             $table->boolean("corrosion_coating_painting")->default(false);
             $table->boolean("corrosion_soil_to_air")->default(false);
             $table->boolean("corrosion_insulation_interface")->default(false);
             $table->boolean("corrosion_biological_growth")->default(false);
             $table->string("supports_condition")->nullable();
-            $table->text("supports_comment")->nullable();
+            $table->text("supports_comment")->nullable()->default("");
             $table->boolean("supports_shoes_supports")->default(false);
             $table->boolean("supports_hanger_distortion")->default(false);
             $table->boolean("supports_bottomed_out")->default(false);
@@ -55,7 +55,7 @@ return new class extends Migration
             $table->boolean("supports_counter_balance")->default(false);
             $table->boolean("supports_support_corrosion")->default(false);
             $table->string("insulation_condition")->nullable();
-            $table->text("insulation_comment")->nullable();
+            $table->text("insulation_comment")->nullable()->default("");
             $table->boolean("insulation_damage_penetrations")->default(false);
             $table->boolean("insulation_missing_jacketing")->default(false);
             $table->boolean("insulation_sealing_deterioration")->default(false);

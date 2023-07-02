@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\DataCMLResource;
 use App\Models\Assets;
 use Illuminate\Support\Facades\Validator as FacadesValidator;
 use App\Models\Datacmls;
@@ -74,14 +75,13 @@ class DatacmlsController extends Controller
      */
     public function show(string $id)
     {
-        $assets = Assets::where('piping_id', $id)->get();
         $data = Datacmls::where('piping_id', $id)->get();
         if($data) {
             return response()->json([
                 'status' => true,
                 'message' => 'Data ditemukan.',
-                'data' => $data,
-                'piping' => $assets
+                'piping' => Assets::find($id),
+                'data' => DataCMLResource::collection($data),
             ], 200);
         } else {
             return response()->json([

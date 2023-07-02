@@ -17,7 +17,6 @@ class DamageMechanismController extends Controller
         return response()->json([
             'status' => true,
             'message' => 'Data ditemukan',
-            // 'data' => $data
             'data' => DamageMechanismResource::collection($data) 
         ], 200);
     }

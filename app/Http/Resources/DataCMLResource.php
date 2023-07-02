@@ -2,10 +2,11 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Assets;
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\ResourceCollection;
+use Illuminate\Http\Resources\Json\JsonResource;
 
-class DataCMLResource extends ResourceCollection
+class DataCMLResource extends JsonResource
 {
     /**
      * Transform the resource collection into an array.
@@ -14,9 +15,6 @@ class DataCMLResource extends ResourceCollection
      */
     public function toArray(Request $request): array
     {
-        return [
-            "datacml" => $this->id
-        ];
-        // return parent::toArray($request);
+        return parent::toArray($request);
     }
 }

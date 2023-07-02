@@ -15,11 +15,10 @@ class AssetsController extends Controller
     public function index()
     {
         $data = Assets::all();
-
         return response()->json([
             'status' => true,
             'message' => 'Data ditemukan',
-            'data' => AssetsResource::collection($data) 
+            'data' => AssetsResource::collection($data)
         ], 200);
     }
 
@@ -89,7 +88,7 @@ class AssetsController extends Controller
 
         $data->notes = $request->notes;
         $data->attachment = $request->attachment;
-        $data->images = $request->image;
+        $data->images = json_encode($request->images);
         $data->recomendation = $request->recomendation;
         $data->piping_circuit = $request->piping_circuit;
 
@@ -165,7 +164,7 @@ class AssetsController extends Controller
 
         $data->notes = $request->notes;
         $data->attachment = $request->attachment;
-        $data->images = $request->image;
+        $data->images = json_encode($request->images);
         $data->recomendation = $request->recomendation;
         $data->piping_circuit = $request->piping_circuit;
 

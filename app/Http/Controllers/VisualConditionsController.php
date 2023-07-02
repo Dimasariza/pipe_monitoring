@@ -66,10 +66,9 @@ class VisualConditionsController extends Controller
             "leaks_comment",
             "leaks_process",
             "leaks_steam_tracing",
-            "leaks_existing_clamps",
             "misalignment_condition","misalignment_comment",
             "misalignment_piping_misalignment",
-            "misalignment_expaint_joint",
+            "misalignment_expainsion_joint",
             "misalignment_existing_clamps",
             "vibration_condition","vibration_comment",
             "vibration_excessive_overhung",
@@ -170,7 +169,7 @@ class VisualConditionsController extends Controller
                 'status' => false,
                 'message' => 'Gagal memperbarui data.',
                 'data' => $validator->errors()
-            ]);
+            ], 400);
         }
 
         $data_value = [
@@ -181,10 +180,9 @@ class VisualConditionsController extends Controller
             "leaks_comment",
             "leaks_process",
             "leaks_steam_tracing",
-            "leaks_existing_clamps",
             "misalignment_condition","misalignment_comment",
             "misalignment_piping_misalignment",
-            "misalignment_expaint_joint",
+            "misalignment_expainsion_joint",
             "misalignment_existing_clamps",
             "vibration_condition","vibration_comment",
             "vibration_excessive_overhung",
@@ -216,14 +214,21 @@ class VisualConditionsController extends Controller
         ];
 
         foreach ($data_value as $key) {
-            $data->$key = $request->$key ?? false;
+            $data->$key = $request->$key;
         }
 
-        $data->save();
+        $success = $data->save();
+        if($success)
         return response()->json([
             'status' => true,
             'message' => 'Sukses memperbarui data.'
         ], 200);
+
+        if(!$success)
+        return response()->json([
+            'status' => false,
+            'message' => 'Gagal memperbarui data.'
+        ], 500);
     }
 
     /**
