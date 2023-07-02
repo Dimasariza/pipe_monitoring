@@ -27,15 +27,15 @@ class PipingCircuitService {
         return this.httpClient.get(url);
     }
     addPipingCircuits(data) {
-        const url = this.apiUrl + "/assets";
+        const url = this.apiUrl + "/circuit";
         return this.httpClient.post(url, data);
     }
     updatePipingCircuits(data) {
-        const url = this.apiUrl + "/assets";
+        const url = this.apiUrl + "/circuit";
         return this.httpClient.put(url, data);
     }
     deletePipingCircuits(id) {
-        const url = this.apiUrl + "/assets/" + id;
+        const url = this.apiUrl + "/circuit/" + id;
         return this.httpClient.delete(url);
     }
 }
@@ -617,7 +617,7 @@ function ReportPipingCircuit_nb_option_6_Template(rf, ctx) { if (rf & 1) {
 const _c0 = function () { return { "width": "40px" }; };
 function ReportPipingCircuit_th_16_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "th", 39);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, " No. ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, " Circuit Id ");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
 } if (rf & 2) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](1, _c0));
