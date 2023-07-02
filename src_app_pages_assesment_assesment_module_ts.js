@@ -326,9 +326,7 @@ class DemageMechanismComponent {
         const tableData = this.tableData.map(item => {
             const { id } = item;
             if (damage_mechanism === null || damage_mechanism === void 0 ? void 0 : damage_mechanism[id]) {
-                console.log('generate data');
                 const { last_insp_date, insp_due_date } = damage_mechanism[id];
-                console.log(damage_mechanism);
                 return Object.assign(Object.assign(Object.assign({}, item), damage_mechanism[id]), { active: true, last_insp_date: new Date(last_insp_date), insp_due_date: new Date(insp_due_date) });
             }
             return Object.assign({}, item);
