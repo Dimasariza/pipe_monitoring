@@ -31,7 +31,7 @@ class PipingCircuitService {
         return this.httpClient.post(url, data);
     }
     updatePipingCircuits(data) {
-        const url = this.apiUrl + "/circuit";
+        const url = this.apiUrl + "/circuit/" + data.id;
         return this.httpClient.put(url, data);
     }
     deletePipingCircuits(id) {
