@@ -16,12 +16,12 @@ return new class extends Migration
             $table->date("date_in_service");
             $table->string("class");
             $table->string("piping_circuit_name");
-            $table->string("piping_circuit_id");
+            $table->string("piping_circuit_id")->unique();
             $table->text("notes")->nullable();
             $table->string("attachment")->nullable();
             $table->text("recomendation")->nullable();
             $table->text("images")-> nullable();
-            $table->text('piping_id');
+            $table->text('piping_id')->nullable();
             $table->timestamps();
         });
     }

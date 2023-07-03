@@ -9,6 +9,7 @@ use App\Http\Controllers\FileStorageController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\DamageMechanismController;
 use App\Http\Controllers\ProposalsController;
+use App\Http\Controllers\ReportControllers;
 use App\Http\Controllers\VisualConditionsController;
 use Illuminate\Support\Facades\Artisan;
 
@@ -52,6 +53,9 @@ Route::post('image', [FileStorageController::class, 'storeImage']);
 Route::get('image/{id}', [FileStorageController::class, 'showImage']);
 Route::post('document', [FileStorageController::class, 'storeDocument']);
 Route::get('document/{id}', [FileStorageController::class, 'showDocument']);
+
+Route::get('asset_report/{id}', [ReportControllers::class, 'report_assets']);
+Route::get('circuit_report/{id}', [ReportControllers::class, 'report_circuit']);
 
 Route::get('/linkstorage', function () {
     Artisan::call('storage:link');

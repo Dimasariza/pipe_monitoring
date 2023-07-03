@@ -79,7 +79,7 @@ class AssetsController extends Controller
                 'status' => false,
                 'message' => 'Gagal menambahkan data.',
                 'data' => $validator->errors()
-            ]);
+            ], 400);
         }
 
         foreach ($rules as $key => $value) {

@@ -40,7 +40,7 @@ class CircuitsController extends Controller
     public function store(Request $request)
     {
         $data = new Circuits;
-        $this->reconstructData($data, $request);
+        return $this->reconstructData($data, $request);
     }
 
     /**
@@ -77,7 +77,7 @@ class CircuitsController extends Controller
     public function update(Request $request, string $id)
     {
         $data = Circuits::find($id);
-        $this->reconstructData($data, $request);
+        return $this->reconstructData($data, $request);
     }
 
     public function reconstructData($data, Request $request)
@@ -87,7 +87,6 @@ class CircuitsController extends Controller
             "class"                 => "required",
             "piping_circuit_name"   => "required",
             "piping_circuit_id"     => "required",
-            "piping_id"             => "required",
         ];
 
         $validator = FacadesValidator::make($request->all(), $rules);
@@ -119,6 +118,7 @@ class CircuitsController extends Controller
         $complete = $data->save();
 
         if($complete) {
+            if($request->piping_id)
             foreach($request->piping_id as $pipe) {
                 DB::table('assets')->where('id', $pipe)->update([
                     "piping_circuit" =>  $data['id']
@@ -135,7 +135,7 @@ class CircuitsController extends Controller
         return response()->json([
             'status' => false,
             'message' => 'Data gagal di tambahkan'
-        ]);
+        ], 400);
     }
 
     /**
