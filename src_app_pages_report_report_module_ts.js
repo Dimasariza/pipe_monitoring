@@ -989,9 +989,7 @@ class ReportPipingCircuit {
     }
     visualConditionAvg(asset, props) {
         return asset.map(x => this.switchToPoint(x.visual_condition[props]))
-            .reduce((x, y) => {
-            return x + y;
-        }, 0);
+            .reduce((x, y) => x + y, 0);
     }
     switchToPoint(c) {
         if (c == 'Excellent')
