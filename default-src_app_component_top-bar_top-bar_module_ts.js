@@ -1003,7 +1003,6 @@ class PipingAssetsComponent {
             .pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.takeUntil)(this.destroy$))
             .subscribe(res => {
             var _a;
-            console.log(res);
             let images = [...(_a = oldData === null || oldData === void 0 ? void 0 : oldData.images) !== null && _a !== void 0 ? _a : []];
             let lastId = res.data.id;
             for (let i = lastId; i < lastId + image.length; i++)
@@ -1113,9 +1112,9 @@ class PipingAssetsComponent {
                 class: Class
             };
         });
+        console.log(datas);
         datas.forEach(data => {
-            this.assetsService.addPipingAssets(data)
-                .subscribe(res => { }, () => this.toastrService.danger('Please check your connection and try again.', 'Your request failed.'));
+            this.reconstructAssetsData(data, 'add');
         });
     }
     ngOnDestroy() {
@@ -1129,7 +1128,7 @@ PipingAssetsComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODU
     } if (rf & 2) {
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵloadQuery"]()) && (ctx.viewTable = _t.first);
-    } }, decls: 4, vars: 11, consts: [["nbButton", "", "outline", "", "size", "small", "status", "primary", "class", "m-2", 3, "disabled", "click", 4, "ngFor", "ngForOf"], [3, "tableHeader", "columnDetails", "tableData", "onClickTable"], ["nbButton", "", "outline", "", "size", "small", "status", "primary", 1, "m-2", 3, "disabled", "click"], ["type", "file", "accept", "application/vnd.ms-excel", 2, "display", "none", 3, "change"], ["importExcel", ""], [1, "m-1", 3, "icon", "pack"]], template: function PipingAssetsComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, decls: 4, vars: 11, consts: [["nbButton", "", "outline", "", "size", "small", "status", "primary", "class", "m-2", 3, "disabled", "click", 4, "ngFor", "ngForOf"], [3, "tableHeader", "columnDetails", "tableData", "onClickTable"], ["nbButton", "", "outline", "", "size", "small", "status", "primary", 1, "m-2", 3, "disabled", "click"], ["type", "file", "accept", ".xls,.xlsx", 2, "display", "none", 3, "change"], ["importExcel", ""], [1, "m-1", 3, "icon", "pack"]], template: function PipingAssetsComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "nb-card")(1, "nb-card-body");
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵtemplate"](2, PipingAssetsComponent_button_2_Template, 6, 4, "button", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementEnd"]()();
