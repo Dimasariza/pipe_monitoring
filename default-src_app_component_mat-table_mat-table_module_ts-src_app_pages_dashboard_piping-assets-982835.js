@@ -458,7 +458,6 @@ class MatTableComponent {
     }
     selectTableRow() {
         return this.selection.selected;
-        // this.onClickTable.emit({data, title : 'Export To Excel'})
     }
     getDataSource() {
         return this.dataSource;
