@@ -366,7 +366,8 @@ class CorrosionRateTrendComponent {
     ngOnInit() {
         this.pipingAssetsService.getPipingAssets()
             .subscribe(({ data }) => {
-            this.selectionData = data[0].piping_id;
+            var _a;
+            this.selectionData = (_a = data[0]) === null || _a === void 0 ? void 0 : _a.piping_id;
             this.tableData = data;
             this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_7__.MatTableDataSource(data);
             this.dataSource.paginator = this.paginator;
@@ -378,7 +379,7 @@ class CorrosionRateTrendComponent {
         // this.dataSource.sort = this.sort;
     }
     showData(element) {
-        this.selectionData = element.piping_id;
+        this.selectionData = element === null || element === void 0 ? void 0 : element.piping_id;
     }
     applyFilter(event) {
         const filterValue = event.target.value;
@@ -592,7 +593,8 @@ class RemainingLifeTrendComponent {
     ngOnInit() {
         this.pipingAssetsService.getPipingAssets()
             .subscribe(({ data }) => {
-            this.selectionData = data[0].piping_id;
+            var _a;
+            this.selectionData = (_a = data[0]) === null || _a === void 0 ? void 0 : _a.piping_id;
             this.tableData = data;
             this.dataSource = new _angular_material_table__WEBPACK_IMPORTED_MODULE_4__.MatTableDataSource(data);
             this.dataSource.paginator = this.paginator;
