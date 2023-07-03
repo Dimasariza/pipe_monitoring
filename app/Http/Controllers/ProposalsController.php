@@ -73,7 +73,6 @@ class ProposalsController extends Controller
             "proposal_id"               => "required",
             "list_of_piping_id"         => "required",
             "inspection_planned_date"   => "required",
-            "recomendation_date"       => "required",
             "inspection_method"         => "required",
         ];
 
