@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Proposals extends Model
 {
     use HasFactory;
+
+    public function proposal()
+    {
+        return $this->hasMany(Assets::class, 'proposal_id', 'id');
+    }
 }

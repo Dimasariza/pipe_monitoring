@@ -3,9 +3,9 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\ResourceCollection;
+use Illuminate\Http\Resources\Json\JsonResource;
 
-class ProposalResource extends ResourceCollection
+class ProposalResource extends JsonResource
 {
     /**
      * Transform the resource collection into an array.
@@ -14,6 +14,10 @@ class ProposalResource extends ResourceCollection
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        $data = parent::toArray($request);
+        if(array_key_exists('inspection_method', $data))
+        $data['inspection_method'] = json_decode($data['inspection_method']);
+        $data['piping'] = new AssetsResource($this->proposal);
+        return $data;
     }
 }

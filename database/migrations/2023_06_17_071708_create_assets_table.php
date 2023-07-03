@@ -42,6 +42,7 @@ return new class extends Migration
             $table->text('recomendation')->nullable();
             $table->text('qr_code')->nullable();
             $table->unsignedInteger('piping_circuit')->nullable();
+            $table->unsignedInteger('proposal_id')->nullable();
             $table->timestamp('update');
             $table->timestamps();
         });

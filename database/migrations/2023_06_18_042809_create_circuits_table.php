@@ -20,7 +20,7 @@ return new class extends Migration
             $table->text("notes")->nullable();
             $table->string("attachment")->nullable();
             $table->text("recomendation")->nullable();
-            $table->string("image")-> nullable();
+            $table->text("images")-> nullable();
             $table->text('piping_id');
             $table->timestamps();
         });

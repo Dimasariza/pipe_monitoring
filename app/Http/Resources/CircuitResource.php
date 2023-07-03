@@ -15,6 +15,7 @@ class CircuitResource extends JsonResource
     public function toArray(Request $request): array
     {
         $data = parent::toArray($request);
+        $data['images'] = json_decode($data['images']);
         $data['piping'] = new AssetsResource($this->circuit);
         return $data;
     }
