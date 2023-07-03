@@ -881,7 +881,7 @@ VisualConditionComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_M
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](5);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngModel", ctx.selectionData == null ? null : ctx.selectionData.visual_condition == null ? null : ctx.selectionData.visual_condition.general_finding);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngModel", ctx.selectionData == null ? null : ctx.selectionData.visual_condition == null ? null : ctx.selectionData.visual_condition.general_finding);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngModel", ctx.selectionData == null ? null : ctx.selectionData.visual_condition == null ? null : ctx.selectionData.visual_condition.general_recomendation);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](6);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.externalCheckList);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);

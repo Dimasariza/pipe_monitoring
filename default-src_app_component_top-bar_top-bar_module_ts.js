@@ -1203,8 +1203,9 @@ function AddCircuitComponent_div_42_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("src", image_r9.src, _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsanitizeUrl"])("alt", image_r9 == null ? null : image_r9.alt);
 } }
-const _c0 = function () { return [1, 2, 3, 4]; };
-const _c1 = function (a0) { return { "display": a0 }; };
+const _c0 = function () { return []; };
+const _c1 = function () { return [1, 2, 3, 4]; };
+const _c2 = function (a0) { return { "display": a0 }; };
 class AddCircuitComponent {
     constructor(dialog, assetsService, pageMenuService) {
         this.dialog = dialog;
@@ -1268,7 +1269,7 @@ class AddCircuitComponent {
     }
 }
 AddCircuitComponent.ɵfac = function AddCircuitComponent_Factory(t) { return new (t || AddCircuitComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_nebular_theme__WEBPACK_IMPORTED_MODULE_4__.NbDialogRef), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_piping_assets_piping_assets_service__WEBPACK_IMPORTED_MODULE_1__.PipingAssetsService), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_pages_service__WEBPACK_IMPORTED_MODULE_2__.PageMenuService)); };
-AddCircuitComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: AddCircuitComponent, selectors: [["ngx-add-circuit"]], inputs: { dialogData: "dialogData" }, decls: 60, vars: 18, consts: [[1, "d-flex", "justify-content-center", "align-items-center", "mt-4"], [1, "mt-5", 2, "max-height", "35rem", "min-width", "90rem"], [1, "d-flex"], [1, "w-100"], [1, "flex-shrink-1"], ["nbButton", "", "status", "danger", "size", "tiny", 3, "click"], ["icon", "close-outline"], [3, "ngSubmit"], ["addCircuitForm", "ngForm"], [1, "row"], [1, "col-6"], ["for", "piping_circuit_id", 1, "mb-1", "d-block"], ["fullWidth", "", "nbInput", "", "fieldSize", "small", "type", "text", "id", "piping_circuit_id", "name", "piping_circuit_id", "required", "", 3, "ngModel"], ["for", "piping_id", 1, "mb-1", "d-block"], ["multiple", "", "placeholder", "Select Assets", "name", "piping_id", "required", "", 2, "min-width", "35rem", 3, "ngModel"], [3, "value", 4, "ngFor", "ngForOf"], ["for", "piping_circuit_name", 1, "mb-1", "d-block"], ["fullWidth", "", "nbInput", "", "fieldSize", "small", "type", "text", "id", "piping_circuit_name", "name", "piping_circuit_name", "required", "", 3, "ngModel"], ["for", "dateInService", 1, "mb-1", "d-block"], ["fullWidth", "", "nbInput", "", "fieldSize", "small", "name", "date_in_service", "required", "", 3, "nbDatepicker", "ngModel"], ["datepicker", ""], ["for", "class", 1, "mb-1", "d-block"], ["placeholder", "Class", "size", "small", "status", "primary", "name", "class", "required", "", 3, "ngModel"], ["for", "notes", 1, "mb-1", "d-block"], ["fullWidth", "", "nbInput", "", "fieldSize", "small", "type", "text", "id", "notes", "name", "notes", 3, "ngModel"], ["for", "addAttach", 1, "d-block", "mb-1"], ["fullWidth", "", "fieldSize", "tiny", "nbInput", "", "type", "file", "id", "addAttach", "accept", "application/pdf", "id", "addAttachment", "name", "attachment", "ngModel", ""], ["addAttach", ""], [1, "col-6", "align-self-center"], ["id", "carouselExampleInterval", "data-bs-ride", "carousel", 1, "carousel", "slide"], [1, "carousel-inner"], ["class", "carousel-item", "data-bs-interval", "10000", 3, "ngClass", 4, "ngFor", "ngForOf"], ["type", "button", "data-bs-target", "#carouselExampleInterval", "data-bs-slide", "prev", 1, "carousel-control-prev"], ["aria-hidden", "true", 1, "carousel-control-prev-icon"], [1, "visually-hidden"], ["type", "button", "data-bs-target", "#carouselExampleInterval", "data-bs-slide", "next", 1, "carousel-control-next"], ["aria-hidden", "true", 1, "carousel-control-next-icon"], ["placeholder", "Add image", "multiple", "", "fullWidth", "", "nbInput", "", "type", "file", "accept", "image/png, image/gif, image/jpeg", "id", "addImage", 2, "display", "none", 3, "ngStyle", "change"], ["addImage", ""], ["for", "recomendation", 1, "d-block", "mb-1"], ["fullWidth", "", "nbInput", "", "name", "recomendation", "id", "recomendation", "rows", "2", "name", "recomendation", 3, "ngModel"], [1, "d-flex", "justify-content-center"], ["nbButton", "", "status", "success", "type", "submit", 1, "m-1", "w-100", 3, "disabled"], [3, "value"], ["data-bs-interval", "10000", 1, "carousel-item", 3, "ngClass"], [1, "overflow-hidden", "d-flex", "align-justify-center", 2, "height", "18rem"], [1, "w-100", 3, "src", "alt", "click"]], template: function AddCircuitComponent_Template(rf, ctx) { if (rf & 1) {
+AddCircuitComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: AddCircuitComponent, selectors: [["ngx-add-circuit"]], inputs: { dialogData: "dialogData" }, decls: 60, vars: 19, consts: [[1, "d-flex", "justify-content-center", "align-items-center", "mt-4"], [1, "mt-5", 2, "max-height", "35rem", "min-width", "90rem"], [1, "d-flex"], [1, "w-100"], [1, "flex-shrink-1"], ["nbButton", "", "status", "danger", "size", "tiny", 3, "click"], ["icon", "close-outline"], [3, "ngSubmit"], ["addCircuitForm", "ngForm"], [1, "row"], [1, "col-6"], ["for", "piping_circuit_id", 1, "mb-1", "d-block"], ["fullWidth", "", "nbInput", "", "fieldSize", "small", "type", "text", "id", "piping_circuit_id", "name", "piping_circuit_id", "required", "", 3, "ngModel"], ["for", "piping_id", 1, "mb-1", "d-block"], ["multiple", "", "placeholder", "Select Assets", "name", "piping_id", 2, "min-width", "35rem", 3, "ngModel"], [3, "value", 4, "ngFor", "ngForOf"], ["for", "piping_circuit_name", 1, "mb-1", "d-block"], ["fullWidth", "", "nbInput", "", "fieldSize", "small", "type", "text", "id", "piping_circuit_name", "name", "piping_circuit_name", "required", "", 3, "ngModel"], ["for", "dateInService", 1, "mb-1", "d-block"], ["fullWidth", "", "nbInput", "", "fieldSize", "small", "name", "date_in_service", "required", "", 3, "nbDatepicker", "ngModel"], ["datepicker", ""], ["for", "class", 1, "mb-1", "d-block"], ["placeholder", "Class", "size", "small", "status", "primary", "name", "class", "required", "", 3, "ngModel"], ["for", "notes", 1, "mb-1", "d-block"], ["fullWidth", "", "nbInput", "", "fieldSize", "small", "type", "text", "id", "notes", "name", "notes", 3, "ngModel"], ["for", "addAttach", 1, "d-block", "mb-1"], ["fullWidth", "", "fieldSize", "tiny", "nbInput", "", "type", "file", "id", "addAttach", "accept", "application/pdf", "id", "addAttachment", "name", "attachment", "ngModel", ""], ["addAttach", ""], [1, "col-6", "align-self-center"], ["id", "carouselExampleInterval", "data-bs-ride", "carousel", 1, "carousel", "slide"], [1, "carousel-inner"], ["class", "carousel-item", "data-bs-interval", "10000", 3, "ngClass", 4, "ngFor", "ngForOf"], ["type", "button", "data-bs-target", "#carouselExampleInterval", "data-bs-slide", "prev", 1, "carousel-control-prev"], ["aria-hidden", "true", 1, "carousel-control-prev-icon"], [1, "visually-hidden"], ["type", "button", "data-bs-target", "#carouselExampleInterval", "data-bs-slide", "next", 1, "carousel-control-next"], ["aria-hidden", "true", 1, "carousel-control-next-icon"], ["placeholder", "Add image", "multiple", "", "fullWidth", "", "nbInput", "", "type", "file", "accept", "image/png, image/gif, image/jpeg", "id", "addImage", 2, "display", "none", 3, "ngStyle", "change"], ["addImage", ""], ["for", "recomendation", 1, "d-block", "mb-1"], ["fullWidth", "", "nbInput", "", "name", "recomendation", "id", "recomendation", "rows", "2", "name", "recomendation", 3, "ngModel"], [1, "d-flex", "justify-content-center"], ["nbButton", "", "status", "success", "type", "submit", 1, "m-1", "w-100", 3, "disabled"], [3, "value"], ["data-bs-interval", "10000", 1, "carousel-item", 3, "ngClass"], [1, "overflow-hidden", "d-flex", "align-justify-center", 2, "height", "18rem"], [1, "w-100", 3, "src", "alt", "click"]], template: function AddCircuitComponent_Template(rf, ctx) { if (rf & 1) {
         const _r13 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 0)(1, "nb-card", 1)(2, "nb-card-header", 2)(3, "h5", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](4);
@@ -1339,12 +1340,13 @@ AddCircuitComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE
     } if (rf & 2) {
         const _r0 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵreference"](10);
         const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵreference"](27);
+        let tmp_2_0;
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](4);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](ctx.dialogData == null ? null : ctx.dialogData.title);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](11);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngModel", ctx.dialogData == null ? null : ctx.dialogData.data == null ? null : ctx.dialogData.data.piping_circuit_id);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngModel", ctx.dialogData == null ? null : ctx.dialogData.data == null ? null : ctx.dialogData.data.piping_id);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngModel", (tmp_2_0 = ctx.dialogData == null ? null : ctx.dialogData.data == null ? null : ctx.dialogData.data.piping_id) !== null && tmp_2_0 !== undefined ? tmp_2_0 : _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](15, _c0));
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngForOf", ctx.piping);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](3);
@@ -1354,13 +1356,13 @@ AddCircuitComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](5);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngModel", ctx.parseInt(ctx.dialogData == null ? null : ctx.dialogData.data == null ? null : ctx.dialogData.data.class));
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](15, _c0));
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](16, _c1));
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngModel", ctx.dialogData == null ? null : ctx.dialogData.data == null ? null : ctx.dialogData.data.notes);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](8);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngForOf", ctx.imageLink);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction1"](16, _c1, ctx.imageLink.length ? "none" : "block"));
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction1"](17, _c2, ctx.imageLink.length ? "none" : "block"));
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](5);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngModel", ctx.dialogData == null ? null : ctx.dialogData.data == null ? null : ctx.dialogData.data.recomendation);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
@@ -1412,9 +1414,11 @@ function PipingCircuitsComponent_button_2_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
 } if (rf & 2) {
     const button_r1 = ctx.$implicit;
-    let tmp_1_0;
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+    let tmp_2_0;
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("disabled", (button_r1 == null ? null : button_r1.name) == "Export" && !(ctx_r0.tableData == null ? null : ctx_r0.tableData.length));
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("icon", button_r1.icon)("pack", (tmp_1_0 = button_r1.pack) !== null && tmp_1_0 !== undefined ? tmp_1_0 : "eva");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("icon", button_r1.icon)("pack", (tmp_2_0 = button_r1.pack) !== null && tmp_2_0 !== undefined ? tmp_2_0 : "eva");
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate"](button_r1.name);
 } }
@@ -1569,9 +1573,9 @@ PipingCircuitsComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MO
     } if (rf & 2) {
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵloadQuery"]()) && (ctx.viewTable = _t.first);
-    } }, decls: 4, vars: 11, consts: [["nbButton", "", "outline", "", "size", "small", "status", "primary", "class", "m-2", 3, "click", 4, "ngFor", "ngForOf"], [3, "tableHeader", "columnDetails", "tableData", "onClickTable"], ["nbButton", "", "outline", "", "size", "small", "status", "primary", 1, "m-2", 3, "click"], [1, "m-1", 3, "icon", "pack"]], template: function PipingCircuitsComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, decls: 4, vars: 11, consts: [["nbButton", "", "outline", "", "size", "small", "status", "primary", "class", "m-2", 3, "disabled", "click", 4, "ngFor", "ngForOf"], [3, "tableHeader", "columnDetails", "tableData", "onClickTable"], ["nbButton", "", "outline", "", "size", "small", "status", "primary", 1, "m-2", 3, "disabled", "click"], [1, "m-1", 3, "icon", "pack"]], template: function PipingCircuitsComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "nb-card")(1, "nb-card-body");
-        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](2, PipingCircuitsComponent_button_2_Template, 4, 3, "button", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](2, PipingCircuitsComponent_button_2_Template, 4, 4, "button", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]()();
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](3, "ngx-mat-table", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("onClickTable", function PipingCircuitsComponent_Template_ngx_mat_table_onClickTable_3_listener($event) { return ctx.onClickTable($event.data, $event.title); });
@@ -2065,7 +2069,7 @@ __webpack_require__.r(__webpack_exports__);
 function ViewProposalComponent_button_2_Template(rf, ctx) { if (rf & 1) {
     const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "button", 2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function ViewProposalComponent_button_2_Template_button_click_0_listener() { const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r3); const button_r1 = restoredCtx.$implicit; const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](); return button_r1.name == "New" ? ctx_r2.addProposal() : button_r1.name == "Import" ? ctx_r2.import() : button_r1.name == "Export" ? ctx_r2.export() : button_r1.name == "Print" ? ctx_r2.print() : button_r1.name == "QR Print" ? ctx_r2.qrPrint() : null; });
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function ViewProposalComponent_button_2_Template_button_click_0_listener() { const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r3); const button_r1 = restoredCtx.$implicit; const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](); return button_r1.name == "New" ? ctx_r2.addProposal() : button_r1.name == "Export" ? ctx_r2.export() : null; });
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](1, "nb-icon", 3);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](2, "span");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](3);
@@ -2079,10 +2083,9 @@ function ViewProposalComponent_button_2_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](button_r1.name);
 } }
 const _c0 = function () { return { name: "New", icon: "plus-outline" }; };
-const _c1 = function () { return { name: "Import", icon: "download-outline" }; };
-const _c2 = function () { return { name: "Export", icon: "upload-outline" }; };
-const _c3 = function (a0, a1, a2) { return [a0, a1, a2]; };
-const _c4 = function () { return { title: "Proposal" }; };
+const _c1 = function () { return { name: "Export", icon: "upload-outline" }; };
+const _c2 = function (a0, a1) { return [a0, a1]; };
+const _c3 = function () { return { title: "Proposal" }; };
 class ViewProposalComponent {
     constructor(proposalService, dialogService, datePipe, toastrService) {
         this.proposalService = proposalService;
@@ -2131,16 +2134,16 @@ ViewProposalComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODU
     } if (rf & 2) {
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵloadQuery"]()) && (ctx.viewTable = _t.first);
-    } }, decls: 4, vars: 12, consts: [["nbButton", "", "outline", "", "size", "small", "status", "primary", "class", "m-2", 3, "click", 4, "ngFor", "ngForOf"], [3, "tableHeader", "columnDetails", "tableData"], ["nbButton", "", "outline", "", "size", "small", "status", "primary", 1, "m-2", 3, "click"], [1, "m-1", 3, "icon", "pack"]], template: function ViewProposalComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, decls: 4, vars: 10, consts: [["nbButton", "", "outline", "", "size", "small", "status", "primary", "class", "m-2", 3, "click", 4, "ngFor", "ngForOf"], [3, "tableHeader", "columnDetails", "tableData"], ["nbButton", "", "outline", "", "size", "small", "status", "primary", 1, "m-2", 3, "click"], [1, "m-1", 3, "icon", "pack"]], template: function ViewProposalComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "nb-card")(1, "nb-card-body");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](2, ViewProposalComponent_button_2_Template, 4, 3, "button", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](3, "ngx-mat-table", 1);
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction3"](7, _c3, _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](4, _c0), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](5, _c1), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](6, _c2)));
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction2"](6, _c2, _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](4, _c0), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](5, _c1)));
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("tableHeader", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](11, _c4))("columnDetails", ctx.columnDetails)("tableData", ctx.tableData);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("tableHeader", _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpureFunction0"](9, _c3))("columnDetails", ctx.columnDetails)("tableData", ctx.tableData);
     } }, directives: [_nebular_theme__WEBPACK_IMPORTED_MODULE_4__.NbCardComponent, _nebular_theme__WEBPACK_IMPORTED_MODULE_4__.NbCardBodyComponent, _angular_common__WEBPACK_IMPORTED_MODULE_5__.NgForOf, _nebular_theme__WEBPACK_IMPORTED_MODULE_4__.NbButtonComponent, _nebular_theme__WEBPACK_IMPORTED_MODULE_4__.NbIconComponent, _component_mat_table_mat_table_component__WEBPACK_IMPORTED_MODULE_1__.MatTableComponent], encapsulation: 2 });
 ViewProposalComponent.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjectable"]({ token: ViewProposalComponent, factory: ViewProposalComponent.ɵfac, providedIn: 'root' });
 
