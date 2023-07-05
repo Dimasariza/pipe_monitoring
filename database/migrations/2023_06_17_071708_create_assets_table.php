@@ -33,8 +33,8 @@ return new class extends Migration
             $table->double('min_alert_thickness');
             $table->double('nominal_thickness');
             $table->string('class');
-            $table->double("pressure_design_thickness");
-            $table->double("min_required_thickness");
+            // $table->double("pressure_design_thickness");
+            // $table->double("min_required_thickness");
             $table->text('date_in_service');
             $table->text('notes')->nullable();
             $table->text('attachment')->nullable();
@@ -43,7 +43,6 @@ return new class extends Migration
             $table->text('qr_code')->nullable();
             $table->unsignedInteger('piping_circuit')->nullable();
             $table->unsignedInteger('proposal_id')->nullable();
-            $table->timestamp('update');
             $table->timestamps();
         });
     }

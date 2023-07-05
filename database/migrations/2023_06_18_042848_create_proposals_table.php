@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('proposals', function (Blueprint $table) {
             $table->id();
             $table->text("list_of_piping_id");
+            $table->boolean("carried_out");
             $table->string("proposal_id");
             $table->date("inspection_planned_date");
+            $table->date("inspection_date");
             $table->date("recomendation_date")->nullable();
             $table->text("remarks")->nullable();
             $table->text("inspection_method")->nullable();

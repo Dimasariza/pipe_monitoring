@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Datacmls;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -17,6 +18,12 @@ class AssetsResource extends JsonResource
         $data = parent::toArray($request);
         if(array_key_exists('images', $data))
         $data['images'] = json_decode($data['images']);
+
+        if(array_key_exists('class', $data) && $data['class'] == 4) 
+        {
+            $data['cml'] = Datacmls::where("piping_id", $this->id)->get();
+        }
+
         return $data;
     } 
 }

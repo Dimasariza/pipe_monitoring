@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string("cml_id");
             $table->string("gauge_point");
             $table->string("point_location");
+            $table->bigInteger("year");
             $table->double("last_thickness_reading");
             $table->date("last_thickness_reading_date");
             $table->double("calculated_cr")->nullable();

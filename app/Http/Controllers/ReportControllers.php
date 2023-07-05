@@ -64,7 +64,7 @@ class ReportControllers extends Controller
         $array_assets = array_map(function($a){
             return $this->get_collection_data($a);
         }, $assets);
-        
+
         return response()->json([
             "status" => true,
             "message" => "Data report ditemukan.",

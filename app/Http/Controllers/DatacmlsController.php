@@ -44,7 +44,7 @@ class DatacmlsController extends Controller
             "point_location"                => "required",
             "last_thickness_reading"        => "required",
             "last_thickness_reading_date"   => "required",
-            "calculated_cr"                 => "required",
+            "year"                          => "required",
         ];
 
         $validator = FacadesValidator::make($request->all(), $rules);
@@ -53,14 +53,12 @@ class DatacmlsController extends Controller
                 'status' => false,
                 'message' => 'Gagal menambahkan data.',
                 'data' => $validator->errors()
-            ]);
+            ], 400);
         }
 
         foreach ($rules as $key => $value) {
             $data->$key = $request->$key;
         }
-
-        // dd($data);
 
         $data->save();
         return response()->json([
@@ -75,7 +73,7 @@ class DatacmlsController extends Controller
      */
     public function show(string $id)
     {
-        $data = Datacmls::where('piping_id', $id)->get();
+        $data = Datacmls::where('piping_id', $id)->get();   
         if($data) {
             return response()->json([
                 'status' => true,
@@ -112,7 +110,7 @@ class DatacmlsController extends Controller
             "point_location"                => "required",
             "last_thickness_reading"        => "required",
             "last_thickness_reading_date"   => "required",
-            "calculated_cr"                 => "required",
+            "year"                          => "required",
         ];
 
         $validator = FacadesValidator::make($request->all(), $rules);
@@ -121,7 +119,7 @@ class DatacmlsController extends Controller
                 'status' => false,
                 'message' => 'Gagal menambahkan data.',
                 'data' => $validator->errors()
-            ]);
+            ], 400);
         }
 
         foreach ($rules as $key => $value) {

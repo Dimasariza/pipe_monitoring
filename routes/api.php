@@ -10,6 +10,7 @@ use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\DamageMechanismController;
 use App\Http\Controllers\ProposalsController;
 use App\Http\Controllers\ReportControllers;
+use App\Http\Controllers\ThicknessController;
 use App\Http\Controllers\VisualConditionsController;
 use Illuminate\Support\Facades\Artisan;
 
@@ -56,6 +57,8 @@ Route::get('document/{id}', [FileStorageController::class, 'showDocument']);
 
 Route::get('asset_report/{id}', [ReportControllers::class, 'report_assets']);
 Route::get('circuit_report/{id}', [ReportControllers::class, 'report_circuit']);
+
+Route::get('thickness', [ThicknessController::class, 'getThickness']);
 
 Route::get('/linkstorage', function () {
     Artisan::call('storage:link');
