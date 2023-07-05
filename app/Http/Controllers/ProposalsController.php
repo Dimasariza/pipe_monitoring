@@ -92,9 +92,11 @@ class ProposalsController extends Controller
         $data->list_of_piping_id = json_encode($request->list_of_piping_id);
         $data->inspection_method = json_encode($request->inspection_method);
         $data->remarks = $request->remarks;
+
         $data->carried_out = $request->carried_out;
         $data->inspection_date = $request->inspection_date;
-        $data->recomendation_date = $request->recomendation_date;
+        // $data->recomendation_date = $request->recomendation_date;
+
         $complete = $data->save();
 
         if($complete) {
