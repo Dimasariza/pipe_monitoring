@@ -35,9 +35,8 @@ class FileStorageController extends Controller
     public function showImage($id)    
     {
         $storage_path = FileStorage::find($id);
-        // return response()->json($storage_path->file_name);
-        $file_path = storage_path("app\public\image");  
-        $file_path = $file_path. "\\" .$storage_path->file_name;
+        $file_path = storage_path("app/public/image");  
+        $file_path = $file_path. "/" .$storage_path->file_name;
         
         if(fileExists($file_path)) {
             $file_info = new \finfo(FILEINFO_MIME_TYPE);
@@ -71,7 +70,7 @@ class FileStorageController extends Controller
     }
 
     public function showDocument($id) {
-        $storage_path = storage_path("app\public\document");  
+        $storage_path = storage_path("app/public/document");  
         $file_path = FileStorage::find($id);
         if(empty($file_path)) {
             return response()->json([
@@ -87,7 +86,7 @@ class FileStorageController extends Controller
                 "message" => "Dokumen bukan meruapakan dokumen."
             ]);
         }
-        $storage_path = $storage_path. "\\" .$file_path["file_name"];
+        $storage_path = $storage_path. "/" .$file_path["file_name"];
         
         $file_info = new \finfo(FILEINFO_MIME_TYPE);
         $file_show=file_get_contents($storage_path);

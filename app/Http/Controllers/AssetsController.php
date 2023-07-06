@@ -99,9 +99,7 @@ class AssetsController extends Controller
 
     public function store(Request $request) 
     {
-        dd($request);
         $data = new Assets;
-
         $result = $this->reconstruct_data($request, $data);
         
         if($result['status']) {
