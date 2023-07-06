@@ -7,7 +7,7 @@ use App\Models\Assets;
 
 class ThicknessController extends Controller
 {
-    public function getThickness()
+    public function get_thickness()
     {
         $assets = Assets::all();
 

@@ -8,6 +8,7 @@ use App\Http\Controllers\DatacmlsController;
 use App\Http\Controllers\FileStorageController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\DamageMechanismController;
+use App\Http\Controllers\ImportExcelController;
 use App\Http\Controllers\ProposalsController;
 use App\Http\Controllers\ReportControllers;
 use App\Http\Controllers\ThicknessController;
@@ -58,7 +59,10 @@ Route::get('document/{id}', [FileStorageController::class, 'showDocument']);
 Route::get('asset_report/{id}', [ReportControllers::class, 'report_assets']);
 Route::get('circuit_report/{id}', [ReportControllers::class, 'report_circuit']);
     
-Route::get('thickness', [ThicknessController::class, 'getThickness']);
+Route::get('thickness', [ThicknessController::class, 'get_thickness']);
+
+Route::post('import_assets', [ImportExcelController::class, 'import_assets']);
+Route::post('import_cmls', [ImportExcelController::class, 'import_cmls']);
 
 Route::get('/linkstorage', function () {
     Artisan::call('storage:link');
