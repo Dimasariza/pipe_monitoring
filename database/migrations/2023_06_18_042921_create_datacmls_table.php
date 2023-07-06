@@ -24,7 +24,6 @@ return new class extends Migration
             $table->bigInteger("year");
             $table->double("last_thickness_reading");
             $table->date("last_thickness_reading_date");
-            $table->double("calculated_cr")->nullable();
             $table->timestamps();
         });
     }
