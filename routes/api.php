@@ -57,7 +57,7 @@ Route::get('document/{id}', [FileStorageController::class, 'showDocument']);
 
 Route::get('asset_report/{id}', [ReportControllers::class, 'report_assets']);
 Route::get('circuit_report/{id}', [ReportControllers::class, 'report_circuit']);
-
+    
 Route::get('thickness', [ThicknessController::class, 'getThickness']);
 
 Route::get('/linkstorage', function () {

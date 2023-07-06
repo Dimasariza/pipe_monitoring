@@ -21,7 +21,6 @@ class CircuitsController extends Controller
         return response()->json([
             'status' => true,
             'message' => 'Data ditemukan',
-            // 'data' => $data
             'data' => CircuitResource::collection($data)
         ], 200);
     }

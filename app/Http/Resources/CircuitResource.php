@@ -16,7 +16,7 @@ class CircuitResource extends JsonResource
     {
         $data = parent::toArray($request);
         $data['images'] = json_decode($data['images']);
-        $data['piping'] = new AssetsResource($this->circuit);
+        $data['piping'] = AssetsResource::collection($this->circuit);
         return $data;
     }
 }
