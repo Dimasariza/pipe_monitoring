@@ -25,7 +25,7 @@ class ImportExcelController extends Controller
                 $damage_mechanism->save();
             }
 
-            if($assetId)
+            if(!$assetId)
             return response()->json([
                 "status" => false,
                 "message" => "Data gagal di tambahkan."
