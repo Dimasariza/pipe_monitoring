@@ -3,14 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\QRCode;
-use App\Http\Requests\StoreQRCodeRequest;
-use App\Http\Requests\UpdateQRCodeRequest;
 use Illuminate\Http\Request;
 
 class QRCodeController extends Controller
 {
     public function storeDocument(Request $request) {
         $filedir = "qr_code";
+        // dd($request);
         $file_name = $request->file($filedir)->getClientOriginalName();
         $file_name = date('YmdHis').$file_name;
         $file_storage = new QRCode;

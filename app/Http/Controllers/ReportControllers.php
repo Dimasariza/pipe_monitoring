@@ -81,6 +81,14 @@ class ReportControllers extends Controller
     public function publish_assets(Request $request, string $id)
     {
         $asset = Assets::find($id);
+
+        // dd($asset);
+        if(empty($asset))
+        return response()->json([
+            "status" => false,
+            "message" => "Data gagal di temukan."
+        ], 404);
+        
         $asset->qr_code = $request->qr_code;
         $status = $asset->save();
 
