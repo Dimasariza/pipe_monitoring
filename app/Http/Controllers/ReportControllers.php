@@ -82,13 +82,13 @@ class ReportControllers extends Controller
     {
         $asset = Assets::find($id);
 
-        // dd($asset);
+        dd($asset);
         if(empty($asset))
         return response()->json([
             "status" => false,
             "message" => "Data gagal di temukan."
         ], 404);
-        
+
         $asset->qr_code = $request->qr_code;
         $status = $asset->save();
 
