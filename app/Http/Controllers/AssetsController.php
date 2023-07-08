@@ -88,6 +88,7 @@ class AssetsController extends Controller
         $data->images = json_encode($request->images);
         $data->recomendation = $request->recomendation;
         $data->piping_circuit = $request->piping_circuit;
+        $data->qr_code = null;
 
         $status = $data->save();
 

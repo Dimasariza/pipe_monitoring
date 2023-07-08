@@ -38,7 +38,7 @@ return new class extends Migration
             $table->text('attachment')->nullable();
             $table->text('images')->nullable();
             $table->text('recomendation')->nullable();
-            $table->text('qr_code')->nullable();
+            $table->unsignedBigInteger('qr_code')->nullable();
             $table->unsignedInteger('piping_circuit')->nullable();
             $table->unsignedInteger('proposal_id')->nullable();
             $table->timestamps();

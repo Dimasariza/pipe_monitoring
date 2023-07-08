@@ -9,10 +9,12 @@ use App\Models\DamageMechanism;
 use App\Models\Datacmls;
 use App\Models\Proposals;
 use App\Models\VisualConditions;
+use Illuminate\Http\Request;
+
+use function PHPUnit\Framework\returnSelf;
 
 class ReportControllers extends Controller
 {
-
     public function get_collection_data(string $id)
     {
         $asset = Assets::find($id);
@@ -44,9 +46,10 @@ class ReportControllers extends Controller
 
         $circuit = Circuits::find($data['asset']['piping_circuit']);
         $data["circuit"] = $circuit;
+
         return response()->json([
-            "status" => false,
-            "message" => "Data tidak ditemukan.",
+            "status" => true,
+            "message" => "Data ditemukan.",
             "data" => $data
         ], 200);
     }
@@ -73,5 +76,41 @@ class ReportControllers extends Controller
                 "assets" => $array_assets,
             ]
         ], 200);
+    }
+
+    public function publish_assets(Request $request, string $id)
+    {
+        $asset = Assets::find($id);
+        $asset->qr_code = $request->qr_code;
+        $status = $asset->save();
+
+        if($status)
+        return response()->json([
+            "status" => $status,
+            "message" => "Asset berhasil di publish"
+        ], 200);
+
+        if(!$status)
+        return response()->json([
+            "status" => $status,
+            "message" => "Asset gagal di publish"
+        ], 400);
+    }
+
+    public function publish_circuits(Request $request, string $id)
+    {
+        $circuit = Circuits::find($id);
+        if(!empty($circuit)) {
+            return response()->json([
+                "status" => true,
+                "message" => "Data ditemukan."
+            ], 200);
+        }
+        if(empty($circuit)) {
+            return response()->json([
+                "status" => false,
+                "message" => "Data tidak di temukan."
+            ], 404);
+        }
     }
 }

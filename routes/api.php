@@ -10,6 +10,7 @@ use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\DamageMechanismController;
 use App\Http\Controllers\ImportExcelController;
 use App\Http\Controllers\ProposalsController;
+use App\Http\Controllers\QRCodeController;
 use App\Http\Controllers\ReportControllers;
 use App\Http\Controllers\ThicknessController;
 use App\Http\Controllers\VisualConditionsController;
@@ -55,9 +56,13 @@ Route::post('image', [FileStorageController::class, 'storeImage']);
 Route::get('image/{id}', [FileStorageController::class, 'showImage']);
 Route::post('document', [FileStorageController::class, 'storeDocument']);
 Route::get('document/{id}', [FileStorageController::class, 'showDocument']);
+Route::post('qr_code', [QRCodeController::class, 'storeDocument']);
+Route::get('qr_code/{id}', [QRCodeController::class, 'showDocument']);
 
 Route::get('asset_report/{id}', [ReportControllers::class, 'report_assets']);
 Route::get('circuit_report/{id}', [ReportControllers::class, 'report_circuit']);
+Route::put('publish_asset/{id}', [ReportControllers::class, 'publish_assets']);
+Route::put('publish_circuit/{id}', [ReportControllers::class, 'publish_circuits']);
     
 Route::get('thickness', [ThicknessController::class, 'get_thickness']);
 

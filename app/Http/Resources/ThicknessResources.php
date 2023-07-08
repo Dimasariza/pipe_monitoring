@@ -15,6 +15,7 @@ class ThicknessResources extends JsonResource
     public function toArray(Request $request): array
     {
         $piping = parent::toArray($request);
+        $piping['images'] = json_decode($piping['images']);
         return [
             ...$piping,
             "cml" => new AssetsResource($this->AllCml)
