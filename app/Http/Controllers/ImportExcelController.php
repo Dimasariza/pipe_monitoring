@@ -38,6 +38,23 @@ class ImportExcelController extends Controller
         ], 200);
     }
 
+    public function import_circuits(Request $request)
+    {
+        $status = DB::table('circuits')->insert($request->toArray());
+
+        if($status)
+        return response()->json([
+            "status" => $status,
+            "message" => "Data berhasil di tambahkan."
+        ], 200);
+
+        if($status)
+        return response()->json([
+            "status" => $status,
+            "message" => "Data gagal di tambahkan."
+        ], 400);
+    }
+
     public function import_cmls(Request $request)
     {
         $status = DB::table('datacmls')->insert($request->toArray());

@@ -82,7 +82,7 @@ class ReportControllers extends Controller
     {
         $asset = Assets::find($id);
 
-        dd($asset);
+        // dd($asset);
         if(empty($asset))
         return response()->json([
             "status" => false,

@@ -68,6 +68,7 @@ Route::get('thickness', [ThicknessController::class, 'get_thickness']);
 
 Route::post('import_assets', [ImportExcelController::class, 'import_assets']);
 Route::post('import_cmls', [ImportExcelController::class, 'import_cmls']);
+Route::post('import_circuits', [ImportExcelController::class, 'import_circuits']);
 
 Route::get('/linkstorage', function () {
     Artisan::call('storage:link');

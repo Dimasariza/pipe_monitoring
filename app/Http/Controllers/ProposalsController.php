@@ -122,8 +122,21 @@ class ProposalsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Proposals $proposals)
+    public function destroy(string $id)
     {
-        //
+        $data = Proposals::find($id);
+        if(empty($data)) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Data tidak ditemukan.'
+            ], 404);
+        }
+
+        $data->delete();
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Sukses melakukan menghapus data.'
+        ], 200);
     }
 }
