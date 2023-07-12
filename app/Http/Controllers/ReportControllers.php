@@ -114,11 +114,20 @@ class ReportControllers extends Controller
                 "message" => "Data ditemukan."
             ], 200);
         }
-        if(empty($circuit)) {
-            return response()->json([
-                "status" => false,
-                "message" => "Data tidak di temukan."
-            ], 404);
-        }
+
+        $circuit->qr_code = $request->qr_code;
+        $status = $circuit->save();
+
+        if($status)
+        return response()->json([
+            "status" => $status,
+            "message" => "Circuit berhasil di publish"
+        ], 200);
+
+        if(!$status)
+        return response()->json([
+            "status" => $status,
+            "message" => "Circuit gagal di publish"
+        ], 400);
     }
 }

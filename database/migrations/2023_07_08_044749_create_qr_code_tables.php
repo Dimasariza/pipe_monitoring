@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('qr_code', function (Blueprint $table) {
             $table->id();
-            $table->text("qr_code");
-            $table->text("file_name");
+            $table->text("qr_code")->unique();
+            $table->text("file_name");  
             $table->timestamps();
         });
     }
