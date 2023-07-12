@@ -13,4 +13,9 @@ class Proposals extends Model
     {
         return $this->hasMany(Assets::class, 'proposal_id', 'id');
     }
+
+    public function circuit()
+    {
+        return $this->hasMany(Circuits::class, 'proposal_id', 'id');
+    }
 }
