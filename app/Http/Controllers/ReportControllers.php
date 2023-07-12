@@ -82,7 +82,6 @@ class ReportControllers extends Controller
     {
         $asset = Assets::find($id);
 
-        // dd($asset);
         if(empty($asset))
         return response()->json([
             "status" => false,
@@ -108,7 +107,7 @@ class ReportControllers extends Controller
     public function publish_circuits(Request $request, string $id)
     {
         $circuit = Circuits::find($id);
-        if(!empty($circuit)) {
+        if(empty($circuit)) {
             return response()->json([
                 "status" => true,
                 "message" => "Data ditemukan."
