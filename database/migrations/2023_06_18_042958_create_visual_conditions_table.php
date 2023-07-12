@@ -25,11 +25,11 @@ return new class extends Migration
             $table->text("leaks_comment")->nullable()->default("");
             $table->boolean("leaks_process")->default(false);
             $table->boolean("leaks_steam_tracing")->default(false);
+            $table->boolean("leaks_existing_clamps")->default(false);
             $table->string("misalignment_condition")->nullable();
             $table->text("misalignment_comment")->nullable()->default("");
             $table->boolean("misalignment_piping_misalignment")->default(false);
             $table->boolean("misalignment_expainsion_joint")->default(false);
-            $table->boolean("misalignment_existing_clamps")->default(false);
             $table->string("vibration_condition")->nullable();
             $table->text("vibration_comment")->nullable();
             $table->boolean("vibration_excessive_overhung")->default(false);
