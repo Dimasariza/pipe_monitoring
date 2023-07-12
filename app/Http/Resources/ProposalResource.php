@@ -17,7 +17,7 @@ class ProposalResource extends JsonResource
         $data = parent::toArray($request);
         if(array_key_exists('inspection_method', $data))
         $data['inspection_method'] = json_decode($data['inspection_method']);
-        $data['piping'] = new AssetsResource($this->proposal);
+        // $data['piping'] = new AssetsResource($this->proposal);
         $data['circuit'] = CircuitResource::collection($this->circuit);
         return $data;
     }
