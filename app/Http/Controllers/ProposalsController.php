@@ -106,6 +106,12 @@ class ProposalsController extends Controller
                 ]);
             }
 
+            foreach($request->circuit as $circuit) {
+                DB::table('circuits')->where('id', $circuit)->update([
+                    "proposal_id" =>  $data['id']
+                ]);
+            }
+
             return response()->json([
                 'status' => true,
                 'message' => 'Sukses menambahkan data.'
