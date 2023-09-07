@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Assets;
 use App\Models\DamageMechanism;
 use App\Models\VisualConditions;
 use Illuminate\Http\Request;

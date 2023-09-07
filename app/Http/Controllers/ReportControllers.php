@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\DataCMLResource;
+use App\Http\Resources\ListAssetsResource;
 use App\Models\Assets;
 use App\Models\Circuits;
 use App\Models\DamageMechanism;
@@ -10,8 +11,6 @@ use App\Models\Datacmls;
 use App\Models\Proposals;
 use App\Models\VisualConditions;
 use Illuminate\Http\Request;
-
-use function PHPUnit\Framework\returnSelf;
 
 class ReportControllers extends Controller
 {
@@ -33,6 +32,20 @@ class ReportControllers extends Controller
             "visual_condition" => $visual_condition,
             "proposal" => $proposal 
         ];
+    }
+
+    public function list_report_assets() 
+    {
+        $data = Assets::all();
+        $data = ListAssetsResource::collection($data) ;
+        return response()->json([
+            "data" => $data
+        ]); 
+    }
+
+    public function list_report_circuits()
+    {
+
     }
 
     public function report_assets(string $id)

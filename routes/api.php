@@ -61,6 +61,8 @@ Route::get('qr_code/{id}', [QRCodeController::class, 'showDocument']);
 
 Route::get('asset_report/{id}', [ReportControllers::class, 'report_assets']);
 Route::get('circuit_report/{id}', [ReportControllers::class, 'report_circuit']);
+Route::get('list_report_assets', [ReportControllers::class, 'list_report_assets']);
+Route::get('list_report_circuits', [ReportControllers::class, 'list_report_circuits']);
 Route::put('publish_asset/{id}', [ReportControllers::class, 'publish_assets']);
 Route::put('publish_circuit/{id}', [ReportControllers::class, 'publish_circuits']);
     

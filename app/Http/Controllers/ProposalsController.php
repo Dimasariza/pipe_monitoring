@@ -38,7 +38,7 @@ class ProposalsController extends Controller
     public function store(Request $request)
     {
         $data = new Proposals;
-        $this->reconstructData($data, $request);
+        return $this->reconstructData($data, $request);
     }
 
     /**
@@ -95,21 +95,30 @@ class ProposalsController extends Controller
 
         $data->carried_out = $request->carried_out;
         $data->inspection_date = $request->inspection_date;
-        // $data->recomendation_date = $request->recomendation_date;
 
         $complete = $data->save();
 
         if($complete) {
-            foreach($request->list_of_piping_id as $pipe) {
-                DB::table('assets')->where('id', $pipe)->update([
-                    "proposal_id" =>  $data['id']
-                ]);
-            }
 
             foreach($request->circuit as $circuit) {
-                DB::table('circuits')->where('id', $circuit)->update([
-                    "proposal_id" =>  $data['id']
+
+                $success = DB::table('proposal_circuits')
+                ->where('id_proposal',$data["id"])
+                ->where("id_circuit", $circuit)->update([
+                    "id_circuit" =>  $circuit
                 ]);
+
+                // dd($success);
+
+                if(!$success) {
+                    DB::table('proposal_circuits')->insert([
+                        "id_proposal" => $data["id"],
+                        "id_circuit" => $circuit
+                    ]);
+                }
+
+                // dd($success);
+
             }
 
             return response()->json([

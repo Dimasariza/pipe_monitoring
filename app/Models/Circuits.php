@@ -16,4 +16,9 @@ class Circuits extends Model
         return $this->hasMany(Assets::class, 'piping_circuit', 'id');
     }
 
+    public function circuitS()
+    {
+        return $this->belongsToMany(Proposals::class, 'proposal_circuits', 'id_cicruit');
+    }
+
 }

@@ -19,7 +19,7 @@ class AssetsResource extends JsonResource
         if(array_key_exists('images', $data))
         $data['images'] = json_decode($data['images']);
 
-        if(array_key_exists('class', $data) && $data['class'] == 4) 
+        if(array_key_exists('class', $data)) 
         {
             $data['cml'] = Datacmls::where("piping_id", $this->id)->get();
         }

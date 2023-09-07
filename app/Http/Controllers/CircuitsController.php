@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\CircuitResource;
+use App\Models\Assets;
 use App\Models\Circuits;
-use GrahamCampbell\ResultType\Success;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator as FacadesValidator;
@@ -39,7 +39,7 @@ class CircuitsController extends Controller
     public function store(Request $request)
     {
         $data = new Circuits;
-        return $this->reconstructData($data, $request);
+        return $this->reconstructData($data, $request, null);
     }
 
     /**
@@ -76,10 +76,10 @@ class CircuitsController extends Controller
     public function update(Request $request, string $id)
     {
         $data = Circuits::find($id);
-        return $this->reconstructData($data, $request);
+        return $this->reconstructData($data, $request, $id = null);
     }
 
-    public function reconstructData($data, Request $request)
+    public function reconstructData($data, Request $request, $id)
     {
         $rules = [
             "date_in_service"       => "required",
@@ -118,15 +118,31 @@ class CircuitsController extends Controller
 
         if($complete) {
             if($request->piping_id)
+
+            // dd($id);
+            $allPipes = Assets::all()->where('piping_circuit', $id)->toArray();
+            // dd($allPipes);
+            foreach($allPipes as $pipe)
+            {
+                DB::table('assets')->where('id', $pipe)
+                ->update([
+                    "piping_circuit" =>  null
+                ]);
+            }
+
             foreach($request->piping_id as $pipe) {
-                DB::table('assets')->where('id', $pipe)->update([
+                DB::table('assets')->where('id', $pipe)
+                ->update([
                     "piping_circuit" =>  $data['id']
                 ]);
             }
 
+            $message = "Sukeses menambahkan data";
+            if($id) $message = "Sukses mengupdate data";
+
             return response()->json([
                 'status' => true,
-                'message' => 'Sukses menambahkan data.'
+                'message' => $message
             ], 200);
         }
 
