@@ -19,11 +19,11 @@ return new class extends Migration
             ->on('assets')
             ->onDelete('cascade');
             $table->string("general_condition")->nullable();    
-            // $table->text("general_finding")->nullable()->default("");
-            // $table->text("general_recomendation")->nullable()->default("");
-            // $table->string("leaks_condition")->nullable();
-            // $table->text("leaks_comment")->nullable()->default("");
-            // $table->boolean("leaks_process")->default(false);
+            $table->text("general_finding")->nullable()->default("");
+            $table->text("general_recomendation")->nullable()->default("");
+            $table->string("leaks_condition")->nullable();
+            $table->text("leaks_comment")->nullable()->default("");
+            $table->boolean("leaks_process")->default(false);
             // $table->boolean("leaks_steam_tracing")->default(false);
             // $table->boolean("leaks_existing_clamps")->default(false);
             // $table->string("misalignment_condition")->nullable();
