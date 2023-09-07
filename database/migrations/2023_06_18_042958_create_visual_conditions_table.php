@@ -12,13 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('visual_conditions', function (Blueprint $table) {
-            // $table->id();
-            // $table->unsignedBigInteger('piping_id');
-            // $table->foreign('piping_id')
-            // ->references('id')
-            // ->on('assets')
-            // ->onDelete('cascade');
-            // $table->string("general_condition")->nullable();    
+            $table->id();
+            $table->unsignedBigInteger('piping_id');
+            $table->foreign('piping_id')
+            ->references('id')
+            ->on('assets')
+            ->onDelete('cascade');
+            $table->string("general_condition")->nullable();    
             // $table->text("general_finding")->nullable()->default("");
             // $table->text("general_recomendation")->nullable()->default("");
             // $table->string("leaks_condition")->nullable();
