@@ -40,7 +40,7 @@ return new class extends Migration
             $table->text('recomendation')->nullable();
             $table->string('qr_code')->nullable();
             $table->unsignedInteger('piping_circuit')->nullable();
-            // $table->unsignedInteger('proposal_id')->nullable();
+            $table->unsignedInteger('proposal_id')->nullable();
             $table->timestamps();
         });
     }

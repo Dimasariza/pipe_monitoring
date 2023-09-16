@@ -100,6 +100,14 @@ class ProposalsController extends Controller
 
         if($complete) {
 
+            foreach($request->list_of_piping_id as $piping) {
+                // print($piping);
+                DB::table('assets')->where('id', $piping)
+                ->update([
+                    "proposal_id" => $piping
+                ]);
+            }
+
             foreach($request->circuit as $circuit) {
 
                 $success = DB::table('proposal_circuits')
@@ -108,7 +116,6 @@ class ProposalsController extends Controller
                     "id_circuit" =>  $circuit
                 ]);
 
-                // dd($success);
 
                 if(!$success) {
                     DB::table('proposal_circuits')->insert([
@@ -116,8 +123,6 @@ class ProposalsController extends Controller
                         "id_circuit" => $circuit
                     ]);
                 }
-
-                // dd($success);
 
             }
 
