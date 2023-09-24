@@ -48,6 +48,7 @@ class CircuitsController extends Controller
     public function show(string $id)
     {
         $data = Circuits::find($id);
+        $data = new CircuitResource($data);
         if($data) {
             return response()->json([
                 'status' => true,

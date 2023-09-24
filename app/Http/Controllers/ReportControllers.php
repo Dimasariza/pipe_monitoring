@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\CircuitResource;
 use App\Http\Resources\DataCMLResource;
 use App\Http\Resources\ListAssetsResource;
 use App\Models\Assets;
@@ -23,14 +24,12 @@ class ReportControllers extends Controller
         $damage_mechanism = DamageMechanism::where('piping_id', $id)->first();
         $damage_mechanism = json_decode($damage_mechanism['damage_mechanism']);
         $visual_condition = VisualConditions::where('piping_id', $id)->first();
-        $proposal = Proposals::find($asset['proposal_id']);
-        if($proposal) $proposal['inspection_method'] = json_decode($proposal['inspection_method']);
+
         return [
             "asset" => $asset,
             "cml" => DataCMLResource::collection($cml),
             "damage_mechanism" => $damage_mechanism,
             "visual_condition" => $visual_condition,
-            "proposal" => $proposal 
         ];
     }
 
@@ -43,11 +42,6 @@ class ReportControllers extends Controller
         ]); 
     }
 
-    public function list_report_circuits()
-    {
-
-    }
-
     public function report_assets(string $id)
     {
         $data = $this->get_collection_data($id);
@@ -58,7 +52,17 @@ class ReportControllers extends Controller
         ], 404);
 
         $circuit = Circuits::find($data['asset']['piping_circuit']);
+
         $data["circuit"] = $circuit;
+
+        $proposals = new CircuitResource($circuit);
+
+        $data["proposals"] = array_map(function($proposal) {
+            return [
+                ...$proposal,
+                "inspection_method" => json_decode($proposal["inspection_method"])
+            ];
+        }, $proposals->proposals->toArray());
 
         return response()->json([
             "status" => true,
@@ -70,6 +74,16 @@ class ReportControllers extends Controller
     public function report_circuit($id)
     {
         $circuit = Circuits::find($id);
+
+        $proposals = new CircuitResource($circuit);
+
+        $proposals = array_map(function($proposal) {
+            return [
+                ...$proposal,
+                "inspection_method" => json_decode($proposal["inspection_method"])
+            ];
+        }, $proposals->proposals->toArray());
+
         if(empty($circuit))
         return response()->json([
             "status" => false,
@@ -77,15 +91,19 @@ class ReportControllers extends Controller
         ], 404);
 
         $assets = json_decode($circuit->piping_id);
-        $array_assets = array_map(function($a){
-            return $this->get_collection_data($a);
-        }, $assets);
+        $array_assets = [];
+        if($assets) {
+            $array_assets = array_map(function($a){
+                return $this->get_collection_data($a);
+            }, $assets);
+        }
 
         return response()->json([
             "status" => true,
             "message" => "Data report ditemukan.",
             "data" => [
                 "circuit" => $circuit,
+                "proposals" => $proposals,
                 "assets" => $array_assets,
             ]
         ], 200);

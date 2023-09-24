@@ -21,4 +21,14 @@ class Circuits extends Model
         return $this->belongsToMany(Proposals::class, 'proposal_circuits', 'id_cicruit');
     }
 
+    public function proposals()
+    {
+        return $this->belongsToMany(
+            Proposals::class, 
+            'proposal_circuits', 
+            'id_circuit' ,
+            'id_proposal'
+        );
+    }
+
 }
