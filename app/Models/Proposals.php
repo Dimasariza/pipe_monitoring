@@ -19,10 +19,15 @@ class Proposals extends Model
         return $this->hasMany(Circuits::class, 'proposal_id', 'id');
     }
 
+    public function manyAssets() 
+    {
+        return $this->belongsToMany(Assets::class, 'proposal_assets',  
+        'id_proposal', 'id_asset');
+    }
+
     public function manyCircuits() 
     {
         return $this->belongsToMany(Circuits::class, 'proposal_circuits',  
         'id_proposal', 'id_circuit');
     }
-
 }

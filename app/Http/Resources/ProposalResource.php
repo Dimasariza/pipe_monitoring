@@ -18,6 +18,7 @@ class ProposalResource extends JsonResource
         if(array_key_exists('inspection_method', $data))
         $data['inspection_method'] = json_decode($data['inspection_method']);
         $data['circuit'] = $this->manyCircuits;
+        $data['assets'] = $this->manyAssets;
         return $data;
     }
 }
