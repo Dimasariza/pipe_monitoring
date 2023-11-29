@@ -53,7 +53,6 @@ class ReportControllers extends Controller
         ], 404);
 
         $circuit = Circuits::find($data['asset']['piping_circuit']);
-        dd($circuit);
 
         if($circuit){
             $data["circuit"] = $circuit;
