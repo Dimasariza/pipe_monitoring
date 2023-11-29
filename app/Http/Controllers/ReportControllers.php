@@ -20,6 +20,7 @@ class ReportControllers extends Controller
         $asset = Assets::find($id);
         if(empty($asset)) return false;
         $asset['images'] = json_decode($asset['images']);
+
         $cml = Datacmls::where('piping_id', $id)->get();
         $damage_mechanism = DamageMechanism::where('piping_id', $id)->first();
         $damage_mechanism = json_decode($damage_mechanism['damage_mechanism']);
@@ -52,17 +53,20 @@ class ReportControllers extends Controller
         ], 404);
 
         $circuit = Circuits::find($data['asset']['piping_circuit']);
+        dd($circuit);
 
-        $data["circuit"] = $circuit;
-
-        $proposals = new CircuitResource($circuit);
-
-        $data["proposals"] = array_map(function($proposal) {
-            return [
-                ...$proposal,
-                "inspection_method" => json_decode($proposal["inspection_method"])
-            ];
-        }, $proposals->proposals->toArray());
+        if($circuit){
+            $data["circuit"] = $circuit;
+            $proposals = new CircuitResource($circuit);
+            
+            if($proposals)
+            $data["proposals"] = array_map(function($proposal) {
+                return [
+                    ...$proposal,
+                    "inspection_method" => json_decode($proposal["inspection_method"])
+                ];
+            }, $proposals->proposals->toArray());
+        }
 
         return response()->json([
             "status" => true,
