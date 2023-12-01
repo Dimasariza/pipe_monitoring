@@ -93,9 +93,6 @@ class ProposalsController extends Controller
         $data->inspection_method = json_encode($request->inspection_method);
         $data->remarks = $request->remarks;
 
-        $data->carried_out = $request->carried_out;
-        $data->inspection_date = $request->inspection_date;
-
         $complete = $data->save();
 
         if(!$complete) 
