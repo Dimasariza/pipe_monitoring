@@ -9,11 +9,10 @@ class Circuits extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
-
     public function circuit()
     {
-        return $this->hasMany(Assets::class, 'piping_circuit', 'id');
+        return $this->belongsToMany(Assets::class, 'assets_circuit',  
+        'id_circuit', 'id_asset');
     }
 
     public function circuitS()

@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string("attachment")->nullable();
             $table->text("recomendation")->nullable();
             $table->text("images")-> nullable();
-            $table->text('piping_id')->nullable();
+            // $table->text('piping_id')->nullable();
             $table->text('circuit_id')->nullable();
             $table->unsignedBigInteger('proposal_id')->nullable();
             $table->string('qr_code')->nullable();

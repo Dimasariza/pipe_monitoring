@@ -98,60 +98,40 @@ class ProposalsController extends Controller
 
         $complete = $data->save();
 
-        if($complete) {
-
-            foreach($request->list_of_piping_id as $piping) {
-                // print($piping);
-                DB::table('assets')->where('id', $piping)
-                ->update([
-                    "proposal_id" => $piping
-                ]);
-            }
-
-            foreach($request->circuit as $circuit) {
-
-                $success = DB::table('proposal_circuits')
-                ->where('id_proposal',$data["id"])
-                ->where("id_circuit", $circuit)
-                ->update([
-                    "id_circuit" =>  $circuit
-                ]);
-
-                if(!$success) {
-                    DB::table('proposal_circuits')->insert([
-                        "id_proposal" => $data["id"],
-                        "id_circuit" => $circuit
-                    ]);
-                }
-            }
-
-            foreach($request->list_of_piping_id as $asset){
-                $success = DB::table('proposal_assets')
-                ->where('id_proposal',$data["id"])
-                ->where("id_asset", $asset)
-                ->update([
-                    "id_asset" =>  $asset
-                ]);
-
-                if(!$success) {
-                    DB::table('proposal_assets')->insert([
-                        "id_proposal" => $data["id"],
-                        "id_asset" => $asset
-                    ]);
-                }
-            }
-
-            return response()->json([
-                'status' => true,
-                'message' => 'Sukses menambahkan data.'
-            ], 200);
-        }
-
         if(!$complete) 
         return response()->json([
             'status' => false,
             'message' => 'Data gagal di tambahkan'
         ], 400);
+
+        if($request->circuit){
+            DB::table('proposal_circuits')
+            ->where('id_proposal',$data["id"])
+            ->delete();
+    
+            foreach($request->circuit as $circuit) {
+                DB::table('proposal_circuits')->insert([
+                    "id_proposal" => $data["id"],
+                    "id_circuit" => $circuit
+                ]);
+            }
+    
+            DB::table('proposal_assets')
+            ->where('id_proposal',$data["id"])
+            ->delete();
+    
+            foreach($request->list_of_piping_id as $asset){
+                DB::table('proposal_assets')->insert([
+                    "id_proposal" => $data["id"],
+                    "id_asset" => $asset
+                ]);
+            }
+        }
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Sukses menambahkan data.'
+        ], 200);
     }
 
     /**

@@ -16,6 +16,10 @@ class AssetsResource extends JsonResource
     public function toArray(Request $request): array
     {
         $data = parent::toArray($request);
+
+        if($this->first() && array_key_exists('images', $data))
+        $data["circuit"] = $this->circuit->first();
+        
         if(array_key_exists('images', $data))
         $data['images'] = json_decode($data['images']);
 

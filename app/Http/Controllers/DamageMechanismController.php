@@ -35,9 +35,6 @@ class DamageMechanismController extends Controller
     public function store(Request $request)
     {
         $data = new DamageMechanism();
-        // $data->damage_mechanism = json_encode($request->damage_mechanism);
-        // $data->piping_id = $request->piping_id;
-        // $data->save();
         return response()->json([
             "status" => true,
             "message" => "Data berhasil ditambahkan.",

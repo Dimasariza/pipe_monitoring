@@ -2,16 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Assets;
+use App\Models\Circuits;
+use App\Models\Datacmls;
+use Illuminate\Http\Request;
+use App\Models\DamageMechanism;
+use App\Models\VisualConditions;
+use Illuminate\Support\Facades\DB;
+use App\Http\Resources\AssetsResource;
 use App\Http\Resources\CircuitResource;
 use App\Http\Resources\DataCMLResource;
 use App\Http\Resources\ListAssetsResource;
-use App\Models\Assets;
-use App\Models\Circuits;
-use App\Models\DamageMechanism;
-use App\Models\Datacmls;
-use App\Models\Proposals;
-use App\Models\VisualConditions;
-use Illuminate\Http\Request;
+use App\Http\Resources\AssetCircuitResource;
+use App\Http\Resources\CircuitAssetResource;
+use App\Http\Resources\CircuitProposalsResource;
 
 class ReportControllers extends Controller
 {
@@ -46,46 +50,31 @@ class ReportControllers extends Controller
     public function report_assets(string $id)
     {
         $data = $this->get_collection_data($id);
+
         if(!$data)
         return response()->json([
             "status" => false,
             "message" => "Data tidak ditemukan.",
         ], 404);
 
-        $circuit = Circuits::find($data['asset']['piping_circuit']);
-
-        if($circuit){
+        $circuit = new CircuitAssetResource($data["asset"]);
+        if($circuit->circuit->first()){
+            $circuit = $circuit->circuit[0];
             $data["circuit"] = $circuit;
-            $proposals = new CircuitResource($circuit);
-            
-            if($proposals)
-            $data["proposals"] = array_map(function($proposal) {
-                return [
-                    ...$proposal,
-                    "inspection_method" => json_decode($proposal["inspection_method"])
-                ];
-            }, $proposals->proposals->toArray());
+            $data["proposals"] = new CircuitProposalsResource($circuit);
         }
 
         return response()->json([
             "status" => true,
             "message" => "Data ditemukan.",
-            "data" => $data
+            "data" => $data,
         ], 200);
     }
 
     public function report_circuit($id)
     {
         $circuit = Circuits::find($id);
-
-        $proposals = new CircuitResource($circuit);
-
-        $proposals = array_map(function($proposal) {
-            return [
-                ...$proposal,
-                "inspection_method" => json_decode($proposal["inspection_method"])
-            ];
-        }, $proposals->proposals->toArray());
+        $proposals = new CircuitProposalsResource($circuit);
 
         if(empty($circuit))
         return response()->json([
@@ -93,13 +82,15 @@ class ReportControllers extends Controller
             "message" => "Data tidak ditemukan.",
         ], 404);
 
-        $assets = json_decode($circuit->piping_id);
-        $array_assets = [];
-        if($assets) {
-            $array_assets = array_map(function($a){
-                return $this->get_collection_data($a);
-            }, $assets);
-        }
+        $assets = DB::table('assets_circuit')
+        ->where('id_circuit',$circuit["id"])
+        ->get()->toArray();
+
+        $assets_data = [];
+
+        foreach($assets as $asset){
+            array_push($assets_data, $this->get_collection_data($asset->id_asset));
+        };
 
         return response()->json([
             "status" => true,
@@ -107,7 +98,7 @@ class ReportControllers extends Controller
             "data" => [
                 "circuit" => $circuit,
                 "proposals" => $proposals,
-                "assets" => $array_assets,
+                "assets" => $assets_data,
             ]
         ], 200);
     }

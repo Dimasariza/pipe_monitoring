@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\CircuitResource;
-use App\Models\Assets;
 use App\Models\Circuits;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -103,7 +102,6 @@ class CircuitsController extends Controller
             "class",
             "piping_circuit_name",
             "piping_circuit_id",
-            "piping_id",
             "notes",
             "attachment",
             "recomendation",
@@ -113,45 +111,33 @@ class CircuitsController extends Controller
             $data->$key = $request->$key;
         }
         
-        $data->piping_id = json_encode($request->piping_id);
         $data->images = json_encode($request->images);
         $complete = $data->save();
-
-        if($complete) {
-            if($request->piping_id)
-
-            // dd($id);
-            $allPipes = Assets::all()->where('piping_circuit', $id)->toArray();
-            // dd($allPipes);
-            foreach($allPipes as $pipe)
-            {
-                DB::table('assets')->where('id', $pipe)
-                ->update([
-                    "piping_circuit" =>  null
-                ]);
-            }
-
-            foreach($request->piping_id as $pipe) {
-                DB::table('assets')->where('id', $pipe)
-                ->update([
-                    "piping_circuit" =>  $data['id']
-                ]);
-            }
-
-            $message = "Sukeses menambahkan data";
-            if($id) $message = "Sukses mengupdate data";
-
-            return response()->json([
-                'status' => true,
-                'message' => $message
-            ], 200);
-        }
 
         if(!$complete) 
         return response()->json([
             'status' => false,
             'message' => 'Data gagal di tambahkan'
         ], 400);
+        
+        DB::table('assets_circuit')
+        ->where('id_circuit',$data["id"])
+        ->delete();
+
+        foreach($request->piping_id as $pipe) {
+            DB::table('assets_circuit')->insert([
+                "id_circuit" => $data["id"],
+                "id_asset" => $pipe
+            ]);
+        }
+
+        $message = "Sukeses menambahkan data";
+        if($id) $message = "Sukses mengupdate data";    
+
+        return response()->json([
+            'status' => true,
+            'message' => $message
+        ], 200);
     }
 
     /**

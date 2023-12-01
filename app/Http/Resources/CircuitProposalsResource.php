@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class CircuitResource extends JsonResource
+class CircuitProposalsResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -14,9 +14,9 @@ class CircuitResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        $data = parent::toArray($request);
-        $data['images'] = json_decode($data['images']);
-        $data['piping'] = AssetsResource::collection($this->circuit) ;
-        return $data;
-    }
+        $data = $this->proposals->first();
+        if($data)
+        $data['inspection_method'] = json_decode($data['inspection_method']);
+        return [$data];
+    } 
 }

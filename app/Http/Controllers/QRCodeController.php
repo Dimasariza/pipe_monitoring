@@ -9,7 +9,6 @@ class QRCodeController extends Controller
 {
     public function storeDocument(Request $request) {
         $filedir = "qr_code";
-        // dd($request);
         $file_name = $request->file($filedir)->getClientOriginalName();
         $file_name = date('YmdHis').$file_name;
         $file_storage = new QRCode;
