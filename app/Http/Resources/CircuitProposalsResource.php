@@ -14,9 +14,11 @@ class CircuitProposalsResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        $data = $this->proposals->first();
-        if($data)
-        $data['inspection_method'] = json_decode($data['inspection_method']);
-        return [$data];
+        $data = $this->proposals->toArray();
+        $data = array_map(function($e){
+            $e['inspection_method'] = json_decode($e['inspection_method']);
+            return $e;
+        }, $data);
+        return $data;
     } 
 }
